@@ -84,6 +84,11 @@
         width: 29%;
         margin-right: 6.5%;
         margin-top: 210px;
+        @include mq(tab_max) {
+          width: 100%;
+          margin-right: 0;
+          margin-top: 0;
+        }
 
         &:first-child {
           margin-top: 0;
@@ -107,10 +112,13 @@
           line-height: 1.6;
           background-color: #fff;
           border: 3px solid $third-color;
-          transform: translate(-50%,-100%);
           padding: 20px 24px;
           border-radius: 10px;
-          // display: none;
+          transition: all 0.3s;
+          transform: translate(-50%,-80%);
+          @include mq(tab_min) {
+            opacity: 0;
+          }
 
           &:before {
             content: '';
@@ -146,13 +154,14 @@
           transition: transform 0.3s;
           position: relative;
 
-          &:hover {
-            transform: scale(1.05);
-
-            .bubble {
-              display: block;
-              
-
+          @include mq(hover) {
+            &:hover {
+              transform: scale(1.03);
+  
+              .bubble {
+                opacity: 1;
+                transform: translate(-50%,-100%);
+              }
             }
           }
         }
