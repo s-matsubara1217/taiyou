@@ -7,6 +7,12 @@
   padding-bottom: 140px;
   max-width: 1330px;
 }
+@media screen and (max-width: 768px) {
+  .lower-interview_l .interview__inner {
+    padding-top: 0;
+    padding-bottom: 96px;
+  }
+}
 .lower-interview_l .interview__list {
   display: flex;
   justify-content: flex-start;
@@ -25,6 +31,14 @@
   left: 50%;
   transform: translateX(-50%);
 }
+@media screen and (max-width: 768px) {
+  .lower-interview_l .interview__list:before {
+    width: 60%;
+    border: 20px solid #fdf6c3;
+    height: calc(100% + 16px);
+    top: 0;
+  }
+}
 .lower-interview_l .interview__list__item {
   width: 29%;
   margin-right: 6.5%;
@@ -32,22 +46,33 @@
 }
 @media screen and (max-width: 768px) {
   .lower-interview_l .interview__list__item {
-    width: 100%;
-    margin-right: 0;
-    margin-top: 0;
+    width: 90%;
+    margin: 36px auto 0;
   }
 }
 .lower-interview_l .interview__list__item:first-child {
   margin-top: 0;
 }
-.lower-interview_l .interview__list__item:nth-child(2) {
-  margin-top: 0;
+@media screen and (min-width: 769px) {
+  .lower-interview_l .interview__list__item:nth-child(2) {
+    margin-top: 0;
+  }
 }
-.lower-interview_l .interview__list__item:nth-child(3) {
-  margin-top: 0;
+@media screen and (min-width: 769px) {
+  .lower-interview_l .interview__list__item:nth-child(3) {
+    margin-top: 0;
+  }
 }
-.lower-interview_l .interview__list__item:nth-child(3n+3) {
-  margin-right: 0;
+@media screen and (min-width: 769px) {
+  .lower-interview_l .interview__list__item:nth-child(3n+2) {
+    transition-delay: 0.2s;
+  }
+}
+@media screen and (min-width: 769px) {
+  .lower-interview_l .interview__list__item:nth-child(3n+3) {
+    transition-delay: 0.4s;
+    margin-right: 0;
+  }
 }
 .lower-interview_l .interview__list__item .bubble {
   width: 130%;
@@ -66,6 +91,18 @@
 @media screen and (min-width: 769px) {
   .lower-interview_l .interview__list__item .bubble {
     opacity: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lower-interview_l .interview__list__item .bubble {
+    width: 110%;
+    position: relative;
+    top: auto;
+    left: 50%;
+    font-size: 1.6rem;
+    padding: 16px;
+    transform: translateX(-50%);
+    margin-bottom: 28px;
   }
 }
 .lower-interview_l .interview__list__item .bubble:before {
@@ -160,6 +197,12 @@
   font-weight: bold;
   display: block;
   padding: 28px 8% 0;
+}
+@media screen and (max-width: 768px) {
+  .lower-interview_l .interview__list__item .txt-holder .name {
+    font-size: 2rem;
+    padding: 24px 8% 0;
+  }
 }
 .lower-interview_l .interview__list__item .txt-holder .year {
   font-size: 1.4rem;
