@@ -1,11 +1,24 @@
 /*トップ*/
 @use "../foundation/mixins" as *;
 
+
 .mv {
-  margin-top: -15px;
+  // margin-top: -11px;
   position: relative;
+  @include mq(tab_min) {
+    // margin-top: -19px;
+  }
   &_photo {
-    height: 650px;
+    overflow: hidden;
+    position: relative;
+    height: 280px;
+    background: #fff;
+    @include mq(tab_min) {
+      height: 650px;
+    }
+    img {
+      animation: fuwa 1s $easing;
+    }
   }
   &_inner {
     height: 650px;
@@ -19,184 +32,951 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
-    padding: 0 0 10% 10%;
+    padding: 0 0 110px 20px;
+    transform: scale(0.35);
+    transform-origin: bottom left;
+    @include mq(tab_min) {
+      transform: scale(0.9);
+      padding: 0 0 5% 3%;
+    }
+    @include mq(pc_min) {
+      transform: scale(1);
+      padding: 0 0 10% 10%;
+    }
+
+    &_sub {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.8s $easing;
+    }
+    &_main {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.8s $easing;
+    }
+    &.acted {
+      .mv_lead_sub {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .mv_lead_main {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   }
 }
 
 .newJobs {
-  margin-top: -30px;
+  margin-top: -20px;
   position: relative;
   z-index: 1;
+  margin-bottom: 40px;
+  @include mq(tab_min) {
+    margin-top: -30px;
+    margin-bottom: 0;
+  }
   &_inner {
     display: flex;
-    align-items: center;
+    flex-flow: column;
+    @include mq(tab_min) {
+      flex-flow: row;
+      align-items: flex-start;
+    }
   }
   &_title {
-    width: 30%;
+    position: relative;
+    max-width: 460px;
+    width: 85%;
     background: $third-color;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    padding: 60px 60px 120px;
+    overflow: hidden;
+    padding: 30px 30px 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq(tab_min) {
+      display: block;
+      width: 100%;
+      padding: 80px 60px 160px;
+      flex: 1 0 400px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 154px;
+      height: 617px;
+      background-image: url(../img/index/deco_o01.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+    .m_button_style02 {
+      @include mq(tab_min) {
+        margin-top: 20px;
+      }
+    }
+  }
+  .control {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    margin: auto;
+    z-index: 1;
+    width: 100%;
+    pointer-events: none;
+    @include mq(tab_min) {
+      width: auto;
+      margin-top: 30px;
+      left: 300px;
+      right: initial;
+      top: initial;
+      justify-content: flex-end;
+      transform: translateY(0);
+    }
+    .swiper-button-prev_newJobs,
+    .swiper-button-next_newJobs {
+      background: $primary-color;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      pointer-events: all;
+      outline: none;
+      transition: all .5s $easing;
+      opacity: 1;
+      @include mq(tab_min) {
+        width: 38px;
+        height: 38px;
+      }
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &:hover {
+        @include mq(hover) {
+          opacity: 0.7;
+        }
+      }
+      &.swiper-button-disabled{
+        background: rgba(0,0,0,0.2);
+        opacity: .5;
+        pointer-events: none;
+      }
+    }
+    .swiper-button-prev_newJobs {
+      &::before {
+        transform: rotate(-135deg);
+        left: 2px;
+      }
+    }
+    .swiper-button-next_newJobs {
+      margin-left: 10px;
+      &::before {
+        transform: rotate(45deg);
+        left: -2px;
+      }
+    }
+  }
+  .swiper-newJobs {
+    width: 100%;
+    position: relative;
   }
   &_slide {
-    margin-left: -80px;
+    padding: 0 20px;
+    margin-top: -80px;
+    position: relative;
+    @include mq(tab_min) {
+      margin-left: -180px;
+      width: calc(100% - 280px);
+      margin-top: 80px;
+      position: static;
+    }
     &_item {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
       background: #fff;
       padding: 20px;
       border-radius: 10px;
+      border: 2px solid transparent;
+      transition: border 0.5s $easing;
+      &:hover {
+        @include mq(hover) {
+          border: 2px solid $primary-color;
+          .photo {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+      .photo {
+        display: flex;
+        overflow: hidden;
+        border-radius: 5px;
+        flex: 1 0 110px;
+        max-width: 110px;
+        width: 100%;
+        img {
+          font-size: 0;
+          transition: all 0.5s $easing;
+        }
+      }
+      .content {
+        margin-left: 20px;
+        display: flex;
+        flex-flow: wrap;
+        .info {
+          display: inline-flex;
+          align-items: center;
+          line-height: 1;
+          .tag {
+            background: $primary-color;
+            color: #fff;
+            font-size: 1rem;
+            padding: 3px 3px;
+            margin-right: 10px;
+          }
+          .calendar {
+            display: inline-flex;
+            align-items: center;
+            .icon {
+              width: 9px;
+              height: 10px;
+              display: flex;
+              margin-right: 5px;
+            }
+            .date {
+              font-size: 1rem;
+              opacity: 0.8;
+            }
+          }
+        }
+        .text {
+          margin-top: 5px;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          height: 5em;
+          overflow: hidden;
+          font-size: 1.4rem;
+          line-height: 1.8;
+        }
+      }
     }
   }
 }
 
 .search {
-  margin-top: -60px;
   padding: 0 16px;
   display: block;
+  overflow: hidden;
   @include mq(tab_min) {
+    margin-top: -100px;
     padding: 0 40px;
   }
   &_inner {
     background: $primary-color;
-    border-radius: 30px;
-    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    padding: 10px;
+    @include mq(tab_min) {
+      padding: 20px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 846px;
+      height: 1028px;
+      background-image: url(../img/index/deco_o02.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      bottom: -240px;
+      right: -240px;
+      z-index: 0;
+    }
   }
   &_border {
     display: flex;
+    flex-flow: column;
     border: 2px dashed #fff;
-    border-radius: 20px;
+    border-radius: 10px;
+    @include mq(tab_min) {
+      align-items: flex-end;
+      flex-flow: row;
+    }
   }
-  .photo {
-    margin-top: 80px;
-    margin-bottom: -30px;
-    margin-left: 50px;
+  .deco {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    z-index: 1;
+    max-width: 90px;
+    @include mq(tab_min) {
+      flex: 1 0 293px;
+      max-width: 293px;
+      width: 100%;
+      position: static;
+      margin-top: 80px;
+      margin-bottom: -30px;
+      margin-left: -50px;
+      transform: scale(1);
+    }
+    .balloon {
+      // max-width: 120px;
+      width: 100%;
+      position: absolute;
+      right: -17px;
+      bottom: calc(100% - 43px);
+      z-index: 0;
+      @include mq(tab_min) {
+        max-width: none;
+        right: -95px;
+        bottom: calc(100% - 100px);
+      }
+      img {
+        transform: scale(1.3);
+        transform-origin: left;
+        @include mq(tab_min) {
+          transform: scale(1);
+        }
+      }
+    }
+    .human {
+      position: relative;
+      z-index: 1;
+      // max-width: 70px;
+      opacity: 0;
+      img {
+        transform: scale(1);
+      }
+    }
+    img {
+      @include mq(tab) {
+        object-fit: cover;
+        font-family: "object-fit: cover;";
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   &_main {
-    padding: 60px 0 0 0;
+    padding: 40px 15px 20px;
+    width: 100%;
+    @include mq(tab_min) {
+      padding: 60px 60px 60px 60px;
+    }
+    .m_title_style01 {
+      margin-left: 140px;
+      height: 115px;
+      display: flex;
+      justify-content: center;
+      @include mq(tab_min) {
+        margin-bottom: 20px;
+        margin-left: 140px;
+      }
+      .en {
+        font-size: (5rem * 0.55);
+        white-space: nowrap;
+        @include mq(tab_min) {
+          font-size: 5rem;
+        }
+      }
+    }
   }
 }
 
 .welcome {
-  margin-top: 80px;
+  margin-top: 60px;
+  @include mq(tab_min) {
+    margin-top: 140px;
+  }
   &_inner {
     display: flex;
     align-items: center;
+    flex-flow: column-reverse;
+    @include mq(tab_min) {
+      flex-flow: row;
+    }
   }
   .photo {
     position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    will-change: transform;
+    @include mq(tab_min) {
+      max-width: 400px;
+      flex: 1 0 400px;
+      margin-right: 40px;
+    }
+    @include mq(pc_min) {
+      margin-top: 40px;
+      margin-right: 80px;
+      margin-top: 0;
+    }
+    @media screen and (min-width: 1200px) {
+      max-width: 596px;
+      flex: 1 0 596px;
+      width: 100%;
+    }
     &_item {
+      position: relative;
+      z-index: 1;
+      font-size: 0;
+      width: 90%;
+      margin: 0 0 0 auto;
       border-radius: 20px;
       overflow: hidden;
-      font-size: 0;
+      @include mq(tab_min) {
+        width: 100%;
+      }
+      img {
+        border-radius: 20px;
+      }
       &:nth-child(2) {
         position: absolute;
         bottom: -100px;
         right: calc(100% - 200px);
+        width: 100%;
+        max-width: 200px;
+        @include mq(tab_min) {
+          max-width: 250px;
+        }
+        @media screen and (min-width: 1400px) {
+          max-width: 350px;
+        }
       }
     }
   }
   .content {
-    margin-left: 60px;
+    width: 100%;
+    @include mq(tab_min) {
+      padding: 0 0 0 0;
+    }
+    @include mq(pc_min) {
+      padding: 0 60px 0 0;
+    }
     .text {
-      margin-top: 20px;
+      margin-top: 15px;
+      line-height: 2.2;
+      @include mq(tab_min) {
+        margin-top: 30px;
+      }
     }
   }
 }
 
 .interview {
   margin-top: 180px;
+  @include mq(tab_min) {
+    margin-top: 100px;
+  }
   .m_title_style01 {
     width: 100%;
+  }
+  &_inner {
+    overflow: hidden;
+    @include mq(tab_min) {
+      padding: 60px 60px;
+    }
   }
   &_content {
     position: relative;
     &::before {
       content: "";
       display: inline-block;
-      width: 80%;
+      width: 70%;
       height: 90%;
-      border: 60px solid $fourth-color;
+      border: 30px solid $fourth-color;
       position: absolute;
-      top: 0;
+      top: -10px;
       bottom: 0;
       left: 0;
       right: 0;
       margin: auto;
       border-radius: 30px;
       z-index: -1;
+      @include mq(tab_min) {
+        width: 75%;
+        border: 40px solid $fourth-color;
+      }
     }
     .deco {
       display: flex;
-      justify-content: space-between;
       width: 100%;
       margin-top: 60px;
-      &02 {
+      margin-bottom: -10px;
+      align-items: center;
+      justify-content: space-between;
+      @include mq(tab_min) {
         margin-top: -200px;
+        align-items: flex-end;
+      }
+      @include mq(pc_min) {
+        margin-top: 60px;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      &01 {
+        max-width: calc(272px * 0.5);
+        width: 100%;
+        height: calc(170px * 0.5);
+        @include mq(tab_min) {
+          max-width: calc(272px * 0.7);
+          height: calc(170px * 0.7);
+          margin-bottom: 60px;
+        }
+        @include mq(pc_min) {
+          max-width: 272px;
+          width: 100%;
+          height: 170px;
+          margin-bottom: 80px;
+        }
+      }
+      &02 {
         display: flex;
         flex-flow: column;
         position: relative;
+        transform: scale(1);
+        @include mq(tab_min) {
+          transform: scale(0.6);
+          transform-origin: bottom;
+        }
+        @include mq(pc_min) {
+          margin-top: -200px;
+          margin-right: 0;
+        }
+        @media screen and (min-width: 1200px) {
+          transform: scale(1);
+          margin-right: 100px;
+        }
         .balloon {
+          max-width: 120px;
+          width: 100%;
           position: absolute;
-          top: 0;
-          right: 0;
+          right: -10px;
+          bottom: calc(100% - 75px);
+          @include mq(tab_min) {
+            top: -40px;
+            right: -100px;
+            max-width: 211px;
+            height: 170px;
+          }
         }
         .human {
           position: relative;
           z-index: 1;
-          margin-right: 120px;
+          max-width: 100px;
+          width: 100%;
+          margin-right: 60px;
+          @include mq(tab_min) {
+            margin-right: 120px;
+            max-width: none;
+            margin-right: 0;
+          }
         }
       }
     }
     .m_button_style01 {
-      margin: 0 auto;
+      margin: 50px auto 0;
+    }
+    &_inner {
+      margin-top: 120px;
+      position: relative;
+      @include mq(tab_min) {
+        margin-top: 0;
+      }
+    }
+    .control {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      margin: auto;
+      position: absolute;
+      top: -40px;
+      bottom: 0;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      width: calc(100% + 20px);
+      pointer-events: none;
+      @include mq(tab_min) {
+        max-width: 470px;
+        top: -100px;
+        width: 100%;
+      }
+      .swiper-button-prev_interview,
+      .swiper-button-next_interview {
+        background: $primary-color;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        pointer-events: all;
+        outline: none;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+        &:hover {
+          @include mq(hover) {
+            opacity: 0.7;
+          }
+        }
+      }
+      .swiper-button-prev_interview {
+        &::before {
+          transform: rotate(-135deg);
+          left: 2px;
+        }
+      }
+      .swiper-button-next_interview {
+        margin-left: 10px;
+        &::before {
+          transform: rotate(45deg);
+          left: -2px;
+        }
+      }
+    }
+  }
+  .swiper-interview {
+    overflow: visible;
+    @include mq(tab_min) {
+      overflow: visible;
+      // overflow: hidden;
+    }
+    .swiper-slide {
+      &-duplicate-active,
+      &-active {
+        .interview_item {
+          transform: scale(1);
+          @include mq(tab_min) {
+            transform: scale(1.1);
+
+          }
+          .lead {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+  &_item {
+    position: relative;
+    display: block;
+    transition: all 0.5s $easing;
+    &:hover {
+      transform: scale(1.1);
+    }
+    .lead {
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      border: 3px solid $third-color;
+      padding: 16px 20px;
+      z-index: 1;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      font-size: 1.6rem;
+      position: absolute;
+      bottom: 100%;
+      @include mq(tab_min) {
+        font-size: 1.8rem;
+        margin: 0 -60px 30px;
+      }
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 23px 9.5px 0 9.5px;
+        border-color: $third-color transparent transparent transparent;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 17px 6.5px 0 6.5px;
+        border-color: #fff transparent transparent transparent;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    .photo {
+      border-radius: 10px;
+      overflow: hidden;
+      font-size: 0;
+      position: relative;
+      &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc(100 / 91) * 100%;
+      }
+      > img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .info {
+      position: relative;
+      margin-top: -20px;
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+      .tag {
+        background: $primary-color;
+        color: #fff;
+        display: inline-flex;
+        padding: 0 20px;
+      }
+      .name {
+        font-size: (2.2rem * 0.8);
+        font-weight: bold;
+        margin-top: 10px;
+        @include mq(tab_min) {
+          font-size: 2.2rem;
+        }
+      }
+      .year {
+        color: #2f0909;
+        font-size: 1.4rem;
+        opacity: 0.8;
+      }
     }
   }
 }
 
 .oneday {
   margin-top: 80px;
+  @include mq(tab_min) {
+    margin-top: 100px;
+  }
   &_inner {
     display: flex;
     align-items: center;
+    flex-flow: column-reverse;
+    position: relative;
+    padding-bottom: 30px;
+    @include mq(tab_min) {
+      flex-flow: row;
+    }
+  }
+  .photo {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    font-size: 0;
+    @include mq(tab_min) {
+      max-width: 300px;
+      flex: 1 0 300px;
+      margin-right: 40px;
+      margin-top: 0;
+    }
+    @media screen and (min-width: 1200px) {
+      max-width: 620px;
+      flex: 1 0 620px;
+      margin-right: 80px;
+    }
+    img {
+      font-size: 0;
+      border-radius: 20px;
+    }
   }
   .content {
-    margin-left: 80px;
+    width: 100%;
+    .text {
+      margin-top: 15px;
+    }
+    .m_button_style01 {
+      margin-top: 30px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      @include mq(tab_min) {
+        position: static;
+        margin-left: 0;
+        margin-top: 40px;
+      }
+    }
   }
 }
 
 .other {
-  margin-top: 140px;
+  margin-top: 180px;
   margin-bottom: 80px;
+  @include mq(tab_min) {
+    margin-top: 180px;
+    margin-bottom: 100px;
+  }
   &_inner {
     display: flex;
+    flex-flow: column;
+    @include mq(tab_min) {
+      flex-flow: row;
+    }
   }
   &_item {
-    margin: 0 20px;
-    width: 50%;
+    width: 100%;
     position: relative;
+    @include mq(tab_min) {
+      margin: 0 30px;
+      width: 50%;
+    }
+    @include mq(pc_min) {
+      margin: 0 30px;
+    }
     .m_title_style01 {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: -5em auto 0;
+      margin: -6em auto 0;
+      @include mq(tab_min) {
+        margin: -7em auto 0;
+      }
     }
     &_wrap {
-      border-radius: 20px;
+      border-radius: 10px;
       background: #fff;
-      padding: 20px 60px;
+      padding: 20px 20px 30px;
+      @include mq(tab_min) {
+        border-radius: 20px;
+        padding: 20px 30px 50px;
+        display: flex;
+        flex-flow: wrap;
+        height: 100%;
+      }
+      @media screen and (min-width: 1200px) {
+        padding: 20px 60px 50px;
+      }
     }
+    &_photo {
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 20px;
+      width: 100%;
+    }
+
     &:nth-child(1) {
-      .photo {
+      margin-bottom: 120px;
+      @include mq(tab_min) {
+        margin-bottom: 0;
+      }
+      .other_item_content {
+        width: 65%;
+        margin: 10px 0 0 0;
+        @include mq(tab_min) {
+          width: 85%;
+          margin: 26px 0 0 auto;
+        }
+      }
+      .deco {
         position: absolute;
-        bottom: -90px;
-        left: -100px;
+        bottom: -3px;
+        right: 0;
+        transform: scale(0.5);
+        transform-origin: bottom right;
+        @include mq(tab_min) {
+          bottom: -110px;
+          left: -100px;
+          right: auto;
+          transform: scale(0.6);
+        }
+        @media screen and (min-width: 1560px) {
+          transform: scale(1);
+        }
+        .balloon {
+          position: absolute;
+          top: -90px;
+          left: -40px;
+        }
       }
     }
     &:nth-child(2) {
-      .photo {
+      .other_item_content {
+        width: 60%;
+        margin: 10px 0 0 0;
+        @include mq(tab_min) {
+          width: 75%;
+          margin: 26px auto 0 0;
+        }
+      }
+      .deco {
         position: absolute;
-        bottom: -90px;
-        right: -100px;
+        bottom: -3px;
+        right: 0;
+        transform: scale(0.5);
+        transform-origin: bottom right;
+        @include mq(tab_min) {
+          bottom: -110px;
+          right: -100px;
+          transform: scale(0.6);
+          transform-origin: left bottom;
+        }
+        @media screen and (min-width: 1560px) {
+          transform: scale(1);
+        }
+        .balloon {
+          position: absolute;
+          top: -90px;
+          right: -40px;
+        }
       }
     }
   }

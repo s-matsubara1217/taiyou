@@ -6,26 +6,52 @@
 .header {
   display: flex;
   align-items: flex-start;
+  background: #fff;
+  height: 60px;
+  @include mq(tab_min) {
+    height: 72px;
+
+  }
+  @media screen and (min-width: 1370px) {
+    background: transparent;
+  }
   .h_logo {
     position: relative;
-    z-index: 2;
+    z-index: 10;
     background: #fff;
-    width: 80px;
-    border-bottom-right-radius: 20px;
-    padding: 16px 30px;
+    width: 240px;
+    border-bottom-right-radius: 10px;
+    padding: 15px 15px 10px;
     @include mq(tab_min) {
-      width: 160px;
+      padding: 16px 20px;
+      width: 320px;
     }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1370px) {
       width: 320px;
       flex: 1 0 320px;
     }
+    img{
+      transition: all .5s $easing;
+    }
+    &:hover{
+      @include mq(hover) {
+        img{
+          opacity: .7;
+
+        }
+      }
+
+    }
   }
   .h_navi {
-    background: #FFF;
+    background: #fff;
     width: 100%;
     padding: 0 100px 0 60px;
     justify-content: space-between;
+    display: none;
+    @media screen and (min-width: 1370px) {
+      display: block;
+    }
     &_list {
       display: flex;
       justify-content: flex-end;
@@ -42,8 +68,8 @@
         a {
           position: relative;
           padding: 20px 0;
-          &::before{
-            content: '';
+          &::before {
+            content: "";
             display: inline-block;
             width: 100%;
             height: 4px;
@@ -53,7 +79,7 @@
             right: 0;
             background: $primary-color;
             opacity: 0;
-            transition: opacity .3s ease;
+            transition: opacity 0.3s ease;
           }
           .ja {
             font-weight: bold;
@@ -76,7 +102,7 @@
           }
           &:hover {
             @include mq(hover) {
-              &::before{
+              &::before {
                 opacity: 1;
               }
             }
@@ -91,26 +117,26 @@
   position: fixed;
   right: 0;
   top: 0;
-   background: $primary-color;
+  background: $primary-color;
   // background: #fff;
   // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
   z-index: 200;
   display: flex;
   align-items: center;
+
   flex-flow: column;
   z-index: 50;
   padding: 10px 10px;
   cursor: pointer;
   opacity: 1;
   overflow: hidden;
-  transform: scale(0.8);
   transform-origin: top right;
   transition: all 0.5s ease;
   @include mq(tab_min) {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
   }
   @media screen and (min-width: 1200px) {
     // display: none;
@@ -131,9 +157,7 @@
   }
   &:hover {
     @include mq(hover) {
-      &::before {
-        transform: scale(1.4);
-      }
+      opacity: .7;
     }
   }
   &_inner {
@@ -163,7 +187,7 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      background: #FFF;
+      background: #fff;
       //      background: #FFF;
       //        top: 50%;
       right: 0;
@@ -193,6 +217,12 @@
       }
     }
   }
+  &_text {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1;
+    margin-top: 10px;
+  }
   &.js-active {
     //    background: $fourth-color;
     background: #fff;
@@ -204,6 +234,9 @@
       @include mq(tab_min) {
         //          transform: translateX(0) scale(0.9);
       }
+    }
+    .h_button_text {
+      color: $primary-color;
     }
     span {
       //      background: #FFF;
@@ -290,14 +323,30 @@
     background-repeat: no-repeat;
     background-position: top, bottom;
     background-size: contain, contain;
-    background-color: #fff;
+    // background-color: #fff;
+    background: $primary-color;
     transform: translateX(0);
     transition: all 0.6s $easing;
-    @include mq(tab_min) {
+    @media screen and (min-width: 1200px) {
       padding: 0 3%;
       transform: translateX(0);
       width: 50%;
       left: 50%;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      border: 2px dashed #fff;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      opacity: 0.4;
     }
     &_wrap {
       position: absolute;
@@ -306,7 +355,7 @@
       right: 0;
       transform: translateY(-50%);
       margin: auto;
-      width: 90%;
+      width: 85%;
       max-height: 85%;
       overflow-y: auto;
       overflow-x: hidden;
@@ -334,91 +383,65 @@
     &_item {
       width: 100%;
       transition: all 0.6s $easing;
-      border-bottom: 1px solid #dedede;
+      border-bottom: 1px solid #FFF;
       display: flex;
       &:last-of-type {
         border-bottom: 0;
       }
-      img{
+      img {
         height: auto;
       }
-      &:nth-child(1) {
-        .ico {
-          width: 26px;
-        }
-      }
-      &:nth-child(2) {
-        .ico {
-          width: 27px;
-        }
-      }
-      &:nth-child(3) {
-        .ico {
-          width: 33px;
-        }
-      }
-      &:nth-child(4) {
-        .ico {
-          width: 28px;
-        }
-      }
       a {
-        padding: 20px 10px;
+        padding: 20px 0;
         position: relative;
         width: 100%;
         overflow: hidden;
         font-size: (2rem * 0.7);
-        font-weight: bold;
         transition: all 0.5s ease;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: space-between;
         opacity: 1;
-        transition: all .5s $easing;
+        color: #fff;
         @include mq(tab_min) {
           padding: 20px 20px;
         }
         @include mq(hover) {
           &:hover {
-            opacity: .7;
+            .en,.ja{
+              color:rgba(255,255,255,0.5);
+            }
           }
         }
-      }
-      .text{
-        display: flex;
-        align-items: center;
-        .ico{
-          margin-right: 20px;
-          font-size: 0px;
+        &::before{
+          content: '';
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          background: $secondary-color;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
         }
-        .ja{
-          font-size: (2rem * 0.8);
+        .en {
+          font-family: $eng;
+          font-size: (4rem * 0.55);
+          padding: 0 0 0 14px;
+          transition: all 0.5s $easing;
+          @include mq(tab_min) {
+            font-size: 4rem;
+          }
+        }
+        .ja {
+          font-size: (2rem * 0.6);
+          transition: all 0.5s $easing;
           @include mq(tab_min) {
             font-size: 2rem;
           }
         }
-      }
-      .arrow{
-        width: 20px;
-      }
-    }
-  }
-  &_button{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    &_item{
-      & + .h_menu_button_item{
-        margin-left: 16px;
-        @include mq(tab_min) {
-          margin-left: 40px;
-        }
-      }
-    }
-    .m_button_style01{
-      margin-right: 12px;
-      a{
-        padding: 16px 32px;
       }
     }
   }

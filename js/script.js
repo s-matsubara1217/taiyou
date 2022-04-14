@@ -363,32 +363,60 @@ if ($('.front-page').length) {
   //interview
   function interviewSwiper() {
     let topInterviewOptions = {};
-    topInterviewOptions = {
-      slidesPerView: 3,
-      spaceBetween: 80,
-      centeredSlides: true,
-      loop: true,
-      speed: 500,
-      autoplay: {
-        delay: 4000,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next_interview',
-        prevEl: '.swiper-button-prev_interview'
-      },
-      breakpoints: {
-        767: {
-          slidesPerView: 1,
-          spaceBetween: 15,
+    if ($(".swiper-interview .swiper-slide").length == 1) {
+      topInterviewOptions = {
+        slidesPerView: 3,
+        spaceBetween: 80,
+        centeredSlides: true,
+        speed: 500,
+        watchOverflow: true,
+        autoplay: {
+          delay: 4000,
         },
-      }
-    };
+        navigation: {
+          nextEl: '.swiper-button-next_interview',
+          prevEl: '.swiper-button-prev_interview'
+        },
+        breakpoints: {
+          767: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+        }
+      };
+    } else {
+      topInterviewOptions = {
+        slidesPerView: 3,
+        spaceBetween: 80,
+        centeredSlides: true,
+        loop: true,
+        speed: 500,
+        autoplay: {
+          delay: 4000,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next_interview',
+          prevEl: '.swiper-button-prev_interview'
+        },
+        breakpoints: {
+          767: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+        }
+      };
+    }
     new Swiper('.swiper-interview', topInterviewOptions);
   }
 
 }
 
-
+$('.m_title_style01 .en').each(function () {
+  var txt = $(this).html();
+  $(this).html(
+    txt.replaceAll(' ', '&nbsp;')
+  );
+});
 
 function spanWrap(targetElm) {
   const targets = [].slice.call(document.querySelectorAll(targetElm));
@@ -403,12 +431,12 @@ function spanWrap(targetElm) {
       );
     });
 
-    $('.m_title_style02 .en').each(function () {
-      var txt = $(this).html();
-      $(this).html(
-        txt.replaceAll(' ', '&nbsp;')
-      );
-    });
+    // $('.m_title_style02 .en').each(function () {
+    //   var txt = $(this).html();
+    //   $(this).html(
+    //     txt.replaceAll(' ', '&nbsp;')
+    //   );
+    // });
 
     nodes.forEach(function (node) {
       if (node.nodeType == 3) {

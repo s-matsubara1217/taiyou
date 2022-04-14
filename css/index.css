@@ -1,33 +1,7 @@
 @charset "UTF-8";
 /*トップ*/
-@-webkit-keyframes fuwa {
-  0% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes fuwa {
-  0% {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 .mv {
-  margin-top: -11px;
   position: relative;
-}
-@media screen and (min-width: 769px) {
-  .mv {
-    margin-top: -19px;
-  }
 }
 .mv_photo {
   overflow: hidden;
@@ -566,6 +540,11 @@
 .interview {
   margin-top: 180px;
 }
+@media screen and (min-width: 769px) {
+  .interview {
+    margin-top: 100px;
+  }
+}
 .interview .m_title_style01 {
   width: 100%;
 }
@@ -962,7 +941,7 @@
   .oneday .content .m_button_style01 {
     position: static;
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 
@@ -1114,4 +1093,4 @@
   position: absolute;
   top: -90px;
   right: -40px;
-}
+}/*# sourceMappingURL=index.css.map */

@@ -20,6 +20,7 @@ button
     border-radius: 100px;
     font-weight: bold;
     font-size: 1.6rem;
+    transition: all .5s $easing;
     @include mq(tab_min) {
       padding: 20px 38px 20px 38px;
     }
@@ -59,10 +60,9 @@ button
       color: #FFF;
       @include mq(hover) {
         &:hover {
-          background: $secondary-color !important;
-          &::after {
-            background-color: $secondary-color !important;
-          }
+          background: $third-color !important;
+          color: $primary-color;
+          transform: scale(1.1);
         }
       }
     }
@@ -74,10 +74,9 @@ button
       color: $primary-color;
       @include mq(hover) {
         &:hover {
-          background: $secondary-color !important;
-          &::after {
-            background-color: $secondary-color !important;
-          }
+          background: $primary-color !important;
+          transform: scale(1.1);
+          color: #FFF;
         }
       }
     }
@@ -89,10 +88,9 @@ button
       color: $primary-color;
       @include mq(hover) {
         &:hover {
-          background: $secondary-color !important;
-          &::after {
-            background-color: $secondary-color !important;
-          }
+          background: $primary-color !important;
+          transform: scale(1.1);
+          color: #FFF;
         }
       }
     }
@@ -231,8 +229,14 @@ button
     }
     &:hover {
       opacity: 0.7;
+      span{
+
+        transform: scale(1.1);
+      }
     }
     span{
+
+    transition: all 0.6s $easing;
       padding: 10px 30px 10px 0;
     }
   }
@@ -258,8 +262,11 @@ button
     font-size: (7rem * 0.6);
     font-family: $eng;
     line-height: 1;
+    margin-top: 5px;
+    letter-spacing: .08em;
     @include mq(tab_min) {
       font-size: 7rem;
+      margin-top: 20px;
     }
     &._c_primary {
       color: $primary-color;
@@ -267,11 +274,12 @@ button
     &._c_white {
       color: #FFF;
     }
+
   }
+
   .ja {
-    font-size: (2rem * 0.9);
+    font-size: (2rem * 0.8);
     font-weight: bold;
-    margin-top: 8px;
     @include mq(tab_min) {
       font-size: 2rem;
     }
@@ -313,6 +321,40 @@ button
       }
     }
   }
+  &._a_move01{
+    .en{
+      & > span{
+        display: inline-block;
+        transform: translateY(30px) scale(0.5);
+        transition-property: all;
+        transition-duration: .3s;
+        transition-timing-function: $easing;
+        opacity: 0;
+        @for $i from 1 to 20 {
+          &:nth-child(#{$i}) {
+            transition-delay: 0.05s * $i ;
+          }
+        }
+      }
+    }
+    .ja {
+      transform: translateX(100px);
+      transition: all .5s $easing;
+      opacity: 0;
+    }
+    &.acted{
+      .en{
+        span{
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+      .ja{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .m_title_style02 {
@@ -330,12 +372,15 @@ button
     @include mq(tab_min) {
       font-size: 1.2rem;
     }
+    & > span{
+      display: initial;
+    }
     &._c_primary {
       color: $primary-color;
     }
   }
   .ja {
-    font-size: (2.8rem * 0.8);
+    font-size: (2.8rem * 0.7);
     font-weight: bold;
     @include mq(tab_min) {
       font-size: 2.8rem;
@@ -364,13 +409,49 @@ button
       margin-left: 20px;
     }
   }
+  &._a_move01{
+    .en{
+      & > span{
+        display: inline-block;
+        transform: translateY(30px) scale(0.5);
+        transition-property: all;
+        transition-duration: .3s;
+        transition-timing-function: $easing;
+        opacity: 0;
+        @for $i from 1 to 20 {
+          &:nth-child(#{$i}) {
+            transition-delay: 0.05s * $i ;
+          }
+        }
+      }
+    }
+    .ja {
+      transform: translateX(100px);
+      transition: all .5s $easing;
+      opacity: 0;
+    }
+    &.acted{
+      .en{
+        span{
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+      .ja{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
 }
+
 
 
 /*--------------------
 inner
 --------------------*/
 .m_inner_style {
+  //inner size 1280px
   &01 {
     max-width: 1280px;
     width: 100%;
@@ -380,8 +461,9 @@ inner
       padding: 0 40px;
     }
   }
+  //inner size 1380px
   &02 {
-    max-width: 880px;
+    max-width: 1380px;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
@@ -399,33 +481,33 @@ inner
       padding: 0 40px;
     }
   }
-  &04 {
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-    @include mq(tab_min) {
-      padding: 0 40px;
-    }
-  }
-  &05 {
-    max-width: calc(1028px + 80px);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-    @include mq(tab_min) {
-      padding: 0 40px;
-    }
-  }
-  &06 {
-    max-width: calc(1100px + 80px);
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
-    @include mq(tab_min) {
-      padding: 0 40px;
-    }
-  }
+  // &04 {
+  //   max-width: 1280px;
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   padding: 0 16px;
+  //   @include mq(tab_min) {
+  //     padding: 0 40px;
+  //   }
+  // }
+  // &05 {
+  //   max-width: calc(1028px + 80px);
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   padding: 0 16px;
+  //   @include mq(tab_min) {
+  //     padding: 0 40px;
+  //   }
+  // }
+  // &06 {
+  //   max-width: calc(1100px + 80px);
+  //   width: 100%;
+  //   margin: 0 auto;
+  //   padding: 0 16px;
+  //   @include mq(tab_min) {
+  //     padding: 0 40px;
+  //   }
+  // }
 }
 
 /*--------------------
@@ -455,6 +537,62 @@ layout
 /* ============================================
 // その他
 // ==========================================*/
+@keyframes fuwa {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.25) rotate(-5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.animation {
+  &.a_humanDeco {
+    .human {
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.5s $easing;
+    }
+    .balloon {
+      opacity: 0;
+    }
+    &.acted {
+      .human {
+        opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .balloon {
+        animation: balloon 0.8s 0.5s linear forwards;
+      }
+    }
+  }
+}
 
 .m_pageLink {
   margin-top: 60px;
@@ -494,6 +632,7 @@ layout
     }
   }
 }
+
 .no_text {
   width: 100%;
   //  height: 200px;

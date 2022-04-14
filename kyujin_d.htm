@@ -159,12 +159,29 @@
 		<!-- == //header（common） == -->
 		<!-- //案件のheader -->
 
+      <!-- breadcrumb-->
+      <div class="breadcrumb">
+        <div class="breadcrumb_inner">
+          <div class="scroll sp">
+            <ol class="breadcrumb_list">
+              <li class="breadcrumb_list_item">
+                <a href="/"><span>HOME</span></a>
+              </li>
+              <li class="breadcrumb_list_item">
+                求人情報ページタイトル（求人詳細などはテキスト量が多くなるのでレイアウトに注意ください）求人情報ページタイトル（求人詳細などはテキスト量が多くなるのでレイアウトに注意ください）求人情報ページタイトル（求人詳細などはテキスト量が多くなるのでレイアウトに注意ください）求人情報ページタイトル（求人詳細などはテキスト量が多くなるのでレイアウトに注意ください）
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- //breadcrumb-->
 
 		<main class="l-main">
 			<div class="kyujin_container">
 				<article class="job">
 					<!-- job_head -->
-					<header class="job_head">
+					<!-- [!] add class追加 .animation.slideup_fade02 -->
+					<header class="job_head animation slideup_fade02">
 						<figure class="job_head_img is_sp">
 							<img src="img/kyujin/dummy.jpg" alt="" class="object-fit-img">
 						</figure>
@@ -224,7 +241,8 @@
 					<!-- //job_head -->
 					<!-- job_body -->
 					<div class="job_body">
-						<div class="job_body_head job_body_block">
+						<!-- [!] add class追加 .animation.slideup_fade02 -->
+						<div class="job_body_head job_body_block animation slideup_fade02">
 							<div class="job_body_head_img">
 								<figure class="job_img is_pc">
 									<img src="img/kyujin/dummy.jpg" alt="" class="object-fit-img">
@@ -403,15 +421,15 @@
 
 						</div>
 						<div class="outline job_body_block">
-							<!-- [!]add -->
+							<!-- [!] class追加 .animation.slideup_fade02 -->
 							<h2 class="outline_ttl">
-								<div class="m_title_style01">
+								<div class="m_title_style01 _l_center animation _a_move01">
 									<span class="ja _c_primary">募集要項</span>
-									<h2 class="en _c_primary">DESCRIPTION</h2>
+									<h2 class="en _c_primary js-split">DESCRIPTION</h2>
 								</div>
 							</h2>
-							<!-- [!]add -->
-							<ul class="job_outline">
+							<!-- //[!] class追加 .animation.slideup_fade02 -->
+							<ul class="job_outline animation slideup_fade02">
 								<li class="job_outline_item">
 									<div class="job_outline_item_ttl"><span>職種</span></div>
 									<div class="job_outline_item_txt">
@@ -510,15 +528,15 @@
 						<!-- 20.03add -->
 						<!-- スペルミス修正です。 -->
 						<div class="appeal job_body_block">
-							<!-- [!]add -->
+							<!-- [!]add class追加 .animation.slideup_fade02 -->
 							<div class="appeal_ttl">
-								<div class="m_title_style01">
+								<div class="m_title_style01 _l_center animation _a_move01">
 									<span class="ja _c_primary">アピールポイント</span>
-									<h2 class="en _c_primary">APPEAL</h2>
+									<h2 class="en _c_primary js-split">APPEAL</h2>
 								</div>
 							</div>
-							<!-- //[!]add -->
-							<ul class="appeal_list">
+							<!-- //[!]add class追加 .animation.slideup_fade02 -->
+							<ul class="appeal_list animation slideup_fade02">
 								<li class="appeal_list_item">
 									<div class="appeal_list_item_head">
 										POINT 1
@@ -568,12 +586,12 @@
 
 						<div class="outline job_body_block">
 							<div class="outline_ttl">
-								<div class="m_title_style01">
+								<div class="m_title_style01 _l_center animation _a_move01">
 									<span class="ja _c_primary">応募方法</span>
-									<h2 class="en _c_primary">APPLICATION</h2>
+									<h2 class="en _c_primary js-split">APPLICATION</h2>
 								</div>
 							</div>
-							<ul class="job_outline">
+							<ul class="job_outline animation slideup_fade02">
 								<li class="job_outline_item">
 									<div class="job_outline_item_ttl"><span>応募方法</span></div>
 									<div class="job_outline_item_txt">
@@ -608,7 +626,7 @@
 					<!-- //job_body -->
 				</article>
 
-				<div class="page_back">
+				<div class="page_back animation slideup_fade02">
 					<a href="kyujin_l.htm">前のページへ戻る</a>
 				</div>
 			</div>

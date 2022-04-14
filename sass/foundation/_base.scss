@@ -104,7 +104,7 @@ body {
   -webkit-overflow-scrolling: touch;
   font-weight: 500;
 
-   background: url(../img/common/bg.jpg);
+  background: url(../img/common/bg.jpg);
 
   @media all and (-ms-high-contrast: none) {
     font-family: $default-family-ie;
@@ -158,7 +158,7 @@ a {
 .animation-center {
   &.slideup_fade {
     opacity: 0;
-    transform: translateY(50px) rotate(0.01deg);
+    transform: translateY(30%) rotate(0.01deg);
     transition-property: transform, opacity;
     transition-duration: 0.5s, 0.4s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
@@ -184,12 +184,11 @@ a {
   }
   &.slideup_fade02 {
     opacity: 0;
-    transform: translateY(50px) rotate(6deg);
+    transform: translateY(50px);
     transform-origin: left top;
     transition-property: transform, opacity;
-    transition-duration: 0.6s, 0.7s;
+    transition-duration: 0.5s, 0.4s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
-    filter: blur(10px);
 
     &.acted {
       opacity: 1;
@@ -199,7 +198,7 @@ a {
   }
   &.slideright_fade {
     opacity: 0;
-    transform: translateX(20%) rotate(0.01deg);
+    transform: translateX(30%) rotate(0.01deg);
     transition-property: transform, opacity;
     transition-duration: 0.6s, 0.5s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
@@ -212,9 +211,9 @@ a {
 
   &.slideleft_fade {
     opacity: 0;
-    transform: translateX(-20%) rotate(0.01deg);
+    transform: translateX(-30%) rotate(0.01deg);
     transition-property: transform, opacity;
-    transition-duration: 0.8s, 0.8s;
+    transition-duration: 0.6s, 0.5s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
 
     &.acted {
@@ -305,45 +304,59 @@ a {
 /* ============================================
 // breadcrumb
 // ==========================================*/
+.lower-interview_d,
+.lower-kyujin_d {
+  .breadcrumb {
+    margin-top: 10px;
+    @include mq(tab_min) {
+      margin-top: 10px;
+    }
+    &_inner {
+      width: 100%;
+    }
+  }
+}
 .breadcrumb {
+  margin-top: 0;
   position: relative;
   z-index: 1;
   line-height: 1.4;
   //  background: #F2F2F2;
-  color: #666;
+  color: $primary-color;
   opacity: 0.9;
-  box-shadow: 0 -10px 10px rgba(0,0,0,0.05);
-
+  text-align: left;
+  @include mq(tab_min) {
+    margin-top: -3.5em;
+  }
   &_inner {
     padding: 0;
     width: 100%;
     padding: 10px 20px 10px;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     //    max-width: 1280px;
     @include mq(tab_min) {
       padding: 10px 20px 10px;
+      width: 60%;
     }
   }
   .scroll.sp {
-    @include mq(tab) {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
-      &::-webkit-scrollbar {
-        height: 4px;
-      }
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
 
-      &::-webkit-scrollbar-track {
-        background: #f2f2f2;
-        border-left: none;
-      }
+    &::-webkit-scrollbar-track {
+      background: #f2f2f2;
+      border-left: none;
+    }
 
-      &::-webkit-scrollbar-thumb {
-        background: #d3d3d3;
-        border-radius: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-      }
+    &::-webkit-scrollbar-thumb {
+      background: #d3d3d3;
+      border-radius: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
     }
   }
   &_list {
@@ -351,6 +364,7 @@ a {
     max-width: 100%;
     padding: 5px 0;
     overflow: auto;
+    text-align: right;
     @include mq(tab_min) {
       overflow: visible;
     }
@@ -371,7 +385,7 @@ a {
       display: inline-block;
       font-size: 1.2rem;
       position: relative;
-      color: #777;
+      color: $primary-color;
 
       &:first-of-type {
         //        background: url(../img/ico_home.png) no-repeat;
@@ -418,6 +432,7 @@ a {
       }
 
       a {
+        color: $primary-color;
         //				color: $primary-color;
         //        font-weight: bold;
         font-weight: normal;
@@ -454,99 +469,252 @@ a {
 // 下層共通関係
 // ==========================================*/
 
-.lower_mv {
+.l-main {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  @include mq(tab_min) {
+    margin-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+
+.lower_title {
   position: relative;
   width: 100%;
+  padding-bottom: 0;
+  overflow: hidden;
   // text-align: center;
-  margin-top: -60px;
+  // margin-top: -60px;
+  display: flex;
+  flex-flow: column-reverse;
   @include mq(tab_min) {
+    flex-flow: row;
+    padding-bottom: 60px;
   }
   &_inner {
-    max-width: 1180px;
-    padding: 10px 20px 0;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    @include mq(tab_min) {
-      padding: 0 40px;
-    }
-  }
-  &_photo {
-    border-radius: 20px;
-    overflow: hidden;
-    font-size: 0;
-    position: relative;
-    z-index: 1;
-    height: 150px;
-    @include mq(tab_min) {
-      height: auto;
-    }
-  }
-  &_title {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-top: -3em;
-    @include mq(tab_min) {
-      margin-top: -8.5em;
-    }
-    @include mq(tab_min) {
+    &.m_inner_style03 {
       padding: 0;
     }
-    @media screen and (min-width: 1200px){
-      padding: 0 60px;
+    @include mq(tab_min) {
     }
-    .illust {
-      font-size: 0;
-      position: relative;
-      z-index: 4;
-      max-width: 100px;
-      width: 100%;
+    // flex-flow: column;
+    // @include mq(tab_min) {
+    //   flex-flow: row;
+    // }
+  }
+  .title {
+    position: relative;
+    margin-top: -30px;
+    width: 90%;
+    @include mq(tab_min) {
+      margin-top: -60px;
+      margin-top: 0;
+      width: auto;
+    }
+    &::before {
       @include mq(tab_min) {
-        max-width: 274px;
+        content: "";
+        display: inline-block;
+        width: 357px;
+        height: 616px;
+        background: url(../img/common/deco_bg.png) no-repeat;
+        position: absolute;
+        top: 50%;
+        right: calc(100% - 250px);
+        transform: translateY(-50%);
+        margin: auto;
+        z-index: 2;
+        overflow: hidden;
       }
     }
-    .m_title_style01 {
-      align-items: flex-start;
-      position: relative;
-      padding: 20px 40px 30px 0;
+    &_wrap {
+      height: 120px;
+      display: flex;
+      align-items: center;
       @include mq(tab_min) {
-        padding: 80px 60px 60px;
+        justify-content: flex-end;
+        height: 300px;
       }
       &::before {
         content: "";
         display: inline-block;
-        width: 300%;
+        width: 100%;
+        max-width: 700px;
         height: 100%;
-        background: $primary-color;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+        background: $third-color;
         position: absolute;
-        right: 0;
         top: 0;
         bottom: 0;
+        left: 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 1;
+        @include mq(tab_min) {
+          border-top-right-radius: 0;
+          max-width: 400px;
+          height: calc(100% + 60px);
+        }
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 70px;
+        height: 120px;
+        background-image: url(../img/common/deco_bg.png);
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
         margin: auto;
+        z-index: 2;
+        overflow: hidden;
+        @include mq(tab_min) {
+          width: 100%;
+          height: calc(100% + 60px);
+          position: absolute;
+          top: 0;
+          bottom: auto;
+          right: 100%;
+          left: auto;
+          transform: translateY(0);
+          background-color: $third-color;
+          background-image: none;
+          z-index: 1;
+        }
+      }
+    }
+    &_deco {
+      position: relative;
+      z-index: 4;
+      max-width: 80px;
+      width: 100%;
+      margin-bottom: 0;
+      align-self: flex-end;
+      flex: 1 0 80px;
+      @include mq(tab_min) {
+        max-width: 208px;
+        margin-bottom: -70px;
+      }
+      .balloon {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        z-index: 0;
+        max-width: 80px;
+        @include mq(tab_min) {
+          max-width: none;
+          top: -80px;
+          right: -60px;
+        }
+      }
+      .clipping {
+        overflow: hidden;
+        font-size: 0;
+      }
+      .human {
+        position: relative;
+      }
+      img {
+        @include mq(tab) {
+          object-fit: cover;
+          font-family: "object-fit: cover;";
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &_text {
+      position: relative;
+      z-index: 2;
+      margin-left: 20px;
+      margin-right: 80px;
+      @include mq(tab_min) {
+        margin-left: 80px;
+        margin-top: 60px;
       }
       .en {
-        line-height: 1;
-        font-size: (8rem * 0.5);
-        position: relative;
-        z-index: 1;
-        text-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+        font-size: (7rem * 0.4);
+        letter-spacing: 0.2em;
         @include mq(tab_min) {
-          font-size: 8rem;
+          font-size: 7rem;
+          letter-spacing: 0.1em;
         }
       }
       .ja {
-        line-height: 1;
-        font-size: (1.8rem * 0.9);
-        position: relative;
-        z-index: 1;
-        margin-top: 10px;
+        font-size: 1.6rem;
+        letter-spacing: 0.2em;
+        margin-top: 5px;
         @include mq(tab_min) {
-          font-size: 1.8rem;
+          font-size: 2rem;
+          margin-top: 20px;
+          letter-spacing: 0.25em;
         }
+      }
+      .ja,
+      .en {
+        white-space: nowrap;
+        text-shadow: rgb(255, 255, 255) 3px 0px 0px, rgb(255, 255, 255) 2.83487px 0.981584px 0px,
+          rgb(255, 255, 255) 2.35766px 1.85511px 0px, rgb(255, 255, 255) 1.62091px 2.52441px 0px,
+          rgb(255, 255, 255) 0.705713px 2.91581px 0px, rgb(255, 255, 255) -0.287171px 2.98622px 0px,
+          rgb(255, 255, 255) -1.24844px 2.72789px 0px, rgb(255, 255, 255) -2.07227px 2.16926px 0px,
+          rgb(255, 255, 255) -2.66798px 1.37182px 0px, rgb(255, 255, 255) -2.96998px 0.42336px 0px,
+          rgb(255, 255, 255) -2.94502px -0.571704px 0px, rgb(255, 255, 255) -2.59586px -1.50383px 0px,
+          rgb(255, 255, 255) -1.96093px -2.27041px 0px, rgb(255, 255, 255) -1.11013px -2.78704px 0px,
+          rgb(255, 255, 255) -0.137119px -2.99686px 0px, rgb(255, 255, 255) 0.850987px -2.87677px 0px,
+          rgb(255, 255, 255) 1.74541px -2.43999px 0px, rgb(255, 255, 255) 2.44769px -1.73459px 0px,
+          rgb(255, 255, 255) 2.88051px -0.838247px 0px;
+        @include mq(tab_min) {
+          text-shadow: rgb(255, 255, 255) 6px 0px 0px, rgb(255, 255, 255) 5.91686px 0.995377px 0px,
+            rgb(255, 255, 255) 5.66974px 1.96317px 0px, rgb(255, 255, 255) 5.2655px 2.87655px 0px,
+            rgb(255, 255, 255) 4.71532px 3.71022px 0px, rgb(255, 255, 255) 4.03447px 4.44106px 0px,
+            rgb(255, 255, 255) 3.24181px 5.04883px 0px, rgb(255, 255, 255) 2.35931px 5.51667px 0px,
+            rgb(255, 255, 255) 1.41143px 5.83163px 0px, rgb(255, 255, 255) 0.424423px 5.98497px 0px,
+            rgb(255, 255, 255) -0.574341px 5.97245px 0px, rgb(255, 255, 255) -1.55719px 5.79441px 0px,
+            rgb(255, 255, 255) -2.49688px 5.45578px 0px, rgb(255, 255, 255) -3.36738px 4.96596px 0px,
+            rgb(255, 255, 255) -4.14455px 4.33852px 0px, rgb(255, 255, 255) -4.80686px 3.59083px 0px,
+            rgb(255, 255, 255) -5.33596px 2.74364px 0px, rgb(255, 255, 255) -5.71718px 1.8204px 0px,
+            rgb(255, 255, 255) -5.93995px 0.84672px 0px, rgb(255, 255, 255) -5.99811px -0.150428px 0px,
+            rgb(255, 255, 255) -5.89004px -1.14341px 0px, rgb(255, 255, 255) -5.61874px -2.1047px 0px,
+            rgb(255, 255, 255) -5.19172px -3.00766px 0px, rgb(255, 255, 255) -4.62082px -3.82727px 0px,
+            rgb(255, 255, 255) -3.92186px -4.54081px 0px, rgb(255, 255, 255) -3.11421px -5.12852px 0px,
+            rgb(255, 255, 255) -2.22026px -5.57409px 0px, rgb(255, 255, 255) -1.26477px -5.86518px 0px,
+            rgb(255, 255, 255) -0.274238px -5.99373px 0px, rgb(255, 255, 255) 0.723898px -5.95617px 0px,
+            rgb(255, 255, 255) 1.70197px -5.75355px 0px, rgb(255, 255, 255) 2.63288px -5.39147px 0px,
+            rgb(255, 255, 255) 3.49082px -4.87998px 0px, rgb(255, 255, 255) 4.25202px -4.23324px 0px,
+            rgb(255, 255, 255) 4.89538px -3.46919px 0px, rgb(255, 255, 255) 5.40307px -2.60899px 0px,
+            rgb(255, 255, 255) 5.76102px -1.67649px 0px, rgb(255, 255, 255) 5.95932px -0.697531px 0px;
+        }
+      }
+    }
+  }
+  .bg {
+  }
+  .photo {
+    width: 100%;
+    font-size: 0;
+    margin-bottom: 60px;
+    margin: 0 0 0 auto;
+    z-index: -1;
+    overflow: hidden;
+    height: 170px;
+    @include mq(tab_min) {
+      height: 300px;
+      width: 80%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+    img {
+      opacity: 0;
+    }
+    &.acted {
+      img {
+        animation: fuwa 1s $easing forwards;
       }
     }
   }

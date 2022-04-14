@@ -9,21 +9,43 @@
 .search_panel {
   display: flex;
   flex-flow: column;
-  background: #fff;
+  background-color: $primary-color;
+  background-image: url(../img/index/deco_o02.png);
+  background-repeat: no-repeat;
+  background-position: right top 40px;
   position: relative;
   //  background: $gra-color;
   //  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   // border: 1px solid #ccc;
   border: 0;
   margin-bottom: 40px;
-  // padding: 18px 16px;
-  padding: 0;
+  padding: 18px 30px;
+  // padding: 0;
   border-radius: 20px;
   box-shadow: 0 0 29px rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
+  // margin-top: 20px;
   @include mq(tab_min) {
-    margin-top: 60px;
-    // padding: 30px 40px 20px;
+    // margin-top: 60px;
+    padding: 30px 80px 20px;
+  }
+  &::before {
+    content: "";
+    display: inline-block;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border-radius: 10px;
+    border: 2px dashed #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: none;
+    @include mq(tab_min) {
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+    }
   }
 
   //   @media screen and (min-width: 769px),
@@ -36,36 +58,40 @@
 
   .search_body {
     padding: 0 0 0; //検索フォーム内のpadding-bottomを打ち消し
-    padding: 0 16px 10px;
+    padding: 30px 0 10px;
+    border-bottom: 1px solid #fff;
     @include mq(tab_min) {
-      padding: 20px 60px 20px;
+      padding: 30px 0 30px;
     }
   }
 
   //条件を指定するボタン設定
   .search-toggle {
-    margin-bottom: 0;
+    // margin-bottom: 0;
     //    border-radius: 50px;
-    // max-width: 210px;
-    //    margin: -42px auto 0;
-    width: 100.2%;
+    max-width: 210px;
+    // margin: -42px auto 0;
+    // width: 100;
     overflow: hidden;
     background: $primary-color;
     position: relative;
     transform: none;
     left: 0;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    margin: -1px -1px 0 -1px;
-    // position: absolute;
-    // top: -24px;
-    // left: 0;
-    // right: 0;
-    // margin: auto;
-    // transition: all 0.5s $easing;
+    border-radius: 5px;
+    // border-top-left-radius: 20px;
+    // border-top-right-radius: 20px;
+    // margin: -1px -1px 0 -1px;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all 0.5s $easing;
+    z-index: 5;
+    border-radius: 100px;
 
-    max-width: none;
     @include mq(tab_min) {
+      top: -30px;
       //      margin: -30px auto 0;
     }
     // &::before{
@@ -84,19 +110,20 @@
     &:hover {
       @media screen and (min-width: 769px),
         only screen and (min-device-width: 769px) and (max-device-width: 1024px) and (orientation: landscape) {
-        opacity: 0.8;
-        //        opacity: 1;
+        // opacity: 0.8;
+        opacity: 1;
+        transform: scale(1.1);
       }
     }
 
     //ボタンの設定
     .toggle_txt {
-      padding: 10px 2.7em 10px 1em;
+      padding: 16px 2.7em 16px 2.4em;
       font-size: 1.5rem;
-      //        background: #FFF;
+      background: $third-color;
       //        color: $primary-color;
-      color: #333;
-      @include mq(sp) {
+      color: $primary-color;
+      @include mq(tab) {
         padding: 10px 1em;
         font-size: 1.3rem;
       }
@@ -111,6 +138,13 @@
     // .toggle_txt {
     // }
 
+    &.js-active {
+      .toggle_trigger {
+        &::after {
+          transform: rotate(-270deg);
+        }
+      }
+    }
     //矢印部分の背景色
     .toggle_trigger {
       //        background: none;
@@ -118,17 +152,47 @@
       //        border-bottom-right-radius: 50px;
       //      border-top-right-radius: 50%;
       //      border-bottom-right-radius: 50%;
-      width: 47px;
-      height: 47px;
-      background: rgba(255, 255, 255, 0.3);
+      width: 59px;
+      height: 59px;
+      background: rgba(255, 255, 255, 0);
 
-      @include mq(sp) {
+      @include mq(tab) {
         width: 44px;
         height: 44px;
+      }
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 20px;
+        margin: auto;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 3px 0 3px 6px;
+        border-color: transparent transparent transparent $primary-color;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 25px;
+        margin: auto;
+        transform: rotate(-270deg) scale(-1, 1);
+        transition: transform 0.5s $easing;
       }
 
       //矢印の設定
       .toggle_trigger_txt_ico {
+        display: none;
         // background: #fff;
         background: #333;
         //          background: $primary-color;
@@ -144,9 +208,9 @@
     //		margin-bottom: 30px;
     //    margin-top: 30px;
     margin-top: 10px;
-    padding: 0 16px 20px;
+    padding: 0 0 10px;
     @include mq(tab_min) {
-      padding: 20px 40px 30px;
+      padding: 20px 0 30px 0;
     }
     @include mq(sp) {
       //      margin-top: 30px;
@@ -231,10 +295,28 @@
 .pagination {
   //  margin-top: 20px;
   li {
+    margin: 0 2px;
+    @include mq(tab_min) {
+      margin: 0 4px;
+    }
     a {
+      height: 26px;
+      width: 26px;
+      line-height: 26px;
       font-weight: normal;
-      background: #f5f5f5;
+      // background: #f5f5f5;
+      background: $third-color;
       transition: all 0.5s ease;
+      border-radius: 10px;
+      color: $primary-color;
+      font-size: 1.3rem;
+      @include mq(tab_min) {
+        font-size: 1.5rem;
+
+        height: 36px;
+        width: 36px;
+        line-height: 36px;
+      }
       @include mq(hover) {
         &:hover {
           color: #fff;
@@ -245,27 +327,41 @@
     }
 
     em {
+      height: 26px;
+      width: 26px;
+      line-height: 26px;
+      border-radius: 10px;
       font-weight: normal;
       background: $primary-color;
+      font-size: 1.3rem;
+      color: #fff;
       //      background: $primary-color !important;
+      @include mq(tab_min) {
+        font-size: 1.5rem;
+        height: 36px;
+        width: 36px;
+        line-height: 36px;
+      }
     }
   }
 }
 
 .lower-kyujin_l .job_occupations:after,
 .lower-kyujin_d .job_occupations:after {
-  //  background: $primary-color;
-  opacity: 0.4;
+  background: $primary-color;
+  // opacity: 0.4;
 }
 .job_result_total {
   .job_result_total_body_ttl {
     font-size: 1.4rem;
     font-weight: 500;
     font-family: $default-family;
+    color: #fff;
   }
 }
 .result_total_all {
   //  color: $txt-color !important;
+  color: $primary-color;
 }
 .job_workplace_ttl {
   color: $txt-color !important;
@@ -285,7 +381,7 @@
     width: 100%;
     border-radius: 100px;
     //    border:1px solid $primary-color;
-    background: $secondary-color !important;
+    background: $primary-color !important;
     //    color: $primary-color !important;
     color: #fff !important;
     position: relative;
@@ -294,6 +390,7 @@
     opacity: 1;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform: scale(1);
     span {
       position: relative;
       z-index: 1;
@@ -302,7 +399,10 @@
     }
     &:hover {
       @include mq(hover) {
-        opacity: 0.8;
+        // opacity: 0.8;
+        transform: scale(1.05);
+        background: $third-color !important;
+        color: $primary-color !important;
       }
     }
   }
@@ -312,13 +412,14 @@
     transition: all 0.5s $easing;
     border-radius: 100px;
     width: 100%;
-    color: #fff !important;
-    background: $third-color;
+    color: $primary-color !important;
+    background: $secondary-color;
     position: relative;
     overflow: hidden;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
+    transform: scale(1);
     //    border-radius: 50px;
     &::after {
       display: none;
@@ -332,7 +433,10 @@
 
     @include mq(hover) {
       &:hover {
-        opacity: 0.8;
+        opacity: 1;
+        transform: scale(1.05);
+        background: $third-color;
+        color: $primary-color !important;
         &::before {
           top: -100%;
           left: -100%;
@@ -349,14 +453,14 @@
       padding: 16px 20px !important;
       //      border:0;
       overflow: hidden;
-      color: #333 !important;
+      color: $primary-color !important;
       transition: 0.5s $easing;
       position: relative;
       // border: 1px solid #333;
       border: 0;
       max-width: 300px;
       width: 100%;
-      background: $primary-color;
+      background: $third-color;
       border-radius: 100px;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
@@ -368,7 +472,10 @@
       }
       &:hover {
         @include mq(hover) {
-          opacity: 0.8;
+          opacity: 1;
+          background: $primary-color;
+          color: #fff !important;
+          transform: scale(1.05);
         }
       }
     }
@@ -384,8 +491,8 @@
       padding: 16px 20px !important;
       //      border:0;
       overflow: hidden;
-      color: #fff !important;
-      background: #333;
+      color: $primary-color !important;
+      background: $third-color;
       transition: 0.5s $easing;
       position: relative;
       // border: 1px solid #333;
@@ -419,7 +526,7 @@
       transition: all 0.5s $easing;
       width: 100%;
       color: #333 !important;
-      background: $primary-color;
+      background: $secondary-color;
       position: relative;
       overflow: hidden;
       -webkit-backface-visibility: hidden;
@@ -427,25 +534,25 @@
       transform: translate3d(0, 0, 0);
       text-align: center;
       border-radius: 50px;
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 200%;
-        height: 200%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: linear-gradient(
-          135deg,
-          rgba(0, 0, 0, 0.3) 0%,
-          rgba(255, 255, 255, 0) 45%,
-          rgba(255, 255, 255, 0) 57%,
-          rgba(0, 0, 0, 0.25) 100%
-        );
-        mix-blend-mode: overlay;
-        transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
-        pointer-events: none;
-      }
+      // &::before {
+      //   content: "";
+      //   display: inline-block;
+      //   width: 200%;
+      //   height: 200%;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   background-image: linear-gradient(
+      //     135deg,
+      //     rgba(0, 0, 0, 0.3) 0%,
+      //     rgba(255, 255, 255, 0) 45%,
+      //     rgba(255, 255, 255, 0) 57%,
+      //     rgba(0, 0, 0, 0.25) 100%
+      //   );
+      //   mix-blend-mode: overlay;
+      //   transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+      //   pointer-events: none;
+      // }
       &::after {
         display: none;
       }
@@ -458,7 +565,9 @@
 
       @include mq(hover) {
         &:hover {
-          opacity: 0.8;
+          // opacity: 0.8;
+          opacity: 1;
+          transform: scale(1.05);
           &::before {
             top: -100%;
             left: -100%;
@@ -479,11 +588,11 @@
     }
   }
   .job_employmenttype_list_item {
-    //    border: 1px solid;
-    //    color: $secondary-color !important;
-    //    &:first-letter{
-    //      color: $secondary-color !important;
-    //    }
+    border: 1px solid;
+    color: $primary-color !important;
+    &:first-letter {
+      color: $primary-color !important;
+    }
   }
   .kyujin_container {
     max-width: 1280px;
@@ -518,7 +627,7 @@
       //      margin-top: 40px;
     }
   }
-  .kyujin_container{
+  .kyujin_container {
     margin-bottom: 20px;
     @include mq(tab_min) {
       margin-bottom: 0;
@@ -534,7 +643,7 @@
 
     @include mq(sp) {
       //      margin: 20px 0 0;
-      padding: 0 0 20px;
+      // padding: 0 0 20px;
     }
   }
 
@@ -618,13 +727,27 @@
 
   .job_list {
     .job {
+      border-bottom: 1px solid transparent;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px 20px;
+      margin: 20px 0 0 0;
+      box-shadow: 0 0 10px 9px rgb(34 34 34 / 2%);
+      @include mq(tab_min) {
+      padding: 30px 60px 50px;
+      margin: 40px 0 0 0;
+      }
+      &:first-child {
+        border-top: 1px solid transparent;
+        margin: 0;
+      }
       &:not(:first-child) {
         // margin-top: 80px;
         // margin-bottom: 60px;
 
         @include mq(sp) {
-          margin-top: 2px;
-          margin-bottom: 0;
+          // margin-top: 2px;
+          // margin-bottom: 0;
         }
       }
     }
@@ -642,7 +765,7 @@
 .lower-kyujin_d {
   margin-bottom: 88px;
   @include mq(tab) {
-    margin-bottom: 76px;
+    margin-bottom: 74px;
   }
 
   .kyujin_container {
@@ -696,13 +819,14 @@
       display: inline-block;
       width: 200vw;
       height: 100%;
-      background: #f5f3f3;
+      background: $third-color;
       position: absolute;
       top: 0;
       bottom: 0;
       left: -50vw;
     }
     &_ttl {
+      display: flex;
       text-align: center;
       position: relative;
       //    color: #FFF;
@@ -714,12 +838,19 @@
       z-index: 1;
       align-items: center;
       //    text-align: center;
+
       display: flex;
+      justify-content: center;
       @include mq(tab_min) {
         padding: 0.8em 1em 40px;
       }
       .en {
         // display: block;
+
+        font-size: (7rem * 0.5);
+        @include mq(tab_min) {
+          font-size: 7rem;
+        }
         &::before {
           bottom: calc(100% - 13px);
           left: -14px;
@@ -731,6 +862,7 @@
       }
       .ja {
         //        line-height: 1;
+        margin-bottom: 5px;
       }
       &::after {
         display: none;
@@ -772,23 +904,24 @@
       align-items: center;
       //    text-align: center;
       display: flex;
+      justify-content: center;
       @include mq(tab_min) {
         padding: 0.8em 1em 40px;
       }
-      .deco {
-        left: -16px;
-        top: -0.15em;
-        @include mq(tab_min) {
-          left: -30px;
-          top: -0.25em;
-        }
+      .m_title_style01 {
+        display: flex !important;
       }
       .en {
         // display: block;
         display: inline-block;
+        font-size: (7rem * 0.5);
+        @include mq(tab_min) {
+          font-size: 7rem;
+        }
       }
       .ja {
         //        line-height: 1;
+        margin-bottom: 5px;
       }
       &::after {
         display: none;
@@ -876,6 +1009,7 @@
     background: #fff;
     padding: 4% 5%;
     box-shadow: 0 0 32px 9px rgba(34, 34, 34, 0.05);
+    border-radius: 20px;
     .job_outline_item {
       border-bottom: 1px solid rgba(34, 34, 34, 0.1);
       padding-bottom: 10px;
@@ -900,9 +1034,9 @@
     &::before {
       background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.01) 1%,
-        rgba(255, 255, 255, 1) 100%
+        rgba(250, 247, 231, 0) 0%,
+        rgba(250, 247, 231, 0.01) 1%,
+        rgba(250, 247, 231, 1) 100%
       ) !important;
     }
   }
@@ -968,6 +1102,12 @@
       &::before {
         display: none;
       }
+      .job_post_ttl {
+        color: $primary-color;
+        &::before {
+          background: $primary-color;
+        }
+      }
     }
   }
 
@@ -997,14 +1137,13 @@
   .pagetop {
     bottom: 80px;
     @include mq(tab_min) {
-      bottom: 110px;
+      bottom: 90px;
     }
   }
 }
 
-
-.lower-whatsnew{
-  .lower_contents{
+.lower-whatsnew {
+  .lower_contents {
     margin-top: 0;
     margin-bottom: 20px;
     @include mq(tab_min) {

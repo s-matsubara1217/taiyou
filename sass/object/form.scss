@@ -150,7 +150,7 @@ select option {
 }
 
 input[type="checkbox"] {
-  display: none;
+  // display: none;
 }
 
 input[type="checkbox"] + label {
@@ -231,7 +231,7 @@ input[type="radio"] + label:before {
   border: 1px solid #f2f2f2;
   border-radius: 50%;
   height: 13px;
-  left: 15px;
+  left: 14px;
   //	top: 3px;
   top: 50%;
   transform: translateY(-50%);
@@ -313,13 +313,15 @@ input[type="radio"]:checked + label:after {
     flex: 0 0 140px;
     //        color: #FFF;
     //        padding: 0 0 0 10px;
-    display: flex;
-    // align-items: center;
+    display: inline-flex;
+    align-items: center;
     // flex: 1 0 auto;
-    flex-flow: column;
+    // flex-flow: column;
     //テンプレートで使用しているタイトルの飾り削除
     &:before {
-      display: none;
+      border:none;
+      background: $secondary-color;
+      // display: none;
       //          border: 3px solid $primary-color;
       //          width: 8px;
       //          height: 8px;
@@ -336,7 +338,16 @@ input[type="radio"]:checked + label:after {
     border: 1px solid #d2d2d2;
     background: #fff;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
+  }
+  .searchWord{
+    padding: 15px 20px !important;
+    &:hover{
+      @include mq(hover) {
+          background: #FFF;
+      }
+
+    }
   }
   .pull-down:before {
     display: none;
@@ -464,12 +475,15 @@ input[type="radio"]:checked + label:after {
     //      background: #dedede;
     border-radius: 2px;
     //			left: 15px;
-    left: 0;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    width: 15px;
-    height: 15px;
-    @include mq(sp) {
+    width: 14px;
+    height: 14px;
+    @include mq(tab) {
+      width: 12px;
+      height: 12px;
+      left: 10px;
       //				width: 12px;
       //				height: 12px;
       //				left: 10px;
@@ -481,13 +495,15 @@ input[type="radio"]:checked + label:after {
     box-sizing: initial;
     opacity: 0;
     //			left: 15px;
-    left: 1px;
-    top: 40%;
+    left: 16px;
+    top: 44%;
     transform: rotate(40deg) translateY(-50%);
-    color: #fff;
+    color: $primary-color;
     @include mq(sp) {
-      width: 4px;
-      height: 8px;
+      left: 12px;
+      top: 43%;
+      width: 3px;
+      height: 6px;
       //				left: 10px;
     }
   }
@@ -495,14 +511,14 @@ input[type="radio"]:checked + label:after {
   input[type="checkbox"]:checked + label {
     //		background: #548BC4;
     background: #fff;
-    color: #fff;
+    color: $primary-color;
   }
   input[type="checkbox"]:checked + label:before {
     //    transform: rotate(0);
     //      background: $secondary-color;
     //    background: #dedede;
-    background: $primary-color;
-    border: 1px solid $primary-color;
+    background: #fff;
+    // border: 1px solid $primary-color;
     @include mq(tab) {
     }
   }
@@ -524,21 +540,20 @@ input[type="radio"]:checked + label:after {
 .search,
 .jobSearch {
   .custom-form {
-    margin-top: 20px;
+    // margin-top: 20px;
     position: relative;
     z-index: 1;
   }
   .parts_ttl {
     flex-flow: row;
     align-items: center;
-    color: #333;
-    margin-bottom: 16px;
+    color: #FFF;
+    margin-bottom: 10px;
     flex: none !important;
     @include mq(tab_min) {
-      align-items: flex-start;
-      flex-flow: column;
-      margin-top: 10px;
-      flex: 1 0 130px;
+      // align-items: flex-start;
+      // flex-flow: column;
+      margin-top: 1.2em;
       margin-bottom: 0;
       flex: 0 0 140px !important;
     }
@@ -565,36 +580,55 @@ input[type="radio"]:checked + label:after {
       }
     }
   }
-
   .src_area_content {
     .area {
-      border: 1px solid $primary-color;
+      // border: 1px solid $primary-color;
       &::after {
         transform: translateY(-49%) rotate(0deg) !important;
         border-right: 0;
         border-bottom: 0;
-        height: 3px;
-        width: 15px;
-        background: $primary-color;
-        box-shadow: 0 6px 0 rgba($primary-color, 1), 0 -6px 0 rgba($primary-color, 1);
-        border-radius: 10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 4.5px 0 4.5px;
+        border-color: $primary-color transparent transparent transparent;
       }
       select {
         padding: 8px 44px 8px 16px !important;
         @include mq(tab_min) {
-          padding: 1em 44px 1em 20px !important;
+          padding: .8em 44px .8em 20px !important;
         }
       }
     }
     .selCity-box {
-      margin-top: 20px;
+      margin-top: 10px;
+      @include mq(tab_min) {
+        margin-top: 10px;
+      }
+    }
+  }
+  .src_keywords_content {
+    display: flex;
+    justify-content: flex-start;
+    @include mq(tab_min) {
+      align-items: flex-start;
+    }
+    .keyword_wrap{
+      display: flex;
+      width: 100%;
+      flex-flow: column;
+      @include mq(tab_min) {
+        align-items: flex-start;
+        // align-items: center;
+        flex-flow: row;
+      }
     }
   }
 
   .category_list {
     padding: 5px 12px;
     @include mq(tab_min) {
-      padding: 16px 22px;
+      padding: 12px 18px;
     }
 
     li {
@@ -603,161 +637,73 @@ input[type="radio"]:checked + label:after {
     input[type="checkbox"] {
       &:checked {
         & + label {
-          background: $secondary-color;
+          background: $third-color;
         }
       }
       & + label {
         background: $fourth-color;
         border-radius: 30px;
-        padding: 4px 10px 4px 10px;
+        padding: 8px 10px 8px 30px;
         font-size: 1.4rem;
         transition: all 0.5s $easing;
         @include mq(tab_min) {
-          padding: 8px 15px 8px 15px;
+          padding: 8px 15px 8px 37px;
         }
         &::before,
         &::after {
-          display: none;
+          // display: none;
         }
       }
     }
   }
 
-  .discern {
-    margin-top: 20px;
-    &_wrap {
-      .custom-form_parts {
-        &:first-child {
-          margin-top: 20px;
-        }
-      }
-    }
-    &_button {
-      background: $primary-color;
-      border-radius: 10px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
-      transition: all 0.5s $easing;
-      @include mq(tab_min) {
-        padding: 16px 20px;
-        text-align: center;
-        justify-content: center;
-      }
-      &:hover {
-        // opacity: .7;
-        background: lighten($primary-color, 20%);
-      }
-      .text {
-        display: inline-block;
-      }
-      .icon {
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 16px;
-        margin: auto;
-        @include mq(tab_min) {
-          right: 20px;
-        }
-        &::before,
-        &::after {
-          content: "";
-          display: inline-block;
-          width: 100%;
-          height: 2px;
-          background: #fff;
-          position: absolute;
-          border-radius: 10px;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          transition: all 0.5s $easing;
-        }
-      }
-      &.js_close {
-        .icon {
-          &::before {
-            transform: rotate(270deg);
-          }
-        }
-      }
-      &.js_open {
-        .icon {
-          &::before {
-            transform: rotate(0deg);
-          }
-        }
-      }
-    }
-    &_wrap {
-      display: none;
-    }
-  }
   .button {
     font-weight: 400;
     position: relative;
     text-align: center;
     line-height: 1;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
+    // margin-top: 20px;
     @include mq(tab_min) {
-      margin-top: 60px;
+      margin-left: 10px;
+      margin-top: 0;
     }
     .button_wrap {
       display: inline-block;
       position: relative;
-      &::after {
-        content: "";
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        background-size: 40%;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: -16px;
-        margin: auto;
-        transition: all 0.6s $easing;
-        background-image: url(../img/ico_loupe.png);
-        background-color: $secondary-color;
-      }
       @include mq(hover) {
         &:hover {
           input {
-            background: $primary-color !important;
+            background: $secondary-color !important;
           }
-          &::after {
-            background-color: $primary-color !important;
-          }
+          // &::after {
+          //   background-color: $primary-color !important;
+          // }
         }
       }
       & > input {
         display: block;
-        padding: 14px 30px !important;
+        padding: 14px 30px 14px 50px !important;
         border-radius: 100px;
-        border: 2px solid #fff;
         position: relative;
         transition: all 0.6s $easing;
         text-align: center;
         will-change: transform;
-        color: #fff;
+        color: $txt-color;
         font-weight: bold;
-        background: $secondary-color;
+        background: $third-color;
         @include mq(tab_min) {
-          padding: 20px 50px !important;
+          padding: 16px 50px 16px 60px !important;
         }
+      }
+      .svg {
+        position: absolute;
+        top: 54%;
+        transform: translateY(-50%);
+        left: 20px;
+        z-index: 1;
       }
     }
   }

@@ -161,16 +161,56 @@
 		<!-- == //header（common） == -->
 		<!-- //案件のheader -->
 
+		<!-- lower title -->
+		<div class="lower_title">
+			<div class="lower_title_inner m_inner_style03">
+				<div class="title">
+					<div class="title_wrap">
+						<div class="title_deco animation a_humanDeco">
+							<div class="balloon">
+								<img src="img/kyujin/lower_balloon.png" alt="楽しい職場で働こう">
+							</div>
+							<div class="clipping">
+								<div class="human">
+									<img src="img/kyujin/lower_human.png" alt="写真">
+								</div>
+							</div>
+						</div>
+						<div class="title_text m_title_style01 animation _a_move01">
+							<div class="en _c_primary js-split">RECRUIT</div>
+							<h1 class="ja _c_primary">求人情報</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="photo animation">
+				<img class="ofi" src="img/kyujin/img_lower.jpg" alt="写真">
+			</div>
+		</div>
+		<!-- //lower title -->
+
+      <!-- breadcrumb-->
+      <div class="breadcrumb">
+        <div class="breadcrumb_inner">
+          <div class="scroll sp">
+            <ol class="breadcrumb_list">
+              <li class="breadcrumb_list_item">
+                <a href="/"><span>HOME</span></a>
+              </li>
+              <li class="breadcrumb_list_item">
+                求人情報ページタイトル（求人詳細などはテキスト量が多くなるのでレイアウトに注意ください）
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- //breadcrumb-->
 
 		<main class="l-main">
-
-			<div class="lower_title">
-
-			</div>
-
 			<div class="kyujin_container">
 				<!-- search panel -->
-				<div class="search_panel">
+				<!-- [!] add class追加 .animation.slideup_fade02 -->
+				<div class="search_panel animation slideup_fade02">
 					<div class="toggle search-toggle">
 						<p class="toggle_txt">条件を指定する</p>
 						<span class="toggle_trigger">
@@ -178,7 +218,7 @@
 							<span class="toggle_trigger_txt_ico"></span>
 						</span>
 					</div>
-					<!-- [!] add .search -->
+					<!-- [!] add class追加.search -->
 					<div class="search_body search">
 						<div class="search_body_inner">
 							<form class="custom-form" name="" action="" method="get">
@@ -326,14 +366,6 @@
 						</div>
 					</div>
 					<div class="job_result_total">
-						<!-- 21.03.11 削除 -->
-						<!--
-					<div class="job_result_total_head">
-						<span class="job_result_total_num">999</span>
-						<span class="job_result_total_cach">件</span>
-					</div>
-					-->
-						<!-- /21.03.11 削除 -->
 						<div class="job_result_total_body">
 							<!-- デフォルトは　「求人情報一覧」 -->
 							<p class="job_result_total_body_ttl">大阪 | 職種1・職種2・職種3 | 正社員 | 特徴1・特徴2・特徴3・特徴4 | キーワードキーワード の求人検索結果</p>
@@ -341,8 +373,8 @@
 					</div>
 				</div>
 				<!-- //search panel -->
-
-				<div class="job_count_pager contents_top">
+				<!-- [!] add class追加 .animation.slideup_fade02 -->
+				<div class="job_count_pager contents_top animation slideup_fade02">
 					<div class="result_total">
 						<span class="result_total_all">999</span>
 						<span class="result_total_txt">件</span>
@@ -365,7 +397,8 @@
 
 				<div class="job_list">
 					<!-- 1block -->
-					<article class="job data-for-aidemlog" data-id="${anken.job_offer_id}">
+					<!-- [!] add class追加 .animation.slideup_fade02 -->
+					<article class="job data-for-aidemlog animation slideup_fade02" data-id="${anken.job_offer_id}">
 						<header class="job_head">
 
 							<div class="job_head_meta">
@@ -447,7 +480,8 @@
 					</article>
 					<!-- //1block -->
 
-					<article class="job data-for-aidemlog" data-id="${anken.job_offer_id}">
+					<!-- [!] add class追加 .animation.slideup_fade02 -->
+					<article class="job data-for-aidemlog animation slideup_fade02" data-id="${anken.job_offer_id}">
 						<header class="job_head">
 							<div class="job_head_meta">
 								<div class="job_head_meta_inner">
@@ -526,7 +560,8 @@
 
 				</div>
 
-				<div class="job_count_pager contents_bottom">
+				<!-- [!] add class追加 .animation.slideup_fade02 -->
+				<div class="job_count_pager contents_bottom animation slideup_fade02">
 					<div class="pager_next">
 						<a href="" class="btn">次の10件を表示</a>
 					</div>
