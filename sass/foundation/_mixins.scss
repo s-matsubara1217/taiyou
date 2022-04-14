@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+//========================================
+//variable - mixins
+//========================================
+
+//color set
+$primary-color: #00a572;
+$secondary-color: #fff850;
+$third-color: #c5f4c6;
+$fourth-color: #fdf6c3;
+// $fifth-color:#EE3281;
+$txt-color: #262626;
+$link-color: #262626;
+
+
+//font-family
+$default-family:"Noto Sans JP", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "メイリオ", Meiryo, sans-serif;
+$mincho: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho", "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" ,'Noto Serif JP' , serif;
+// $gothic:"游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$eng: 'Monoton', cursive;
+$eng02: 'Montserrat', sans-serif;
+// $eng-mincho: 'Playfair Display', serif;
+// $point-family:'M PLUS Rounded 1c',"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO", sans-serif;
+$mincho-ie:  "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+$default-family-ie: "メイリオ", Meiryo, sans-serif;
+
+
+//break-points
+$breakpoints: (
+  'pc_max': 'screen and (max-width: 1200px)',
+  'pc': 'screen and (max-width: 1024px)',
+  'pc_min': 'screen and (min-width: 1025px)',
+  'tab': 'screen and (max-width: 767px)',
+  'tab_max': 'screen and (max-width: 768px)',
+  'tab_min': 'screen and (min-width: 769px)',
+  'sp_min': 'screen and (min-width: 481px)',
+  'sp': 'screen and (max-width: 480px)',
+  'narrow': 'screen and (max-width: 320px)',
+  'hover':'screen and (min-width: 769px), only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape)',
+  'tab_view': 'screen and (min-width: 980px)'
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+//▼使い方
+//@include mq(tab) {
+//  color: hoge;
+//}
+
+//easing
+$easing: cubic-bezier(0.165, 0.84, 0.44, 1);

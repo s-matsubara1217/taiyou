@@ -1,0 +1,507 @@
+@charset "utf-8";
+@use "../foundation/mixins" as *;
+/* ============================================
+// MODULES
+// ==========================================*/
+
+/*--------------------
+button
+--------------------*/
+.m_button_style01 {
+  font-weight: 400;
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  & > a,
+  & > span,
+  & > input {
+    padding: 16px 20px 16px 20px;
+    width: 100%;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    @include mq(tab_min) {
+      padding: 20px 38px 20px 38px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      margin: auto;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 3px 0 3px 6px;
+      border-color: transparent transparent transparent $primary-color;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 24px;
+      margin: auto;
+    }
+  }
+
+  &._c_primary {
+    & > a,
+    & > span {
+      background: $primary-color;
+      color: #FFF;
+      @include mq(hover) {
+        &:hover {
+          background: $secondary-color !important;
+          &::after {
+            background-color: $secondary-color !important;
+          }
+        }
+      }
+    }
+  }
+  &._c_secondary {
+    & > a,
+    & > span {
+      background: $secondary-color;
+      color: $primary-color;
+      @include mq(hover) {
+        &:hover {
+          background: $secondary-color !important;
+          &::after {
+            background-color: $secondary-color !important;
+          }
+        }
+      }
+    }
+  }
+  &._c_third {
+    & > a,
+    & > span {
+      background: $third-color;
+      color: $primary-color;
+      @include mq(hover) {
+        &:hover {
+          background: $secondary-color !important;
+          &::after {
+            background-color: $secondary-color !important;
+          }
+        }
+      }
+    }
+  }
+
+  &._w_regular {
+    width: 100%;
+    max-width: 260px;
+    display: block;
+    & > a,
+    & > span,
+    & > input {
+      padding: 16px 14px 16px 14px;
+      width: 100%;
+      @include mq(tab_min) {
+        padding: 20px 38px 20px 38px;
+      }
+    }
+    &220 {
+      width: 100%;
+      max-width: 220px;
+      display: block;
+      & > a,
+      & > span,
+      & > input {
+        padding: 8px 24px 8px 24px;
+        width: 100%;
+      }
+    }
+    &180 {
+      width: 100%;
+      max-width: 180px;
+      display: block;
+      & > a,
+      & > span,
+      & > input {
+        padding: 16px 24px 16px 24px;
+        width: 100%;
+      }
+    }
+  }
+  &._w_short {
+    width: 100%;
+    & > a,
+    & > span,
+    & > input {
+      max-width: 129px;
+      padding: 4px 16px 4px 14px;
+      font-size: 1.2rem;
+      &::after {
+        right: 6px;
+        border-width: 3px 0 3px 4px;
+      }
+    }
+  }
+  &._d_back {
+    a {
+      &::before {
+        transition: all 0.6s $easing;
+        right: inherit;
+        left: -18px;
+        transform: scale(-1, 1) translateX(0);
+      }
+      &::after {
+        right: auto;
+        left: 0;
+      }
+      @include mq(hover) {
+        &:hover {
+          &::before {
+            transform: scale(-1, 1) translateX(17px);
+          }
+          &::after {
+            transform: translateX(16px) scale(1, 1);
+          }
+        }
+      }
+    }
+  }
+  &._d_newTab {
+    position: relative;
+
+    a {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: url(../img/ico_newtab.svg) no-repeat;
+        background-size: cover;
+        //        position: absolute;
+        //        top: 5px;
+        //        right: 5px;
+        z-index: 1;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-left: 20px;
+        margin-right: -10px;
+      }
+    }
+  }
+}
+.m_button_style02 {
+  a {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    transition: all 0.6s $easing;
+    font-weight: bold;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: $primary-color;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 3px 0 3px 6px;
+      border-color: transparent transparent transparent #fff;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 4px;
+      margin: auto;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    span{
+      padding: 10px 30px 10px 0;
+    }
+  }
+  &._c_primary{
+    a{
+      color: $primary-color;
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+}
+
+/*--------------------
+ title
+--------------------*/
+.m_title_style01 {
+  position: relative;
+  flex-flow: column;
+  justify-content: flex-start;
+  @include mq(tab_min) {
+    display: inline-flex;
+  }
+  .en {
+    font-size: (7rem * 0.6);
+    font-family: $eng;
+    line-height: 1;
+    @include mq(tab_min) {
+      font-size: 7rem;
+    }
+    &._c_primary {
+      color: $primary-color;
+    }
+    &._c_white {
+      color: #FFF;
+    }
+  }
+  .ja {
+    font-size: (2rem * 0.9);
+    font-weight: bold;
+    margin-top: 8px;
+    @include mq(tab_min) {
+      font-size: 2rem;
+    }
+    &._c_primary {
+      color: $primary-color;
+    }
+    &._c_white {
+      color: #FFF;
+    }
+  }
+  &._l_center {
+    display: inline-flex;
+    text-align: center;
+    .en {
+      text-align: center;
+      justify-content: center;
+    }
+    .ja {
+      padding: 0;
+      justify-content: center;
+    }
+  }
+  &._l_row {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    .en {
+      margin-left: 20px;
+    }
+  }
+  &._c_primary {
+    .en {
+      color: $primary-color;
+    }
+    &_all {
+      .en,
+      .ja {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.m_title_style02 {
+  position: relative;
+  flex-flow: column;
+  justify-content: flex-start;
+  @include mq(tab_min) {
+    display: inline-flex;
+  }
+  .en {
+    font-size: 1.1rem;
+    font-family: $eng02;
+    line-height: 1;
+    margin-top: 8px;
+    @include mq(tab_min) {
+      font-size: 1.2rem;
+    }
+    &._c_primary {
+      color: $primary-color;
+    }
+  }
+  .ja {
+    font-size: (2.8rem * 0.8);
+    font-weight: bold;
+    @include mq(tab_min) {
+      font-size: 2.8rem;
+    }
+    &._c_primary {
+      color: $primary-color;
+    }
+  }
+  &._l_center {
+    display: inline-flex;
+    text-align: center;
+    .en {
+      text-align: center;
+      justify-content: center;
+    }
+    .ja {
+      padding: 0;
+      justify-content: center;
+    }
+  }
+  &._l_row {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    .en {
+      margin-left: 20px;
+    }
+  }
+}
+
+
+/*--------------------
+inner
+--------------------*/
+.m_inner_style {
+  &01 {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mq(tab_min) {
+      padding: 0 40px;
+    }
+  }
+  &02 {
+    max-width: 880px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mq(tab_min) {
+      padding: 0 40px;
+    }
+  }
+
+  &03 {
+    max-width: calc(1580px + 80px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mq(tab_min) {
+      padding: 0 40px;
+    }
+  }
+  &04 {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mq(tab_min) {
+      padding: 0 40px;
+    }
+  }
+  &05 {
+    max-width: calc(1028px + 80px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mq(tab_min) {
+      padding: 0 40px;
+    }
+  }
+  &06 {
+    max-width: calc(1100px + 80px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    @include mq(tab_min) {
+      padding: 0 40px;
+    }
+  }
+}
+
+/*--------------------
+layout
+--------------------*/
+.m_layout_style01 {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  @include mq(tab_min) {
+    flex-flow: row;
+  }
+  &._l_row {
+    flex-flow: row;
+    @include mq(tab_min) {
+      flex-flow: row;
+    }
+  }
+  &._l_column {
+    flex-flow: column;
+    @include mq(tab_min) {
+      flex-flow: column;
+    }
+  }
+}
+
+/* ============================================
+// その他
+// ==========================================*/
+
+.m_pageLink {
+  margin-top: 60px;
+  ul {
+    flex-flow: wrap;
+    margin-top: 20px;
+    @include mq(tab_min) {
+      justify-content: center;
+    }
+    li {
+      margin: 0 10px 10px;
+      width: 44%;
+      @include mq(tab_min) {
+        max-width: 176px;
+        width: 100%;
+      }
+    }
+    a {
+      width: 100%;
+      // padding: 16px 20px;
+      position: relative;
+      padding: 16px 40px;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        background-image: url(../img/ico_arrow_down.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 24px;
+        margin: auto;
+      }
+    }
+  }
+}
+.no_text {
+  width: 100%;
+  //  height: 200px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &._c_white {
+    color: #fff;
+  }
+}

@@ -1,0 +1,203 @@
+/*トップ*/
+@use "../foundation/mixins" as *;
+
+.mv {
+  margin-top: -15px;
+  position: relative;
+  &_photo {
+    height: 650px;
+  }
+  &_inner {
+    height: 650px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+  }
+  &_lead {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    padding: 0 0 10% 10%;
+  }
+}
+
+.newJobs {
+  margin-top: -30px;
+  position: relative;
+  z-index: 1;
+  &_inner {
+    display: flex;
+    align-items: center;
+  }
+  &_title {
+    width: 30%;
+    background: $third-color;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 60px 60px 120px;
+  }
+  &_slide {
+    margin-left: -80px;
+    &_item {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.search {
+  margin-top: -60px;
+  padding: 0 16px;
+  display: block;
+  @include mq(tab_min) {
+    padding: 0 40px;
+  }
+  &_inner {
+    background: $primary-color;
+    border-radius: 30px;
+    padding: 20px;
+  }
+  &_border {
+    display: flex;
+    border: 2px dashed #fff;
+    border-radius: 20px;
+  }
+  .photo {
+    margin-top: 80px;
+    margin-bottom: -30px;
+    margin-left: 50px;
+  }
+  &_main {
+    padding: 60px 0 0 0;
+  }
+}
+
+.welcome {
+  margin-top: 80px;
+  &_inner {
+    display: flex;
+    align-items: center;
+  }
+  .photo {
+    position: relative;
+    &_item {
+      border-radius: 20px;
+      overflow: hidden;
+      font-size: 0;
+      &:nth-child(2) {
+        position: absolute;
+        bottom: -100px;
+        right: calc(100% - 200px);
+      }
+    }
+  }
+  .content {
+    margin-left: 60px;
+    .text {
+      margin-top: 20px;
+    }
+  }
+}
+
+.interview {
+  margin-top: 180px;
+  .m_title_style01 {
+    width: 100%;
+  }
+  &_content {
+    position: relative;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 80%;
+      height: 90%;
+      border: 60px solid $fourth-color;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 30px;
+      z-index: -1;
+    }
+    .deco {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 60px;
+      &02 {
+        margin-top: -200px;
+        display: flex;
+        flex-flow: column;
+        position: relative;
+        .balloon {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        .human {
+          position: relative;
+          z-index: 1;
+          margin-right: 120px;
+        }
+      }
+    }
+    .m_button_style01 {
+      margin: 0 auto;
+    }
+  }
+}
+
+.oneday {
+  margin-top: 80px;
+  &_inner {
+    display: flex;
+    align-items: center;
+  }
+  .content {
+    margin-left: 80px;
+  }
+}
+
+.other {
+  margin-top: 140px;
+  margin-bottom: 80px;
+  &_inner {
+    display: flex;
+  }
+  &_item {
+    margin: 0 20px;
+    width: 50%;
+    position: relative;
+    .m_title_style01 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: -5em auto 0;
+    }
+    &_wrap {
+      border-radius: 20px;
+      background: #fff;
+      padding: 20px 60px;
+    }
+    &:nth-child(1) {
+      .photo {
+        position: absolute;
+        bottom: -90px;
+        left: -100px;
+      }
+    }
+    &:nth-child(2) {
+      .photo {
+        position: absolute;
+        bottom: -90px;
+        right: -100px;
+      }
+    }
+  }
+}

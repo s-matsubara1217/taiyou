@@ -1,0 +1,605 @@
+/*------------------------------
+	 form base setting
+------------------------------*/
+body.ios select,
+body.ios input,
+body.ios textarea,
+body.iPad select,
+body.iPad input,
+body.iPad textarea,
+body.iPad label {
+  font-size: 16px !important;
+}
+
+input,
+button,
+textarea,
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+
+input::-ms-expand,
+button::-ms-expand,
+textarea::-ms-expand,
+select::-ms-expand {
+  display: none;
+}
+
+input::-ms-reveal,
+button::-ms-reveal,
+textarea::-ms-reveal,
+select::-ms-reveal {
+  visibility: hidden;
+}
+
+input::-ms-clear,
+button::-ms-clear,
+textarea::-ms-clear,
+select::-ms-clear {
+  visibility: hidden;
+}
+
+input[type=text],
+input[type=submit],
+input[type=search],
+input[type=button],
+select,
+textarea {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input[type=search] {
+  cursor: auto;
+  padding: 0.7em 20px 0.7em 20px !important;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-appearance: textfield;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+input[type=search]::-webkit-search-decoration {
+  display: none;
+}
+
+select,
+input {
+  border-radius: 0;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  padding: 0.7em 44px 0.7em 20px !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  background: none;
+}
+
+select option {
+  background: #fff;
+  height: 30px;
+  line-height: 30px;
+}
+
+.resetbtn {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #555;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: normal;
+  padding: 0.1em 0.4em !important;
+}
+
+.pull-down {
+  position: relative;
+}
+
+.pull-down:before,
+.pull-down:after {
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+}
+
+.pull-down:before {
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 44px;
+  z-index: 0;
+}
+
+.pull-down:after {
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  color: #00a572;
+  height: 7px;
+  margin-top: -2px;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 7px;
+  z-index: 1;
+}
+
+input[type=checkbox] + label {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  cursor: pointer;
+  display: block;
+  line-height: 1.5;
+  padding: 10px 15px 0 25px;
+  position: relative;
+  transition: none;
+}
+
+input[type=checkbox] + label:before,
+input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  transition: none;
+}
+
+input[type=checkbox] + label a:link,
+input[type=checkbox] + label a:visited {
+  color: #222;
+}
+
+input[type=checkbox]:checked + label:before {
+  background: #fff;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  cursor: pointer;
+  display: flex;
+  line-height: 1.5;
+  padding: 10px 15px 10px 1.5em;
+  position: relative;
+  transition: all 0.2s;
+  align-items: center;
+  height: 100%;
+}
+
+input[type=radio] + label:before,
+input[type=radio] + label:after {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  content: "";
+  position: absolute;
+  transition: all 0.2s;
+}
+
+input[type=radio] + label:before {
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 50%;
+  height: 13px;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  z-index: 0;
+  box-sizing: content-box;
+}
+
+input[type=radio] + label:after {
+  border-radius: 50%;
+  height: 7px;
+  left: 19px;
+  opacity: 0;
+  width: 7px;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type=radio] + label a:link,
+input[type=radio] + label a:visited {
+  color: #222;
+}
+
+input[type=radio]:checked + label:after {
+  opacity: 1;
+}
+
+/*------------------------------
+	form custom setting
+------------------------------*/
+.search .custom-form,
+.jobSearch .custom-form {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.search .custom-form_parts,
+.jobSearch .custom-form_parts {
+  border-bottom: 0;
+  padding: 0;
+  border-top: 0;
+  align-items: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .search .custom-form_parts,
+.jobSearch .custom-form_parts {
+    flex-wrap: wrap;
+  }
+}
+.search .custom-form_parts:first-child,
+.jobSearch .custom-form_parts:first-child {
+  border-top: 0;
+}
+.search .custom-form_parts + .custom-form_parts,
+.jobSearch .custom-form_parts + .custom-form_parts {
+  margin-top: 10px;
+  border-top: 0;
+}
+@media screen and (max-width: 480px) {
+  .search .custom-form_parts + .custom-form_parts,
+.jobSearch .custom-form_parts + .custom-form_parts {
+    margin-top: 10px;
+  }
+}
+.search .custom-form_parts:nth-of-type(4),
+.jobSearch .custom-form_parts:nth-of-type(4) {
+  padding-bottom: 20px;
+  border-bottom: 0;
+}
+.search .parts_ttl,
+.jobSearch .parts_ttl {
+  flex: 0 0 140px;
+  display: inline-flex;
+  align-items: center;
+}
+.search .parts_ttl:before,
+.jobSearch .parts_ttl:before {
+  border: none;
+  background: #fff850;
+}
+.search .pull-down,
+.search .check-box,
+.search .searchWord,
+.jobSearch .pull-down,
+.jobSearch .check-box,
+.jobSearch .searchWord {
+  color: #383e45;
+  border: 1px solid #d2d2d2;
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+}
+.search .searchWord,
+.jobSearch .searchWord {
+  padding: 15px 20px !important;
+}
+@media screen and (min-width: 769px), only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .search .searchWord:hover,
+.jobSearch .searchWord:hover {
+    background: #FFF;
+  }
+}
+.search .pull-down:before,
+.jobSearch .pull-down:before {
+  display: none;
+  border-left: 1px solid #d2d2d2;
+  height: calc(100% - 20px);
+  bottom: 0;
+  margin: auto;
+}
+.search .selCity-box,
+.jobSearch .selCity-box {
+  padding: 0;
+}
+.search .category_list,
+.jobSearch .category_list {
+  padding: 0.7em 20px;
+}
+.search input[type=checkbox] + label:before,
+.jobSearch input[type=checkbox] + label:before {
+  background: #fff;
+  border: 1px solid #00a572;
+  border-radius: 2px;
+  height: 13px;
+  width: 13px;
+  box-sizing: initial;
+}
+.search input[type=checkbox]:checked + label:before,
+.jobSearch input[type=checkbox]:checked + label:before {
+  background: #fff;
+}
+@media screen and (min-width: 769px), only screen and (max-device-width: 1024px) and (min-device-width: 769px) and (orientation: landscape) {
+  .search input[type=text]:focus,
+.search input[type=submit]:focus,
+.search input[type=search]:focus,
+.search select:focus,
+.search textarea:focus,
+.jobSearch input[type=text]:focus,
+.jobSearch input[type=submit]:focus,
+.jobSearch input[type=search]:focus,
+.jobSearch select:focus,
+.jobSearch textarea:focus {
+    box-shadow: none;
+  }
+  .search select:hover,
+.search input:hover,
+.jobSearch select:hover,
+.jobSearch input:hover {
+    background: none;
+  }
+}
+.search input[type=checkbox] + label,
+.jobSearch input[type=checkbox] + label {
+  padding: 0 15px 0 22px;
+}
+.search input[type=checkbox] + label:before,
+.jobSearch input[type=checkbox] + label:before {
+  transition: background 0.5s ease;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+}
+@media screen and (max-width: 767px) {
+  .search input[type=checkbox] + label:before,
+.jobSearch input[type=checkbox] + label:before {
+    width: 12px;
+    height: 12px;
+    left: 10px;
+  }
+}
+.search input[type=checkbox] + label:after,
+.jobSearch input[type=checkbox] + label:after {
+  transition: opacity 0.5s ease;
+  box-sizing: initial;
+  opacity: 0;
+  left: 16px;
+  top: 44%;
+  transform: rotate(40deg) translateY(-50%);
+  color: #00a572;
+}
+@media screen and (max-width: 480px) {
+  .search input[type=checkbox] + label:after,
+.jobSearch input[type=checkbox] + label:after {
+    left: 12px;
+    top: 43%;
+    width: 3px;
+    height: 6px;
+  }
+}
+.search input[type=checkbox]:checked + label,
+.jobSearch input[type=checkbox]:checked + label {
+  background: #fff;
+  color: #00a572;
+}
+.search input[type=checkbox]:checked + label:before,
+.jobSearch input[type=checkbox]:checked + label:before {
+  background: #fff;
+}
+.search input[type=checkbox]:checked + label:after,
+.jobSearch input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+.search input[type=checkbox] + label,
+.jobSearch input[type=checkbox] + label {
+  line-height: 1.5;
+}
+
+.search .custom-form,
+.jobSearch .custom-form {
+  position: relative;
+  z-index: 1;
+}
+.search .parts_ttl,
+.jobSearch .parts_ttl {
+  flex-flow: row;
+  align-items: center;
+  color: #FFF;
+  margin-bottom: 10px;
+  flex: none !important;
+}
+@media screen and (min-width: 769px) {
+  .search .parts_ttl,
+.jobSearch .parts_ttl {
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    flex: 0 0 140px !important;
+  }
+}
+.search .parts_ttl .ja,
+.search .parts_ttl .en,
+.jobSearch .parts_ttl .ja,
+.jobSearch .parts_ttl .en {
+  line-height: 1;
+}
+.search .parts_ttl .ja,
+.jobSearch .parts_ttl .ja {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 769px) {
+  .search .parts_ttl .ja,
+.jobSearch .parts_ttl .ja {
+    font-size: 1.6rem;
+  }
+}
+.search .parts_ttl .en,
+.jobSearch .parts_ttl .en {
+  font-family: "Monoton", cursive;
+  color: #fff850;
+  font-weight: normal;
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 769px) {
+  .search .parts_ttl .en,
+.jobSearch .parts_ttl .en {
+    margin-left: 0;
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+}
+.search .src_area_content .area::after,
+.jobSearch .src_area_content .area::after {
+  transform: translateY(-49%) rotate(0deg) !important;
+  border-right: 0;
+  border-bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 4.5px 0 4.5px;
+  border-color: #00a572 transparent transparent transparent;
+}
+.search .src_area_content .area select,
+.jobSearch .src_area_content .area select {
+  padding: 8px 44px 8px 16px !important;
+}
+@media screen and (min-width: 769px) {
+  .search .src_area_content .area select,
+.jobSearch .src_area_content .area select {
+    padding: 0.8em 44px 0.8em 20px !important;
+  }
+}
+.search .src_area_content .selCity-box,
+.jobSearch .src_area_content .selCity-box {
+  margin-top: 10px;
+}
+@media screen and (min-width: 769px) {
+  .search .src_area_content .selCity-box,
+.jobSearch .src_area_content .selCity-box {
+    margin-top: 10px;
+  }
+}
+.search .src_keywords_content,
+.jobSearch .src_keywords_content {
+  display: flex;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 769px) {
+  .search .src_keywords_content,
+.jobSearch .src_keywords_content {
+    align-items: flex-start;
+  }
+}
+.search .src_keywords_content .keyword_wrap,
+.jobSearch .src_keywords_content .keyword_wrap {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+}
+@media screen and (min-width: 769px) {
+  .search .src_keywords_content .keyword_wrap,
+.jobSearch .src_keywords_content .keyword_wrap {
+    align-items: flex-start;
+    flex-flow: row;
+  }
+}
+.search .category_list,
+.jobSearch .category_list {
+  padding: 5px 12px;
+}
+@media screen and (min-width: 769px) {
+  .search .category_list,
+.jobSearch .category_list {
+    padding: 12px 18px;
+  }
+}
+.search .category_list li,
+.jobSearch .category_list li {
+  margin: 6px 10px 6px 0;
+}
+.search .category_list input[type=checkbox]:checked + label,
+.jobSearch .category_list input[type=checkbox]:checked + label {
+  background: #c5f4c6;
+}
+.search .category_list input[type=checkbox] + label,
+.jobSearch .category_list input[type=checkbox] + label {
+  background: #fdf6c3;
+  border-radius: 30px;
+  padding: 8px 10px 8px 30px;
+  font-size: 1.4rem;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@media screen and (min-width: 769px) {
+  .search .category_list input[type=checkbox] + label,
+.jobSearch .category_list input[type=checkbox] + label {
+    padding: 8px 15px 8px 37px;
+  }
+}
+.search .button,
+.jobSearch .button {
+  font-weight: 400;
+  position: relative;
+  text-align: center;
+  line-height: 1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+@media screen and (min-width: 769px) {
+  .search .button,
+.jobSearch .button {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}
+.search .button .button_wrap,
+.jobSearch .button .button_wrap {
+  display: inline-block;
+  position: relative;
+}
+@media screen and (min-width: 769px), only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
+  .search .button .button_wrap:hover input,
+.jobSearch .button .button_wrap:hover input {
+    background: #fff850 !important;
+  }
+}
+.search .button .button_wrap > input,
+.jobSearch .button .button_wrap > input {
+  display: block;
+  padding: 14px 30px 14px 50px !important;
+  border-radius: 100px;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-align: center;
+  will-change: transform;
+  color: #262626;
+  font-weight: bold;
+  background: #c5f4c6;
+}
+@media screen and (min-width: 769px) {
+  .search .button .button_wrap > input,
+.jobSearch .button .button_wrap > input {
+    padding: 16px 50px 16px 60px !important;
+  }
+}
+.search .button .button_wrap .svg,
+.jobSearch .button .button_wrap .svg {
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  left: 20px;
+  z-index: 1;
+}

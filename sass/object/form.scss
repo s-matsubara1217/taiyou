@@ -1,0 +1,764 @@
+@use "../foundation/mixins" as *;
+/*------------------------------
+	 form base setting
+------------------------------*/
+body.ios select,
+body.ios input,
+body.ios textarea,
+body.iPad select,
+body.iPad input,
+body.iPad textarea,
+body.iPad label {
+  font-size: 16px !important;
+}
+
+input,
+button,
+textarea,
+select {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+
+input::-ms-expand,
+button::-ms-expand,
+textarea::-ms-expand,
+select::-ms-expand {
+  display: none;
+}
+
+input::-ms-reveal,
+button::-ms-reveal,
+textarea::-ms-reveal,
+select::-ms-reveal {
+  visibility: hidden;
+}
+
+input::-ms-clear,
+button::-ms-clear,
+textarea::-ms-clear,
+select::-ms-clear {
+  visibility: hidden;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="search"],
+input[type="button"],
+select,
+textarea {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input[type="search"] {
+  cursor: auto;
+  //	padding: .875em 15px!important;
+  padding: 0.7em 20px 0.7em 20px !important;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-appearance: textfield;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// input[type="search"]:focus {
+// //	outline-offset: -2px;
+// }
+
+input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+select,
+input {
+  border-radius: 0;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  padding: 0.7em 44px 0.7em 20px !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  background: none;
+}
+
+select option {
+  background: #fff;
+  height: 30px;
+  line-height: 30px;
+}
+
+// input[type="text"],
+// input[type="search"],
+// input[type="submit"] {
+// //	padding-right: 15px !important;
+// }
+
+.resetbtn {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #555;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: normal;
+  padding: 0.1em 0.4em !important;
+}
+
+.pull-down {
+  position: relative;
+}
+
+.pull-down:before,
+.pull-down:after {
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+}
+
+.pull-down:before {
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 44px;
+  z-index: 0;
+}
+
+.pull-down:after {
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  color: $primary-color;
+  height: 7px;
+  margin-top: -2px;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 7px;
+  z-index: 1;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  cursor: pointer;
+  display: block;
+  line-height: 1.5;
+  padding: 10px 15px 0 25px;
+  position: relative;
+  //	transition: all 0.2s;
+  transition: none;
+}
+
+input[type="checkbox"] + label:before,
+input[type="checkbox"] + label:after {
+  //	-moz-transition: all 0.2s;
+  //	-ms-transition: all 0.2s;
+  //	-webkit-transition: all 0.2s;
+  content: "";
+  position: absolute;
+  //	transition: all 0.2s;
+
+  transition: none;
+}
+
+//input[type=checkbox] + label:before {
+//	background: #eaeaea;
+//	height: 14px;
+//	left: 0;
+//	top: 4px;
+//	width: 14px;
+//	z-index: 0;
+//}
+
+input[type="checkbox"] + label a:link,
+input[type="checkbox"] + label a:visited {
+  color: #222;
+}
+
+input[type="checkbox"]:checked + label:before {
+  //	background: $primary-color;
+  background: #fff;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  cursor: pointer;
+  //	display: block;
+  display: flex;
+  line-height: 1.5;
+  padding: 10px 15px 10px 1.5em;
+  position: relative;
+  transition: all 0.2s;
+  align-items: center;
+  height: 100%;
+}
+
+input[type="radio"] + label:before,
+input[type="radio"] + label:after {
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  content: "";
+  position: absolute;
+  transition: all 0.2s;
+}
+
+input[type="radio"] + label:before {
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 50%;
+  height: 13px;
+  left: 15px;
+  //	top: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  z-index: 0;
+  box-sizing: content-box;
+}
+
+input[type="radio"] + label:after {
+  //	background: $fifth-color;
+  border-radius: 50%;
+  height: 7px;
+  left: (15px + 4px);
+  opacity: 0;
+  //	top: 6px;
+  width: 7px;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type="radio"] + label a:link,
+input[type="radio"] + label a:visited {
+  color: #222;
+}
+
+input[type="radio"]:checked + label:after {
+  opacity: 1;
+}
+
+/*------------------------------
+	form custom setting
+------------------------------*/
+
+.search,
+.jobSearch {
+  //.custom-formにかかってるbottom系削除
+  .custom-form {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  //各項目にかかってるmagin・padding削除
+  .custom-form_parts {
+    border-bottom: 0;
+    padding: 0;
+    border-top: 0;
+    align-items: flex-start;
+
+    //全て縦並びにする
+    @include mq(tab_max) {
+      flex-wrap: wrap;
+    }
+    //いちばん上の項目のタイトルを上揃えにする
+    &:first-child {
+      border-top: 0;
+      // align-items: flex-start;
+    }
+    //各項目の余白設定
+    & + .custom-form_parts {
+      margin-top: 10px;
+      border-top: 0;
+      //            padding-top: 20px;
+
+      @include mq(sp) {
+        margin-top: 10px;
+        //                padding-top: 10px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      padding-bottom: 20px;
+      border-bottom: 0;
+    }
+  }
+  //
+  //    //各項目タイトルの設定
+  .parts_ttl {
+    flex: 0 0 140px;
+    //        color: #FFF;
+    //        padding: 0 0 0 10px;
+    display: flex;
+    // align-items: center;
+    // flex: 1 0 auto;
+    flex-flow: column;
+    //テンプレートで使用しているタイトルの飾り削除
+    &:before {
+      display: none;
+      //          border: 3px solid $primary-color;
+      //          width: 8px;
+      //          height: 8px;
+      //          box-sizing: initial;
+    }
+  }
+  //    //フォーム関係の背景色の設定
+  .pull-down,
+  .check-box,
+  .searchWord {
+    //        background: #f2f2f2;
+    //      background: none;
+    color: #383e45;
+    border: 1px solid #d2d2d2;
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .pull-down:before {
+    display: none;
+    border-left: 1px solid #d2d2d2;
+    height: calc(100% - 20px);
+    bottom: 0;
+    margin: auto;
+  }
+  // .pull-down:after{
+  //      content: '';
+  //      display: inline-block;
+  //      width: 0;
+  //      height: 0;
+  //      border-style: solid;
+  //      border-width: 3px 0 3px 7px;
+  //      border-color: transparent transparent transparent #004ea2;
+  //      position: absolute;
+  //      top: 7px;
+  //      bottom: 0;
+  //      margin: auto;
+  //        color: $secondary-color;
+  //      transform: translateY(-50%) rotate(90deg);
+  //      color: $secondary-color;
+  // }
+  //    //#search_cityの余白の設定
+  //    #search_city{
+  //        margin-top: 10px;
+  //    }
+  //    //.selCity-boxの余白の設定
+  .selCity-box {
+    padding: 0;
+  }
+  //    //全ての項目のform側の余白設定
+  .category_list {
+    padding: 0.7em 20px;
+  }
+  //    //フリーワード
+  //    .srcWord{
+  ////        margin-right: 10px;
+  ////        width: 100%;
+  //
+  //        input::placeholder{
+  ////        color: $primary-color;
+  //        }
+  //        input::-ms-input-placeholder{
+  ////            color: $primary-color;
+  //        }
+  //    }
+  //    //チェックボックスの背景の色
+  input[type="checkbox"] + label:before {
+    background: #fff;
+    border: 1px solid $primary-color;
+    border-radius: 2px;
+    height: 13px;
+    width: 13px;
+    box-sizing: initial;
+  }
+  //    //チェックボックスをclickしたときの背景の色
+  input[type="checkbox"]:checked + label:before {
+    //        background: $primary-color;
+    background: #fff;
+  }
+  //
+  //    //スマホでみたときfocus/hoverを消す
+  @media screen and (min-width: 769px),
+    only screen and (max-device-width: 1024px) and (min-device-width: 769px) and (orientation: landscape) {
+    input[type="text"]:focus,
+    input[type="submit"]:focus,
+    input[type="search"]:focus,
+    select:focus,
+    textarea:focus {
+      box-shadow: none;
+    }
+
+    select:hover,
+    input:hover {
+      //            background: #FFF;
+      background: none;
+    }
+  }
+  //
+  //    //検索ボタンの設定
+  //    .custom-form .custom-form_searth_btn{
+  //        margin: 20px auto 0;
+  ////        max-width: 180px;
+  //        max-width: 280px;
+  //        @include mq(pc) {
+  //            bottom: 30px;
+  //            right: 85px;
+  //            position: static;
+  //        }
+  //        @include mq(tab_max) {
+  //            margin: 20px 0 0 0;
+  //        }
+  //        @include mq(sp) {
+  //            left: 0;
+  //            right: 0;
+  //            margin: 20px auto 0;
+  //        }
+  //        .btn_cover{
+  //            transition: all 0.5s ease;
+  //            &:hover{
+  ////                opacity: 1;
+  //                &:before{
+  //                    left: 1em;
+  //                }
+  //            }
+  //            input{
+  //            background: $secondary-color;
+  //            color: #FFF;
+  //            border-radius: 2px;
+  //        }
+  //        }
+  //    }
+  //
+  //    //チェックボタンの設定
+  input[type="checkbox"] + label {
+    //		background: #E6E6E6;
+    padding: 0 15px 0 22px;
+  }
+  input[type="checkbox"] + label:before {
+    transition: background 0.5s ease;
+    border: 1px solid #dedede;
+    //			border: none;
+    //      background: #dedede;
+    border-radius: 2px;
+    //			left: 15px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    @include mq(sp) {
+      //				width: 12px;
+      //				height: 12px;
+      //				left: 10px;
+    }
+  }
+
+  input[type="checkbox"] + label:after {
+    transition: opacity 0.5s ease;
+    box-sizing: initial;
+    opacity: 0;
+    //			left: 15px;
+    left: 1px;
+    top: 40%;
+    transform: rotate(40deg) translateY(-50%);
+    color: #fff;
+    @include mq(sp) {
+      width: 4px;
+      height: 8px;
+      //				left: 10px;
+    }
+  }
+
+  input[type="checkbox"]:checked + label {
+    //		background: #548BC4;
+    background: #fff;
+    color: #fff;
+  }
+  input[type="checkbox"]:checked + label:before {
+    //    transform: rotate(0);
+    //      background: $secondary-color;
+    //    background: #dedede;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    @include mq(tab) {
+    }
+  }
+
+  input[type="checkbox"]:checked + label:after {
+    //        transform: rotate(180deg);
+    //      transform: rotate(40deg);
+    opacity: 1;
+    //			color: $fifth-color;
+  }
+
+  input[type="checkbox"] + label {
+    //    line-height: 1.8;
+    line-height: 1.5;
+  }
+}
+
+//add
+.search,
+.jobSearch {
+  .custom-form {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .parts_ttl {
+    flex-flow: row;
+    align-items: center;
+    color: #333;
+    margin-bottom: 16px;
+    flex: none !important;
+    @include mq(tab_min) {
+      align-items: flex-start;
+      flex-flow: column;
+      margin-top: 10px;
+      flex: 1 0 130px;
+      margin-bottom: 0;
+      flex: 0 0 140px !important;
+    }
+    .ja,
+    .en {
+      line-height: 1;
+    }
+    .ja {
+      font-size: 1.5rem;
+      @include mq(tab_min) {
+        font-size: 1.6rem;
+      }
+    }
+    .en {
+      font-family: $eng;
+      color: $secondary-color;
+      font-weight: normal;
+      margin-left: 10px;
+      font-size: 1.5rem;
+      @include mq(tab_min) {
+        margin-left: 0;
+        font-size: 1.6rem;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .src_area_content {
+    .area {
+      border: 1px solid $primary-color;
+      &::after {
+        transform: translateY(-49%) rotate(0deg) !important;
+        border-right: 0;
+        border-bottom: 0;
+        height: 3px;
+        width: 15px;
+        background: $primary-color;
+        box-shadow: 0 6px 0 rgba($primary-color, 1), 0 -6px 0 rgba($primary-color, 1);
+        border-radius: 10px;
+      }
+      select {
+        padding: 8px 44px 8px 16px !important;
+        @include mq(tab_min) {
+          padding: 1em 44px 1em 20px !important;
+        }
+      }
+    }
+    .selCity-box {
+      margin-top: 20px;
+    }
+  }
+
+  .category_list {
+    padding: 5px 12px;
+    @include mq(tab_min) {
+      padding: 16px 22px;
+    }
+
+    li {
+      margin: 6px 10px 6px 0;
+    }
+    input[type="checkbox"] {
+      &:checked {
+        & + label {
+          background: $secondary-color;
+        }
+      }
+      & + label {
+        background: $fourth-color;
+        border-radius: 30px;
+        padding: 4px 10px 4px 10px;
+        font-size: 1.4rem;
+        transition: all 0.5s $easing;
+        @include mq(tab_min) {
+          padding: 8px 15px 8px 15px;
+        }
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .discern {
+    margin-top: 20px;
+    &_wrap {
+      .custom-form_parts {
+        &:first-child {
+          margin-top: 20px;
+        }
+      }
+    }
+    &_button {
+      background: $primary-color;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: all 0.5s $easing;
+      @include mq(tab_min) {
+        padding: 16px 20px;
+        text-align: center;
+        justify-content: center;
+      }
+      &:hover {
+        // opacity: .7;
+        background: lighten($primary-color, 20%);
+      }
+      .text {
+        display: inline-block;
+      }
+      .icon {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 16px;
+        margin: auto;
+        @include mq(tab_min) {
+          right: 20px;
+        }
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 100%;
+          height: 2px;
+          background: #fff;
+          position: absolute;
+          border-radius: 10px;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          transition: all 0.5s $easing;
+        }
+      }
+      &.js_close {
+        .icon {
+          &::before {
+            transform: rotate(270deg);
+          }
+        }
+      }
+      &.js_open {
+        .icon {
+          &::before {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+    &_wrap {
+      display: none;
+    }
+  }
+  .button {
+    font-weight: 400;
+    position: relative;
+    text-align: center;
+    line-height: 1;
+    margin-top: 20px;
+    @include mq(tab_min) {
+      margin-top: 60px;
+    }
+    .button_wrap {
+      display: inline-block;
+      position: relative;
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -16px;
+        margin: auto;
+        transition: all 0.6s $easing;
+        background-image: url(../img/ico_loupe.png);
+        background-color: $secondary-color;
+      }
+      @include mq(hover) {
+        &:hover {
+          input {
+            background: $primary-color !important;
+          }
+          &::after {
+            background-color: $primary-color !important;
+          }
+        }
+      }
+      & > input {
+        display: block;
+        padding: 14px 30px !important;
+        border-radius: 100px;
+        border: 2px solid #fff;
+        position: relative;
+        transition: all 0.6s $easing;
+        text-align: center;
+        will-change: transform;
+        color: #fff;
+        font-weight: bold;
+        background: $secondary-color;
+        @include mq(tab_min) {
+          padding: 20px 50px !important;
+        }
+      }
+    }
+  }
+}

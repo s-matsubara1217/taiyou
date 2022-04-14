@@ -1,0 +1,212 @@
+@charset "utf-8";
+@use "../foundation/mixins" as *;
+/* ============================================
+// インタビュー
+// ==========================================*/
+
+/*------------------------------
+ innerWrap
+------------------------------*/
+.innerWrap {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @include mq(tab_max) {
+    padding: 0 30px;
+  }
+  @include mq(sp) {
+    padding: 0 15px;
+  }
+}
+
+/*------------------------------
+ 表示 / 非表示
+------------------------------*/
+.u-pcOnly {
+  @include mq(tab_min) {
+    display: none;
+  }
+}
+.u-spOnly {
+  @include mq(tab_min) {
+    display: none;
+  }
+}
+
+// keepAspect
+@mixin keepAspect($persentage){
+	position: relative;
+	z-index: 1;
+	&:before{
+		content: '';
+		display: block;
+		padding-top: $persentage;
+	}
+	img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+
+.lower-interview_l {
+  .interview {
+
+    &__inner {
+      padding-top: 190px;
+      padding-bottom: 200px;
+      max-width: 1330px;
+    }
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 80%;
+        height: calc(120px + 100% + 40px);
+        border: 40px solid $fourth-color;
+        position: absolute;
+        top: -120px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &__item {
+        width: 29%;
+        margin-right: 6.5%;
+        margin-top: 210px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+        &:nth-child(3) {
+          margin-top: 0;
+        }
+        &:nth-child(3n+3) {
+          margin-right: 0;
+        }
+
+        .bubble {
+          width: 130%;
+          position: absolute;
+          top: -40px;
+          left: 50%;
+          font-size: 1.8rem;
+          line-height: 1.6;
+          background-color: #fff;
+          border: 3px solid $third-color;
+          transform: translate(-50%,-100%);
+          padding: 20px 24px;
+          border-radius: 10px;
+          // display: none;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 17px 7.5px 0 7.5px;
+            border-color: #ffffff transparent transparent transparent;
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translate(-50%,100%);
+            z-index: 2;
+          }
+          &:after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 24px 9px 0 9px;
+            border-color: $third-color transparent transparent transparent;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,100%);
+          }
+        }
+
+        a {
+          display: block;
+          transition: transform 0.3s;
+          position: relative;
+
+          &:hover {
+            transform: scale(1.05);
+
+            .bubble {
+              display: block;
+              
+
+            }
+          }
+        }
+
+        .img-holder {
+          .img {
+            @include keepAspect(110%);
+            img {
+              border-radius: 10px;
+            }
+          }
+        }
+        .txt-holder {
+          position: relative;
+          text-align: center;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/common/ico_arrow_green.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            bottom: 24px;
+            right: 0;
+          }
+
+          .position { 
+            color: #fff;
+            background-color: $primary-color;
+            border-radius: 2px;
+            padding: 4px 8px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+          }
+          .name {
+            font-size: 2.2rem;
+            font-weight: bold;
+            display: block;
+            padding: 28px 8% 0;
+          }
+          .year {
+            font-size: 1.4rem;
+            font-weight: 500;
+            display: block;
+            padding: 0 8%;
+          }
+        }
+      }
+    }
+  }
+}
