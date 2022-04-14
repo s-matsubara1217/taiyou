@@ -4,61 +4,12 @@
 // インタビュー
 // ==========================================*/
 
-/*------------------------------
- innerWrap
-------------------------------*/
-.innerWrap {
-  max-width: 1280px;
-  padding: 0 40px;
-  margin: 0 auto;
-
-  @include mq(tab_max) {
-    padding: 0 30px;
-  }
-  @include mq(sp) {
-    padding: 0 15px;
-  }
-}
-
-/*------------------------------
- 表示 / 非表示
-------------------------------*/
-.u-pcOnly {
-  @include mq(tab_min) {
-    display: none;
-  }
-}
-.u-spOnly {
-  @include mq(tab_min) {
-    display: none;
-  }
-}
-
-// keepAspect
-@mixin keepAspect($persentage){
-	position: relative;
-	z-index: 1;
-	&:before{
-		content: '';
-		display: block;
-		padding-top: $persentage;
-	}
-	img{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
-}
-
-
 .lower-interview_l {
   .interview {
 
     &__inner {
-      padding-top: 190px;
-      padding-bottom: 200px;
+      padding-top: 110px;
+      padding-bottom: 140px;
       max-width: 1330px;
     }
     &__list {
@@ -156,7 +107,7 @@
 
           @include mq(hover) {
             &:hover {
-              transform: scale(1.03);
+              transform: scale(1.05);
   
               .bubble {
                 opacity: 1;

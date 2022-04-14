@@ -544,7 +544,7 @@ a {
   transform: translateY(30%) rotate(0.01deg);
   transition-property: transform, opacity;
   transition-duration: 0.5s, 0.4s;
-  ransition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
 }
 .animation.slideup_fade.acted,
 .animation-center.slideup_fade.acted {
@@ -838,6 +838,40 @@ a {
   fill: #000;
 }
 
+/*------------------------------
+ innerWrap
+------------------------------*/
+.innerWrap {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .innerWrap {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .innerWrap {
+    padding: 0 15px;
+  }
+}
+
+/*------------------------------
+ 表示 / 非表示
+------------------------------*/
+@media screen and (min-width: 769px) {
+  .u-pcOnly {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .u-spOnly {
+    display: none;
+  }
+}
+
 /* ============================================
 // 下層共通関係
 // ==========================================*/
@@ -1045,12 +1079,12 @@ a {
 .lower_title .title_text .ja,
 .lower_title .title_text .en {
   white-space: nowrap;
-  text-shadow: rgb(255, 255, 255) 3px 0px 0px, rgb(255, 255, 255) 2.83487px 0.981584px 0px, rgb(255, 255, 255) 2.35766px 1.85511px 0px, rgb(255, 255, 255) 1.62091px 2.52441px 0px, rgb(255, 255, 255) 0.705713px 2.91581px 0px, rgb(255, 255, 255) -0.287171px 2.98622px 0px, rgb(255, 255, 255) -1.24844px 2.72789px 0px, rgb(255, 255, 255) -2.07227px 2.16926px 0px, rgb(255, 255, 255) -2.66798px 1.37182px 0px, rgb(255, 255, 255) -2.96998px 0.42336px 0px, rgb(255, 255, 255) -2.94502px -0.571704px 0px, rgb(255, 255, 255) -2.59586px -1.50383px 0px, rgb(255, 255, 255) -1.96093px -2.27041px 0px, rgb(255, 255, 255) -1.11013px -2.78704px 0px, rgb(255, 255, 255) -0.137119px -2.99686px 0px, rgb(255, 255, 255) 0.850987px -2.87677px 0px, rgb(255, 255, 255) 1.74541px -2.43999px 0px, rgb(255, 255, 255) 2.44769px -1.73459px 0px, rgb(255, 255, 255) 2.88051px -0.838247px 0px;
+  text-shadow: white 3px 0px 0px, white 2.83487px 0.981584px 0px, white 2.35766px 1.85511px 0px, white 1.62091px 2.52441px 0px, white 0.705713px 2.91581px 0px, white -0.287171px 2.98622px 0px, white -1.24844px 2.72789px 0px, white -2.07227px 2.16926px 0px, white -2.66798px 1.37182px 0px, white -2.96998px 0.42336px 0px, white -2.94502px -0.571704px 0px, white -2.59586px -1.50383px 0px, white -1.96093px -2.27041px 0px, white -1.11013px -2.78704px 0px, white -0.137119px -2.99686px 0px, white 0.850987px -2.87677px 0px, white 1.74541px -2.43999px 0px, white 2.44769px -1.73459px 0px, white 2.88051px -0.838247px 0px;
 }
 @media screen and (min-width: 769px) {
   .lower_title .title_text .ja,
 .lower_title .title_text .en {
-    text-shadow: rgb(255, 255, 255) 6px 0px 0px, rgb(255, 255, 255) 5.91686px 0.995377px 0px, rgb(255, 255, 255) 5.66974px 1.96317px 0px, rgb(255, 255, 255) 5.2655px 2.87655px 0px, rgb(255, 255, 255) 4.71532px 3.71022px 0px, rgb(255, 255, 255) 4.03447px 4.44106px 0px, rgb(255, 255, 255) 3.24181px 5.04883px 0px, rgb(255, 255, 255) 2.35931px 5.51667px 0px, rgb(255, 255, 255) 1.41143px 5.83163px 0px, rgb(255, 255, 255) 0.424423px 5.98497px 0px, rgb(255, 255, 255) -0.574341px 5.97245px 0px, rgb(255, 255, 255) -1.55719px 5.79441px 0px, rgb(255, 255, 255) -2.49688px 5.45578px 0px, rgb(255, 255, 255) -3.36738px 4.96596px 0px, rgb(255, 255, 255) -4.14455px 4.33852px 0px, rgb(255, 255, 255) -4.80686px 3.59083px 0px, rgb(255, 255, 255) -5.33596px 2.74364px 0px, rgb(255, 255, 255) -5.71718px 1.8204px 0px, rgb(255, 255, 255) -5.93995px 0.84672px 0px, rgb(255, 255, 255) -5.99811px -0.150428px 0px, rgb(255, 255, 255) -5.89004px -1.14341px 0px, rgb(255, 255, 255) -5.61874px -2.1047px 0px, rgb(255, 255, 255) -5.19172px -3.00766px 0px, rgb(255, 255, 255) -4.62082px -3.82727px 0px, rgb(255, 255, 255) -3.92186px -4.54081px 0px, rgb(255, 255, 255) -3.11421px -5.12852px 0px, rgb(255, 255, 255) -2.22026px -5.57409px 0px, rgb(255, 255, 255) -1.26477px -5.86518px 0px, rgb(255, 255, 255) -0.274238px -5.99373px 0px, rgb(255, 255, 255) 0.723898px -5.95617px 0px, rgb(255, 255, 255) 1.70197px -5.75355px 0px, rgb(255, 255, 255) 2.63288px -5.39147px 0px, rgb(255, 255, 255) 3.49082px -4.87998px 0px, rgb(255, 255, 255) 4.25202px -4.23324px 0px, rgb(255, 255, 255) 4.89538px -3.46919px 0px, rgb(255, 255, 255) 5.40307px -2.60899px 0px, rgb(255, 255, 255) 5.76102px -1.67649px 0px, rgb(255, 255, 255) 5.95932px -0.697531px 0px;
+    text-shadow: white 6px 0px 0px, white 5.91686px 0.995377px 0px, white 5.66974px 1.96317px 0px, white 5.2655px 2.87655px 0px, white 4.71532px 3.71022px 0px, white 4.03447px 4.44106px 0px, white 3.24181px 5.04883px 0px, white 2.35931px 5.51667px 0px, white 1.41143px 5.83163px 0px, white 0.424423px 5.98497px 0px, white -0.574341px 5.97245px 0px, white -1.55719px 5.79441px 0px, white -2.49688px 5.45578px 0px, white -3.36738px 4.96596px 0px, white -4.14455px 4.33852px 0px, white -4.80686px 3.59083px 0px, white -5.33596px 2.74364px 0px, white -5.71718px 1.8204px 0px, white -5.93995px 0.84672px 0px, white -5.99811px -0.150428px 0px, white -5.89004px -1.14341px 0px, white -5.61874px -2.1047px 0px, white -5.19172px -3.00766px 0px, white -4.62082px -3.82727px 0px, white -3.92186px -4.54081px 0px, white -3.11421px -5.12852px 0px, white -2.22026px -5.57409px 0px, white -1.26477px -5.86518px 0px, white -0.274238px -5.99373px 0px, white 0.723898px -5.95617px 0px, white 1.70197px -5.75355px 0px, white 2.63288px -5.39147px 0px, white 3.49082px -4.87998px 0px, white 4.25202px -4.23324px 0px, white 4.89538px -3.46919px 0px, white 5.40307px -2.60899px 0px, white 5.76102px -1.67649px 0px, white 5.95932px -0.697531px 0px;
   }
 }
 .lower_title .photo {
@@ -2221,7 +2255,7 @@ layout
 .footer .f_recruit {
   padding: 40px 16px;
   position: relative;
-  background-color: rgb(0, 128, 88);
+  background-color: #008058;
   background-image: url(../img/common/bg_recruit.png);
   background-size: cover;
   background-position: center;
@@ -2714,4 +2748,5 @@ layout
   .pagetop:hover {
     opacity: 0.7;
   }
-}/*# sourceMappingURL=common.css.map */
+}
+/*# sourceMappingURL=common.css.map */

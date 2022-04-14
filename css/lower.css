@@ -2,43 +2,9 @@
 /* ============================================
 // インタビュー
 // ==========================================*/
-/*------------------------------
- innerWrap
-------------------------------*/
-.innerWrap {
-  max-width: 1280px;
-  padding: 0 40px;
-  margin: 0 auto;
-}
-@media screen and (max-width: 768px) {
-  .innerWrap {
-    padding: 0 30px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .innerWrap {
-    padding: 0 15px;
-  }
-}
-
-/*------------------------------
- 表示 / 非表示
-------------------------------*/
-@media screen and (min-width: 769px) {
-  .u-pcOnly {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .u-spOnly {
-    display: none;
-  }
-}
-
 .lower-interview_l .interview__inner {
-  padding-top: 190px;
-  padding-bottom: 200px;
+  padding-top: 110px;
+  padding-bottom: 140px;
   max-width: 1330px;
 }
 .lower-interview_l .interview__list {
@@ -136,7 +102,7 @@
 }
 @media screen and (min-width: 769px), only screen and (min-device-width : 769px) and (max-device-width : 1024px) and (orientation : landscape) {
   .lower-interview_l .interview__list__item a:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
   .lower-interview_l .interview__list__item a:hover .bubble {
     opacity: 1;
