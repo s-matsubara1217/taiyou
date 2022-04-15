@@ -603,7 +603,8 @@
               margin-right: 4%;
               transform: translateX(-30%) rotate(0.01deg);
               @include mq(tab_max) {
-                margin-right: 0;
+                margin-right: auto;
+                margin-left: auto;
               }
             }
           }
@@ -612,7 +613,7 @@
             flex: 1 1 auto;
             align-self: center;
             .term {
-              font-size: 2.4rem;
+              font-size: 2.3rem;
               color: $primary-color;
               line-height: 1.6;
               font-weight: bold;
@@ -774,6 +775,10 @@
         position: absolute;
         right: 0;
         top: 0;
+        @include mq(tab_max) {
+          width: 50%;
+          height: 50%;
+        }
       }
 
       .others {

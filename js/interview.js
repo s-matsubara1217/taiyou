@@ -34,7 +34,7 @@ var listener02 = function(event) {
       const Destination = ListItem.querySelector('.term')
       const ParentNode = ListItem.querySelector('.txt-holder');
 
-      ParentNode.parentNode.insertBefore(Target, parentNode);
+      ParentNode.parentNode.insertBefore(Target, ParentNode.nextElementSibling);
     })
 
   }
