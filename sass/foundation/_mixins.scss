@@ -34,6 +34,7 @@ $breakpoints: (
   'tab': 'screen and (max-width: 767px)',
   'tab_max': 'screen and (max-width: 768px)',
   'tab_min': 'screen and (min-width: 769px)',
+  'tab_only':'screen and (min-width: 768px) and (max-width: 1024px)',
   'sp_min': 'screen and (min-width: 481px)',
   'sp': 'screen and (max-width: 480px)',
   'narrow': 'screen and (max-width: 320px)',
