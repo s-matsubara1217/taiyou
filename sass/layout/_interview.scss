@@ -222,13 +222,6 @@
 
       .profile {
         position: relative;
-        padding-top: 80px;
-        @include mq(tab_only) {
-          padding-top: 64px;
-        }
-        @include mq(tab_max) {
-          padding-top: 64px;
-        }
 
         &__inner {
           max-width: 1180px;
@@ -237,28 +230,34 @@
           justify-content: flex-start;
           align-items: flex-start;
           position: relative;
+          padding-top: 80px;
+          @include mq(tab_max) {
+            padding-top: 64px;
+            padding-bottom: 20px;
+          }
 
         &:before,
         &:after {
           content: '';
           display: inline-block;
           position: absolute;
-          top: 0;
+          top: 0px;
           left: 50%;
           width: 100%;
           max-width: 1330px;
-          height: 100%;
+          height: calc(100% - 70px);
           border-radius: 10px;
           transform: translateX(-50%);
           pointer-events: none;
+          @include mq(tab_min) {
+            width: 112%;
+          }
           @include mq(tab_only) {
-            height: 70%;
+            height: calc(100% - 56px);
           }
           @include mq(tab_max) {
-            height: 78%;
-            border-radius: 0;
+            height: 100%;
           }
-
         }
         &:before {
           background-image: url(../img/interview/bg01.jpg);
@@ -332,17 +331,18 @@
             color: #fff;
             font-weight: bold;
             @include mq(tab_max) {
-              font-size: 2.4rem;
-              margin-top: 24px;
+              font-size: 2.2rem;
+              margin-top: 18px;
             }
           }
           .name-holder {
             margin-top: 20px;
-            margin-bottom: 64px;
+            margin-bottom: 145px;
             @include mq(tab_only) {
-              margin-bottom: 24px;
+              margin-bottom: 120px;
             }
             @include mq(tab_max) {
+              margin-top: 16px;
               margin-bottom: 32px;
             }
 
@@ -354,7 +354,7 @@
               margin-bottom: 8px;
               line-height: 1.7;
               @include mq(tab_max) {
-                font-size: 2.2rem;
+                font-size: 2rem;
 
               }
             }
@@ -384,6 +384,31 @@
           .desc {
             margin-top: 4px;
             font-weight: 400;
+          }
+        }
+        .profile-wrap {
+          max-width: 1180px;
+          margin-top: -130px;
+          @include mq(tab_only) {
+            margin-top: -110px;
+          }
+          @include mq(tab_max) {
+            margin-top: -28px;
+          }
+
+          .profile-box {
+            width: 61%;
+            margin-right: 0;
+            margin-left: auto;
+            @include mq(tab_max) {
+              width: 100%;
+            }
+
+            .m_title_style01 {
+              span {
+                color: $third-color;
+              }
+            }
           }
         }
       }
@@ -577,6 +602,9 @@
           align-items: flex-start;
           margin-top: 56px;
           padding-left: 9%;
+          @include mq(tab_min) {
+            padding-right: 9%;
+          }
           @include mq(tab_max) {
             display: block;
             padding-left: 0;
@@ -596,6 +624,10 @@
             flex-direction: row-reverse;
             padding-left: 0;
             padding-right: 9%;
+            @include mq(tab_min) {
+              padding-left: 9%;
+              padding-right: 9%;
+            }
             @include mq(tab_max) {
               padding-right: 0;
             }
@@ -604,6 +636,9 @@
               margin-left: 0;
               margin-right: 4%;
               transform: translateX(-30%) rotate(0.01deg);
+              @include mq(tab_min) {
+                margin-left: -9%;
+              }
               @include mq(tab_max) {
                 margin-right: auto;
                 margin-left: auto;
@@ -634,6 +669,9 @@
             transition-property: transform, opacity;
             transition-duration: 0.6s, 0.5s;
             transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1), linear;
+            @include mq(tab_min) {
+              margin-right: -9%;
+            }
             @include mq(tab_max) {
               margin-left: 0;
               max-width: 444px;
