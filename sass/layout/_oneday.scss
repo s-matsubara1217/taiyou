@@ -1,0 +1,509 @@
+@charset "utf-8";
+@use "../foundation/mixins" as *;
+/* ============================================
+// 指導員の一日の流れ
+// ==========================================*/
+
+.lower-oneday {
+
+
+  .sec__oneday {
+    .oneday {
+      &__inner {
+
+      }
+      &__head {
+      }
+      &__body {
+        .name {
+          font-family: $eng;
+          font-size: 16.4rem;
+          color: $third-color;
+          line-height: 1;
+          text-align: center;
+          margin-top: 32px;
+        }
+      }
+
+      &__list {
+        position: relative;
+        padding-top: 110px;
+        padding-bottom: 160px;
+        margin-top: -72px;
+        z-index: 2;
+
+        &__item {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-top: 64px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+          &:last-child {
+            position: relative;
+            &:after {
+              content: '';
+              display: inline-block;
+              background-color: #ffffff;
+              width: 30px;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: -1;
+              border-radius: 200px;
+            }
+          }
+          &:nth-child(odd) {
+            .txt-holder {
+              padding-right: 4%;
+            }
+            .img-holder {
+              padding-left: 6%;
+            }
+          }
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+            .txt-holder {
+              padding-left: 4%;
+            }
+            .img-holder {
+              padding-right: 6%;
+            }
+          }
+
+          .txt-holder {
+            flex: 0 0 45%;
+            margin-top: 24px;
+            @include mq(tab_only) {
+              flex: 0 0 42%;
+            }
+
+            .term {
+              font-size: 2.6rem;
+              font-weight: bold;
+              line-height: 1.6;
+              color: $primary-color;
+            }
+            .desc {
+              margin-top: 8px;
+              font-weight: 400;
+            }
+          }
+          .time {
+            flex: 0 0 110px;
+            width: 110px;
+            height: 110px;
+            color: $primary-color;
+            background-color: $third-color;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 20px 20px -20px $primary-color;
+            font-family: $eng02;
+            font-size: 2rem;
+            font-weight: bold;
+          }
+          .img-holder {
+            flex: 0 0 45%;
+            margin-top: 24px;
+            @include mq(tab_only) {
+              flex: 0 0 42%;
+            }
+
+            .img {
+              @include keepAspect(59.5%);
+
+              img {
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+      }
+      &__bg-deco {
+          display: inline-block;
+          background-color: #fff;
+          width: 30%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: -1;
+          border-radius: 200px;
+          &:before {
+            content: '';
+            display: inline-block;
+            background-image: url(../img/oneday/ico_car-start.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 98px;
+            height: 96px;
+            position: absolute;
+            top: -60px;
+            left: calc(50% - 16px);
+            transform: translateX(-50%);
+          }
+          &:after {
+            content: '';
+            display: inline-block;
+            background-color: #fdf6c3;
+            width: 30px;
+            height: calc(100% - 160px);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            border-radius: 200px;
+          }
+      }
+    }
+  }
+  .sec__career {
+    margin-top: 96px;
+
+    .career {
+      &__inner {
+
+      }
+      &__head {
+        text-align: center;
+        .commonLead {
+          margin-top: 40px;
+        }
+      }
+      &__body {
+
+      }
+    }
+
+    .sec__plan {
+      max-width: 1100px;
+      margin: 64px auto 0;
+      .plan {
+        &__head {
+          text-align: center;
+        }
+        &__body {
+
+        }
+
+        &__list {
+          margin-top: 52px;
+          position: relative;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 100%;
+            background-color: $primary-color;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+          }
+
+          &__item {
+            background-color: #fff;
+            border: 1px solid $primary-color;
+            border-radius: 10px;
+            padding: 28px 4.5%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &:first-child {
+              margin-top: 0;
+            }
+
+            .age {
+              flex: 0 0 11%;
+              font-size: 2.6rem;
+              font-weight: bold;
+              color: $primary-color;
+              padding-top: 28px;
+            }
+            .desc-holder {
+              flex: 0 0 90%;
+              border-left: 2px solid #e6e6e6;
+              padding: 20px 4%;
+              align-self: stretch;
+              margin-left: 4%;
+
+              .year {
+                display: block;
+                font-size: 1.8rem;
+                font-weight: bold;
+              }
+              .todo {
+                display: inline-block;
+                margin-top: 4px;
+                font-weight: 400;
+              }
+              .lifeplan-holder {
+                margin-top: 14px;
+                color: $primary-color;
+                font-weight: bold;
+
+                .txt-lifeplan {
+                  flex: 0 0 ;
+                  background-color: $third-color;
+                  font-family: $eng02;
+                  letter-spacing: 0.08em;
+                  padding: 6px 10px;
+                  border-radius: 10px;
+                  margin-right: 16px;
+                }
+                .lifeplan-age {
+                  display: inline-block;
+                  margin-right: 16px;
+                }
+                .lifeplan-todo {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .sec__training {
+      max-width: 1100px;
+      margin: 130px auto 0;
+      .training {
+        &__head {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          max-width: 1100px;
+          margin: 0 auto;
+
+          .m_title_style03 {
+            white-space: nowrap;
+          }
+          .lead {
+            align-self: flex-end;
+            margin-left: 9%;
+            font-weight: 400;
+          }
+        }
+        &__body {
+          margin-top: 56px;
+        }
+
+        &__list {
+          display: flex;
+          justify-content: flex-start;
+          align-items: stretch;
+          &__item {
+            flex: 0 0 43%;
+            max-width: 470px;
+            margin-right: 14%;
+            position: relative;
+            padding-bottom: 48px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 120%;
+              height: calc(100% - 60px);
+              background-color: #fff;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              z-index: -1;
+              transform: translateX(-50%);
+              border-radius: 20px;
+
+            }
+
+            &:nth-child(2n+2) {
+              margin-right: 0;
+            }
+
+            .num {
+              font-size: 9.8rem;
+              color: $third-color;
+              font-family: $eng;
+              position: absolute;
+              right: 0;
+              bottom: -48px;
+              line-height: 1;
+            }
+            .img-holder {
+              .img {
+                img {
+                  border-radius: 10px;
+                }
+              }
+            }
+            .txt-holder {
+              .term {
+                font-size: 2.4rem;
+                color: $primary-color;
+                line-height: 1.6;
+                margin-top: 12px;
+              }
+              .desc {
+                margin-top: 12px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sec__qualification {
+      margin-top: 160px;
+      margin-bottom: 248px;
+      .qualification {
+        &__head {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          max-width: 1100px;
+          margin: 0 auto;
+
+          .m_title_style03 {
+            white-space: nowrap;
+          }
+          .lead {
+            align-self: flex-end;
+            margin-left: 9%;
+            font-weight: 400;
+          }
+        }
+        &__body {
+          margin-top: 64px;
+          position: relative;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            width: 109%;
+            height: calc(100% + 70px);
+            background-color: #fff;
+            border-radius: 20px;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        &__list {
+          &__item {
+            background-color: $primary-color;
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px 10px 10px 0;
+            position: relative;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 18px 18px 0 0;
+              border-color: $primary-color transparent transparent transparent;
+              position: absolute;
+              bottom: 1px;
+              left: 0;
+              transform: translateY(100%);
+            }
+
+
+            .years {
+              font-size: 2rem;
+              font-weight: bold;
+              margin-bottom: 4px;
+              .num {
+                font-size: 3rem;
+                line-height: 1;
+                font-weight: bold;
+                display: inline-block;
+                margin-right: 4px;
+              }
+            }
+            .todo {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ページ内 共通
+  .commonLead {
+    border: 10px solid #fdf6c3;
+    border-radius: 20px;
+    text-align: center;
+    padding: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  // swiper 関連
+  .swiper {
+    position: relative;
+    width: 313px;
+
+    .swiper-slide {
+      height: auto;
+    }
+    .swiper-box {
+      height: 100%;
+    }
+    .swiper-pagination {
+      top: auto;
+      position: relative;
+      width: 940px;
+      height: 9px;
+      border-radius: 4.5px;
+      bottom: -78px;
+      left: 120px;
+
+      &-progressbar {
+        background-color: #fdf6c3;
+        .swiper-pagination-progressbar-fill {
+          background: $primary-color;
+          border-radius: 4.5px;
+        }
+      }
+
+      .swiper-pagination-progressbar-fill {
+      }
+    }
+    .swiper-buttons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+      top: 52px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: relative;
+      left: auto;
+      right: auto;
+      background-image: none;
+      margin-top: 0;
+      width: 38px;
+    }
+    .swiper-button-prev {
+      transform: scale(-1,1);
+      margin-right: 10px;
+    }
+  }
+}

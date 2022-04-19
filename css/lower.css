@@ -1127,4 +1127,446 @@
     margin-top: 16px;
   }
 }
+
+/* ============================================
+// 指導員の一日の流れ
+// ==========================================*/
+.lower-oneday .sec__oneday .oneday__body .name {
+  font-family: "Monoton", cursive;
+  font-size: 16.4rem;
+  color: #c5f4c6;
+  line-height: 1;
+  text-align: center;
+  margin-top: 32px;
+}
+.lower-oneday .sec__oneday .oneday__list {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 160px;
+  margin-top: -72px;
+  z-index: 2;
+}
+.lower-oneday .sec__oneday .oneday__list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 64px;
+}
+.lower-oneday .sec__oneday .oneday__list__item:first-child {
+  margin-top: 0;
+}
+.lower-oneday .sec__oneday .oneday__list__item:last-child {
+  position: relative;
+}
+.lower-oneday .sec__oneday .oneday__list__item:last-child:after {
+  content: "";
+  display: inline-block;
+  background-color: #ffffff;
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 200px;
+}
+.lower-oneday .sec__oneday .oneday__list__item:nth-child(odd) .txt-holder {
+  padding-right: 4%;
+}
+.lower-oneday .sec__oneday .oneday__list__item:nth-child(odd) .img-holder {
+  padding-left: 6%;
+}
+.lower-oneday .sec__oneday .oneday__list__item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.lower-oneday .sec__oneday .oneday__list__item:nth-child(even) .txt-holder {
+  padding-left: 4%;
+}
+.lower-oneday .sec__oneday .oneday__list__item:nth-child(even) .img-holder {
+  padding-right: 6%;
+}
+.lower-oneday .sec__oneday .oneday__list__item .txt-holder {
+  flex: 0 0 45%;
+  margin-top: 24px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .lower-oneday .sec__oneday .oneday__list__item .txt-holder {
+    flex: 0 0 42%;
+  }
+}
+.lower-oneday .sec__oneday .oneday__list__item .txt-holder .term {
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #00a572;
+}
+.lower-oneday .sec__oneday .oneday__list__item .txt-holder .desc {
+  margin-top: 8px;
+  font-weight: 400;
+}
+.lower-oneday .sec__oneday .oneday__list__item .time {
+  flex: 0 0 110px;
+  width: 110px;
+  height: 110px;
+  color: #00a572;
+  background-color: #c5f4c6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 20px 20px -20px #00a572;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.lower-oneday .sec__oneday .oneday__list__item .img-holder {
+  flex: 0 0 45%;
+  margin-top: 24px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .lower-oneday .sec__oneday .oneday__list__item .img-holder {
+    flex: 0 0 42%;
+  }
+}
+.lower-oneday .sec__oneday .oneday__list__item .img-holder .img {
+  position: relative;
+  z-index: 1;
+}
+.lower-oneday .sec__oneday .oneday__list__item .img-holder .img:before {
+  content: "";
+  display: block;
+  padding-top: 59.5%;
+}
+.lower-oneday .sec__oneday .oneday__list__item .img-holder .img img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.lower-oneday .sec__oneday .oneday__list__item .img-holder .img img {
+  border-radius: 10px;
+}
+.lower-oneday .sec__oneday .oneday__bg-deco {
+  display: inline-block;
+  background-color: #fff;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 200px;
+}
+.lower-oneday .sec__oneday .oneday__bg-deco:before {
+  content: "";
+  display: inline-block;
+  background-image: url(../img/oneday/ico_car-start.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 98px;
+  height: 96px;
+  position: absolute;
+  top: -60px;
+  left: calc(50% - 16px);
+  transform: translateX(-50%);
+}
+.lower-oneday .sec__oneday .oneday__bg-deco:after {
+  content: "";
+  display: inline-block;
+  background-color: #fdf6c3;
+  width: 30px;
+  height: calc(100% - 160px);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 200px;
+}
+.lower-oneday .sec__career {
+  margin-top: 96px;
+}
+.lower-oneday .sec__career .career__head {
+  text-align: center;
+}
+.lower-oneday .sec__career .career__head .commonLead {
+  margin-top: 40px;
+}
+.lower-oneday .sec__career .sec__plan {
+  max-width: 1100px;
+  margin: 64px auto 0;
+}
+.lower-oneday .sec__career .sec__plan .plan__head {
+  text-align: center;
+}
+.lower-oneday .sec__career .sec__plan .plan__list {
+  margin-top: 52px;
+  position: relative;
+}
+.lower-oneday .sec__career .sec__plan .plan__list::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 100%;
+  background-color: #00a572;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item {
+  background-color: #fff;
+  border: 1px solid #00a572;
+  border-radius: 10px;
+  padding: 28px 4.5%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item:first-child {
+  margin-top: 0;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .age {
+  flex: 0 0 11%;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #00a572;
+  padding-top: 28px;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder {
+  flex: 0 0 90%;
+  border-left: 2px solid #e6e6e6;
+  padding: 20px 4%;
+  align-self: stretch;
+  margin-left: 4%;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder .year {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder .todo {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 400;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder .lifeplan-holder {
+  margin-top: 14px;
+  color: #00a572;
+  font-weight: bold;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder .lifeplan-holder .txt-lifeplan {
+  flex: 0 0;
+  background-color: #c5f4c6;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder .lifeplan-holder .lifeplan-age {
+  display: inline-block;
+  margin-right: 16px;
+}
+.lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder .lifeplan-holder .lifeplan-todo {
+  display: inline-block;
+}
+.lower-oneday .sec__career .sec__training {
+  max-width: 1100px;
+  margin: 130px auto 0;
+}
+.lower-oneday .sec__career .sec__training .training__head {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.lower-oneday .sec__career .sec__training .training__head .m_title_style03 {
+  white-space: nowrap;
+}
+.lower-oneday .sec__career .sec__training .training__head .lead {
+  align-self: flex-end;
+  margin-left: 9%;
+  font-weight: 400;
+}
+.lower-oneday .sec__career .sec__training .training__body {
+  margin-top: 56px;
+}
+.lower-oneday .sec__career .sec__training .training__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.lower-oneday .sec__career .sec__training .training__list__item {
+  flex: 0 0 43%;
+  max-width: 470px;
+  margin-right: 14%;
+  position: relative;
+  padding-bottom: 48px;
+}
+.lower-oneday .sec__career .sec__training .training__list__item:before {
+  content: "";
+  display: inline-block;
+  width: 120%;
+  height: calc(100% - 60px);
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  border-radius: 20px;
+}
+.lower-oneday .sec__career .sec__training .training__list__item:nth-child(2n+2) {
+  margin-right: 0;
+}
+.lower-oneday .sec__career .sec__training .training__list__item .num {
+  font-size: 9.8rem;
+  color: #c5f4c6;
+  font-family: "Monoton", cursive;
+  position: absolute;
+  right: 0;
+  bottom: -48px;
+  line-height: 1;
+}
+.lower-oneday .sec__career .sec__training .training__list__item .img-holder .img img {
+  border-radius: 10px;
+}
+.lower-oneday .sec__career .sec__training .training__list__item .txt-holder .term {
+  font-size: 2.4rem;
+  color: #00a572;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+.lower-oneday .sec__career .sec__training .training__list__item .txt-holder .desc {
+  margin-top: 12px;
+  font-weight: 400;
+}
+.lower-oneday .sec__career .sec__qualification {
+  margin-top: 160px;
+  margin-bottom: 248px;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__head {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__head .m_title_style03 {
+  white-space: nowrap;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__head .lead {
+  align-self: flex-end;
+  margin-left: 9%;
+  font-weight: 400;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__body {
+  margin-top: 64px;
+  position: relative;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__body:before {
+  content: "";
+  display: inline-block;
+  width: 109%;
+  height: calc(100% + 70px);
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lower-oneday .sec__career .sec__qualification .qualification__list__item {
+  background-color: #00a572;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px 10px 10px 0;
+  position: relative;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__list__item:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18px 18px 0 0;
+  border-color: #00a572 transparent transparent transparent;
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  transform: translateY(100%);
+}
+.lower-oneday .sec__career .sec__qualification .qualification__list__item .years {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.lower-oneday .sec__career .sec__qualification .qualification__list__item .years .num {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 4px;
+}
+.lower-oneday .commonLead {
+  border: 10px solid #fdf6c3;
+  border-radius: 20px;
+  text-align: center;
+  padding: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.lower-oneday .swiper {
+  position: relative;
+  width: 313px;
+}
+.lower-oneday .swiper .swiper-slide {
+  height: auto;
+}
+.lower-oneday .swiper .swiper-box {
+  height: 100%;
+}
+.lower-oneday .swiper .swiper-pagination {
+  top: auto;
+  position: relative;
+  width: 940px;
+  height: 9px;
+  border-radius: 4.5px;
+  bottom: -78px;
+  left: 120px;
+}
+.lower-oneday .swiper .swiper-pagination-progressbar {
+  background-color: #fdf6c3;
+}
+.lower-oneday .swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #00a572;
+  border-radius: 4.5px;
+}
+.lower-oneday .swiper .swiper-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  top: 52px;
+}
+.lower-oneday .swiper .swiper-button-prev,
+.lower-oneday .swiper .swiper-button-next {
+  position: relative;
+  left: auto;
+  right: auto;
+  background-image: none;
+  margin-top: 0;
+  width: 38px;
+}
+.lower-oneday .swiper .swiper-button-prev {
+  transform: scale(-1, 1);
+  margin-right: 10px;
+}
 /*# sourceMappingURL=lower.css.map */

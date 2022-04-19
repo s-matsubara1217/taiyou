@@ -310,6 +310,30 @@ button
       margin-left: 20px;
     }
   }
+  &._l_small {
+    .en {
+      font-size: (4rem * 0.7);
+      @include mq(tab_min) {
+        font-size: 4rem;
+      }
+    }
+    .ja {
+      font-size: (2rem * 0.7);
+      @include mq(tab_min) {
+        font-size: 2rem;
+      }
+    }
+  }
+  &._l_underline {
+    border-bottom: 1px solid $primary-color;
+    display: inline-flex;
+    .en {
+      margin-left: 0;
+    }
+    .ja {
+      margin-left: 16px;
+    }
+  }
   &._c_primary {
     .en {
       color: $primary-color;
@@ -356,7 +380,6 @@ button
     }
   }
 }
-
 .m_title_style02 {
   position: relative;
   flex-flow: column;
@@ -443,6 +466,14 @@ button
       }
     }
   }
+}
+.m_title_style03 {
+  font-size: 2.8rem;
+  color: $primary-color;
+  font-weight: bold;
+  background:linear-gradient(transparent 60%, #fff850 60%);
+  line-height: 1.6;
+  display: inline-block;
 }
 
 
