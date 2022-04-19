@@ -486,7 +486,7 @@ a {
  表示 / 非表示
 ------------------------------*/
 .u-pcOnly {
-  @include mq(tab_min) {
+  @include mq(tab_max) {
     display: none;
   }
 }

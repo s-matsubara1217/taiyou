@@ -860,7 +860,7 @@ a {
 /*------------------------------
  表示 / 非表示
 ------------------------------*/
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
   .u-pcOnly {
     display: none;
   }
@@ -1654,8 +1654,10 @@ button
   line-height: 1.6;
   display: inline-block;
 }
-.m_title_style03._l_center {
-  text-align: center;
+@media screen and (max-width: 768px) {
+  .m_title_style03 {
+    font-size: 2rem;
+  }
 }
 
 /*--------------------

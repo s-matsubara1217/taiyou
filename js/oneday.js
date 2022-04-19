@@ -14,4 +14,9 @@ const qualification_swiper = new Swiper(".qualification__container", {
     nextEl: ".qualification-button-next",
     prevEl: ".qualification-button-prev",
   },
+  breakpoints: {
+		834: {
+		  spaceBetween: 20,
+		}
+	}
 });

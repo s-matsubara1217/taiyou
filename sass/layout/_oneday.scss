@@ -15,6 +15,7 @@
       &__head {
       }
       &__body {
+        text-align: center;
         .name {
           font-family: $eng;
           font-size: 16.4rem;
@@ -22,6 +23,14 @@
           line-height: 1;
           text-align: center;
           margin-top: 32px;
+          @include mq(tab_only) {
+            font-size: 13rem;
+          }
+          @include mq(tab_max) {
+            font-size: 4rem;
+            margin-left: 72px;
+            margin-top: 44px;
+          }
         }
       }
 
@@ -31,14 +40,23 @@
         padding-bottom: 160px;
         margin-top: -72px;
         z-index: 2;
+        @include mq(tab_max) {
+          padding-top: 84px;
+          margin-top: -64px;
+          padding-bottom: 40px;
+        }
 
         &__item {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
           margin-top: 64px;
+          @include mq(tab_max) {
+            flex-wrap: wrap;
+            margin-top: 32px;
+          }
 
-          &:first-child {
+          &:first-of-type {
             margin-top: 0;
           }
           &:last-child {
@@ -55,23 +73,40 @@
               transform: translateX(-50%);
               z-index: -1;
               border-radius: 200px;
+              @include mq(tab_max) {
+                left: 0;
+                transform: translateX(0);
+                width: 48px;
+              }
             }
           }
-          &:nth-child(odd) {
+          &:nth-of-type(odd) {
             .txt-holder {
-              padding-right: 4%;
+              @include mq(tab_min) {
+                padding-right: 4%;
+              }
             }
             .img-holder {
-              padding-left: 6%;
+              @include mq(tab_min) {
+                padding-left: 6%;
+              }
             }
           }
-          &:nth-child(even) {
+          &:nth-of-type(even) {
             flex-direction: row-reverse;
+            @include mq(tab_max) {
+              flex-direction: row;
+            }
+
             .txt-holder {
-              padding-left: 4%;
+              @include mq(tab_min) {
+                padding-left: 4%;
+              }
             }
             .img-holder {
-              padding-right: 6%;
+              @include mq(tab_min) {
+                padding-right: 6%;
+              }
             }
           }
 
@@ -81,16 +116,31 @@
             @include mq(tab_only) {
               flex: 0 0 42%;
             }
+            @include mq(tab_max) {
+              order: 3;
+              orphans: 0;
+              padding-left: 80px;
+              flex: 1 1 45%;
+              margin-top: 16px;
+            }
 
             .term {
               font-size: 2.6rem;
               font-weight: bold;
               line-height: 1.6;
               color: $primary-color;
+              text-align: left;
+              @include mq(tab_max) {
+                font-size: 2rem;
+              }
             }
             .desc {
               margin-top: 8px;
               font-weight: 400;
+              text-align: left;
+              @include mq(tab_max) {
+                font-size: 1.4rem;
+              }
             }
           }
           .time {
@@ -107,6 +157,13 @@
             font-family: $eng02;
             font-size: 2rem;
             font-weight: bold;
+            @include mq(tab_max) {
+              flex: 0 0 60px;
+              width: 60px;
+              height: 60px;
+              font-size: 1.5rem;
+              order: 1;
+            }
           }
           .img-holder {
             flex: 0 0 45%;
@@ -114,12 +171,19 @@
             @include mq(tab_only) {
               flex: 0 0 42%;
             }
+            @include mq(tab_max) {
+              order: 2;
+              flex: 1 1 45%;
+              padding-left: 20px;
+              margin-top: 20px;
+            }
 
             .img {
               @include keepAspect(59.5%);
 
               img {
                 border-radius: 10px;
+                border: 1px solid transparent;
               }
             }
           }
@@ -136,6 +200,12 @@
           transform: translateX(-50%);
           z-index: -1;
           border-radius: 200px;
+          @include mq(tab_max) {
+            left: 0;
+            transform: translateX(0);
+            width: 18%;
+          }
+
           &:before {
             content: '';
             display: inline-block;
@@ -148,6 +218,12 @@
             top: -60px;
             left: calc(50% - 16px);
             transform: translateX(-50%);
+            @include mq(tab_max) {
+              transform: translateX(-50%) scale(0.7);
+              top: -56px;
+              left: calc(50% - 11px);
+
+            }
           }
           &:after {
             content: '';
@@ -161,12 +237,18 @@
             transform: translateX(-50%);
             z-index: -1;
             border-radius: 200px;
+            @include mq(tab_max) {
+              width: 16px;
+            }
           }
       }
     }
   }
   .sec__career {
     margin-top: 96px;
+    @include mq(tab_max) {
+      margin-top: 32px;
+    }
 
     .career {
       &__inner {
@@ -174,8 +256,38 @@
       }
       &__head {
         text-align: center;
+        position: relative;
+        @include mq(tab_max) {
+          text-align: right;
+        }
+
+        .deco {
+          width: 236px;
+          position: absolute;
+          top: 40px;
+          left: -24px;
+          @include mq(tab_only) {
+            width: 212px;
+            top: 8px;
+            left: -24px;
+          }
+          @include mq(tab_max) {
+            width: 120px;
+            top: 24px;
+            left: 0
+          }
+        }
+        .m_title_style01 {
+          @include mq(tab_max) {
+            flex-direction: column;
+            margin-right: 48px;
+          }
+        }
         .commonLead {
           margin-top: 40px;
+          @include mq(tab_max) {
+            margin-top: 16px;
+          }
         }
       }
       &__body {
@@ -186,6 +298,9 @@
     .sec__plan {
       max-width: 1100px;
       margin: 64px auto 0;
+      @include mq(tab_max) {
+        margin-top: 32px;
+      }
       .plan {
         &__head {
           text-align: center;
@@ -197,6 +312,9 @@
         &__list {
           margin-top: 52px;
           position: relative;
+          @include mq(tab_max) {
+            margin-top: 28px;
+          }
 
           &::before {
             content: '';
@@ -220,6 +338,10 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
+            @include mq(tab_max) {
+              padding: 20px 5% 28px;
+              display: block;
+            }
 
             &:first-child {
               margin-top: 0;
@@ -231,6 +353,10 @@
               font-weight: bold;
               color: $primary-color;
               padding-top: 28px;
+              @include mq(tab_max) {
+                padding-top: 0;
+                font-size: 2rem;
+              }
             }
             .desc-holder {
               flex: 0 0 90%;
@@ -238,11 +364,22 @@
               padding: 20px 4%;
               align-self: stretch;
               margin-left: 4%;
+              @include mq(tab_max) {
+                padding: 0;
+                margin-left: 0;
+                border-left: none;
+                border-top: 2px solid #e6e6e6;
+                padding-top: 8px;
+                margin-top: 8px;
+              }
 
               .year {
                 display: block;
                 font-size: 1.8rem;
                 font-weight: bold;
+                @include mq(tab_max) {
+                  font-size: 1.6rem;
+                }
               }
               .todo {
                 display: inline-block;
@@ -279,6 +416,9 @@
     .sec__training {
       max-width: 1100px;
       margin: 130px auto 0;
+      @include mq(tab_max) {
+        margin-top: 48px;
+      }
       .training {
         &__head {
           display: flex;
@@ -286,6 +426,9 @@
           align-items: flex-start;
           max-width: 1100px;
           margin: 0 auto;
+          @include mq(tab_max) {
+            display: block;
+          }
 
           .m_title_style03 {
             white-space: nowrap;
@@ -294,22 +437,44 @@
             align-self: flex-end;
             margin-left: 9%;
             font-weight: 400;
+            @include mq(tab_max) {
+              margin-left: 0;
+              margin-top: 14px;
+            }
           }
         }
         &__body {
           margin-top: 56px;
+          @include mq(tab_max) {
+            margin-top: 28px;
+          }
         }
 
         &__list {
           display: flex;
           justify-content: flex-start;
           align-items: stretch;
+          @include mq(tab_max) {
+            display: block;
+          }
+
           &__item {
             flex: 0 0 43%;
             max-width: 470px;
             margin-right: 14%;
             position: relative;
             padding-bottom: 48px;
+            @include mq(tab_max) {
+              width: 85%;
+              margin: 0 auto;
+            }
+            @include mq(tab_max) {
+              margin-top: 52px;
+
+              &:first-child {
+                margin-top: 0;
+              }
+            }
 
             &:before {
               content: '';
@@ -327,7 +492,10 @@
             }
 
             &:nth-child(2n+2) {
-              margin-right: 0;
+              @include mq(tab_min) {
+                margin-right: 0;
+                transition-delay: 0.2s;
+              }
             }
 
             .num {
@@ -338,6 +506,10 @@
               right: 0;
               bottom: -48px;
               line-height: 1;
+              @include mq(tab_max) {
+                font-size: 6rem;
+                bottom: -32px;
+              }
             }
             .img-holder {
               .img {
@@ -352,10 +524,17 @@
                 color: $primary-color;
                 line-height: 1.6;
                 margin-top: 12px;
+                @include mq(tab_max) {
+                  font-size: 2rem;
+                  margin-top: 8px;
+                }
               }
               .desc {
                 margin-top: 12px;
                 font-weight: 400;
+                @include mq(tab_max) {
+                  margin-top: 8px;
+                }
               }
             }
           }
@@ -365,6 +544,11 @@
     .sec__qualification {
       margin-top: 160px;
       margin-bottom: 248px;
+      @include mq(tab_max) {
+        margin-top: 64px;
+        margin-bottom: 110px;
+      }
+
       .qualification {
         &__head {
           display: flex;
@@ -372,6 +556,9 @@
           align-items: flex-start;
           max-width: 1100px;
           margin: 0 auto;
+          @include mq(tab_max) {
+            display: block;
+          }
 
           .m_title_style03 {
             white-space: nowrap;
@@ -380,11 +567,18 @@
             align-self: flex-end;
             margin-left: 9%;
             font-weight: 400;
+            @include mq(tab_max) {
+              margin-left: 0;
+              margin-top: 14px;
+            }
           }
         }
         &__body {
           margin-top: 64px;
           position: relative;
+          @include mq(tab_max) {
+            margin-top: 32px;
+          }
 
           &:before {
             content: '';
@@ -397,6 +591,10 @@
             top: 80px;
             left: 50%;
             transform: translateX(-50%);
+            @include mq(tab_max) {
+              height: calc(100% + 32px);
+              top: 64px;
+            }
           }
         }
 
@@ -427,12 +625,18 @@
               font-size: 2rem;
               font-weight: bold;
               margin-bottom: 4px;
+              @include mq(tab_max) {
+                font-size: 1.8rem;
+              }
               .num {
                 font-size: 3rem;
                 line-height: 1;
                 font-weight: bold;
                 display: inline-block;
                 margin-right: 4px;
+                @include mq(tab_max) {
+                  font-size: 2.6rem;
+                }
               }
             }
             .todo {
@@ -452,12 +656,21 @@
     padding: 28px;
     max-width: 1100px;
     margin: 0 auto;
+    @include mq(tab_max) {
+      border: 8px solid #fdf6c3;
+      text-align: left;
+      padding: 24px;
+    }
   }
 
   // swiper 関連
   .swiper {
     position: relative;
     width: 313px;
+    @include mq(tab_max) {
+      width: 80%;
+    }
+
 
     .swiper-slide {
       height: auto;
@@ -473,6 +686,10 @@
       border-radius: 4.5px;
       bottom: -78px;
       left: 120px;
+      @include mq(tab_max) {
+        width: 220px;
+        bottom: -64px;
+      }
 
       &-progressbar {
         background-color: #fdf6c3;
@@ -491,6 +708,9 @@
       align-items: flex-start;
       position: relative;
       top: 52px;
+      @include mq(tab_max) {
+        top: 38px;
+      }
     }
     .swiper-button-prev,
     .swiper-button-next {

@@ -474,6 +474,9 @@ button
   background:linear-gradient(transparent 60%, #fff850 60%);
   line-height: 1.6;
   display: inline-block;
+  @include mq(tab_max) {
+    font-size: 2rem;
+  }
 }
 
 
