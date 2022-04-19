@@ -700,6 +700,18 @@
       }
 
       .swiper-pagination-progressbar-fill {
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 58px;
+          height: 58px;
+          background-image: url(../img/oneday/ico_car.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
     }
     .swiper-buttons {
