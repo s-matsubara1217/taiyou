@@ -223,7 +223,7 @@ function circleChart(setChartEl, setAnimationTime) {
 						color: '#fff',
 						font: {
 							weight: 'bold',
-							size: 18,
+							size: 15,
 						},
 						formatter: function(value, ctx) {
 							if(value < 10){
@@ -288,7 +288,7 @@ function doughnutChart(setChartEl, setAnimationTime) {
 					}]
 				},
 				options: {
-					cutoutPercentage: 68,
+					cutoutPercentage: 60,
 					responsive: true,
 					animation: {animateRotate: false},
 					plugins: {
@@ -322,7 +322,7 @@ function doughnutChart(setChartEl, setAnimationTime) {
 					}]
 				},
 				options: {
-					cutoutPercentage: 68,
+					cutoutPercentage: 60,
 					responsive: true,
 					plugins: {
 						datalabels: {

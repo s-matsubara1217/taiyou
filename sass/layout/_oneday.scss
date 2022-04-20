@@ -661,21 +661,6 @@
     }
   }
 
-  // ページ内 共通
-  .commonLead {
-    border: 10px solid #fdf6c3;
-    border-radius: 20px;
-    text-align: center;
-    padding: 28px;
-    max-width: 1100px;
-    margin: 0 auto;
-    @include mq(tab_max) {
-      border: 8px solid #fdf6c3;
-      text-align: left;
-      padding: 24px;
-    }
-  }
-
   // swiper 関連
   .swiper {
     position: relative;

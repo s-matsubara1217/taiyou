@@ -1429,6 +1429,13 @@ button
 .m_title_style01._c_primary_all .ja {
   color: #00a572;
 }
+.m_title_style01._c_white {
+  border-bottom: 1px solid #fff;
+}
+.m_title_style01._c_white .en,
+.m_title_style01._c_white .ja {
+  color: #fff;
+}
 .m_title_style01._a_move01 .en > span {
   display: inline-block;
   transform: translateY(30px) scale(0.5);
@@ -1863,6 +1870,22 @@ layout
 }
 .no_text._c_white {
   color: #fff;
+}
+
+.commonLead {
+  border: 10px solid #fdf6c3;
+  border-radius: 20px;
+  text-align: center;
+  padding: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .commonLead {
+    border: 8px solid #fdf6c3;
+    text-align: left;
+    padding: 24px;
+  }
 }
 
 /* ============================================
