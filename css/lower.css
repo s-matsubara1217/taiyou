@@ -1173,11 +1173,14 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 64px;
+  position: relative;
+  min-height: 110px;
 }
 @media screen and (max-width: 768px) {
   .lower-oneday .sec__oneday .oneday__list__item {
     flex-wrap: wrap;
     margin-top: 32px;
+    min-height: 60px;
   }
 }
 .lower-oneday .sec__oneday .oneday__list__item:first-of-type {
@@ -1211,6 +1214,11 @@
     padding-right: 4%;
   }
 }
+@media screen and (min-width: 769px) and (-ms-high-contrast: none) {
+  .lower-oneday .sec__oneday .oneday__list__item:nth-of-type(odd) .txt-holder {
+    padding-right: 6%;
+  }
+}
 @media screen and (min-width: 769px) {
   .lower-oneday .sec__oneday .oneday__list__item:nth-of-type(odd) .img-holder {
     padding-left: 6%;
@@ -1229,6 +1237,11 @@
     padding-left: 4%;
   }
 }
+@media screen and (min-width: 769px) and (-ms-high-contrast: none) {
+  .lower-oneday .sec__oneday .oneday__list__item:nth-of-type(even) .txt-holder {
+    padding-left: 6%;
+  }
+}
 @media screen and (min-width: 769px) {
   .lower-oneday .sec__oneday .oneday__list__item:nth-of-type(even) .img-holder {
     padding-right: 6%;
@@ -1238,6 +1251,11 @@
   flex: 0 0 45%;
   margin-top: 24px;
 }
+@media all and (-ms-high-contrast: none) {
+  .lower-oneday .sec__oneday .oneday__list__item .txt-holder {
+    flex: 1 1 45%;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .lower-oneday .sec__oneday .oneday__list__item .txt-holder {
     flex: 0 0 42%;
@@ -1246,10 +1264,9 @@
 @media screen and (max-width: 768px) {
   .lower-oneday .sec__oneday .oneday__list__item .txt-holder {
     order: 3;
-    orphans: 0;
     padding-left: 80px;
-    flex: 1 1 45%;
-    margin-top: 16px;
+    flex: 1 1 auto;
+    margin-top: -48px;
   }
 }
 .lower-oneday .sec__oneday .oneday__list__item .txt-holder .term {
@@ -1289,6 +1306,14 @@
   font-size: 2rem;
   font-weight: bold;
 }
+@media screen and (min-width: 769px) {
+  .lower-oneday .sec__oneday .oneday__list__item .time {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 @media screen and (max-width: 768px) {
   .lower-oneday .sec__oneday .oneday__list__item .time {
     flex: 0 0 60px;
@@ -1302,6 +1327,11 @@
   flex: 0 0 45%;
   margin-top: 24px;
 }
+@media all and (-ms-high-contrast: none) {
+  .lower-oneday .sec__oneday .oneday__list__item .img-holder {
+    flex: 1 1 45%;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .lower-oneday .sec__oneday .oneday__list__item .img-holder {
     flex: 0 0 42%;
@@ -1313,6 +1343,7 @@
     flex: 1 1 45%;
     padding-left: 20px;
     margin-top: 20px;
+    margin-bottom: 64px;
   }
 }
 .lower-oneday .sec__oneday .oneday__list__item .img-holder .img {
@@ -1412,13 +1443,12 @@
 .lower-oneday .sec__career .career__head .deco {
   width: 236px;
   position: absolute;
-  top: 40px;
+  top: -16px;
   left: -24px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .lower-oneday .sec__career .career__head .deco {
     width: 212px;
-    top: 8px;
     left: -24px;
   }
 }
@@ -1514,6 +1544,11 @@
   padding: 20px 4%;
   align-self: stretch;
   margin-left: 4%;
+}
+@media all and (-ms-high-contrast: none) {
+  .lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder {
+    flex: 1 1 90%;
+  }
 }
 @media screen and (max-width: 768px) {
   .lower-oneday .sec__career .sec__plan .plan__list__item .desc-holder {
@@ -1677,6 +1712,7 @@
   color: #00a572;
   line-height: 1.6;
   margin-top: 12px;
+  font-weight: bold;
 }
 @media screen and (max-width: 768px) {
   .lower-oneday .sec__career .sec__training .training__list__item .txt-holder .term {
@@ -1742,7 +1778,7 @@
   content: "";
   display: inline-block;
   width: 109%;
-  height: calc(100% + 70px);
+  height: calc(100% + 56px);
   background-color: #fff;
   border-radius: 20px;
   position: absolute;
@@ -1760,21 +1796,9 @@
   background-color: #00a572;
   color: #fff;
   padding: 20px 30px;
-  border-radius: 10px 10px 10px 0;
+  border-radius: 10px;
   position: relative;
-}
-.lower-oneday .sec__career .sec__qualification .qualification__list__item:before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 18px 18px 0 0;
-  border-color: #00a572 transparent transparent transparent;
-  position: absolute;
-  bottom: 1px;
-  left: 0;
-  transform: translateY(100%);
+  box-shadow: 0px 32px 32px -32px #00a572;
 }
 .lower-oneday .sec__career .sec__qualification .qualification__list__item .years {
   font-size: 2rem;
@@ -1834,8 +1858,13 @@
   width: 940px;
   height: 9px;
   border-radius: 4.5px;
-  bottom: -78px;
+  bottom: -64px;
   left: 120px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .lower-oneday .swiper .swiper-pagination {
+    width: 820px;
+  }
 }
 @media screen and (max-width: 768px) {
   .lower-oneday .swiper .swiper-pagination {
@@ -1851,7 +1880,6 @@
   border-radius: 4.5px;
 }
 .lower-oneday .swiper .swiper-pagination .swiper-pagination-progressbar-fill:before {
-  content: "";
   display: inline-block;
   width: 58px;
   height: 58px;
@@ -1867,7 +1895,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
-  top: 52px;
+  top: 40px;
 }
 @media screen and (max-width: 768px) {
   .lower-oneday .swiper .swiper-buttons {

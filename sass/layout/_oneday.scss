@@ -51,9 +51,13 @@
           justify-content: space-between;
           align-items: flex-start;
           margin-top: 64px;
+          position: relative;
+          min-height: 110px;
+
           @include mq(tab_max) {
             flex-wrap: wrap;
             margin-top: 32px;
+            min-height: 60px;
           }
 
           &:first-of-type {
@@ -84,6 +88,9 @@
             .txt-holder {
               @include mq(tab_min) {
                 padding-right: 4%;
+                @media all and (-ms-high-contrast: none) {
+                  padding-right: 6%;
+                }
               }
             }
             .img-holder {
@@ -101,6 +108,9 @@
             .txt-holder {
               @include mq(tab_min) {
                 padding-left: 4%;
+                @media all and (-ms-high-contrast: none) {
+                  padding-left: 6%;
+                }
               }
             }
             .img-holder {
@@ -113,15 +123,17 @@
           .txt-holder {
             flex: 0 0 45%;
             margin-top: 24px;
+            @media all and (-ms-high-contrast: none) {
+              flex: 1 1 45%;
+            }
             @include mq(tab_only) {
               flex: 0 0 42%;
             }
             @include mq(tab_max) {
               order: 3;
-              orphans: 0;
               padding-left: 80px;
-              flex: 1 1 45%;
-              margin-top: 16px;
+              flex: 1 1 auto;
+              margin-top: -48px;
             }
 
             .term {
@@ -157,6 +169,13 @@
             font-family: $eng02;
             font-size: 2rem;
             font-weight: bold;
+
+            @include mq(tab_min) {
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+            }
             @include mq(tab_max) {
               flex: 0 0 60px;
               width: 60px;
@@ -168,6 +187,9 @@
           .img-holder {
             flex: 0 0 45%;
             margin-top: 24px;
+            @media all and (-ms-high-contrast: none) {
+              flex: 1 1 45%;
+            }
             @include mq(tab_only) {
               flex: 0 0 42%;
             }
@@ -176,6 +198,7 @@
               flex: 1 1 45%;
               padding-left: 20px;
               margin-top: 20px;
+              margin-bottom: 64px;
             }
 
             .img {
@@ -264,11 +287,10 @@
         .deco {
           width: 236px;
           position: absolute;
-          top: 40px;
+          top: -16px;
           left: -24px;
           @include mq(tab_only) {
             width: 212px;
-            top: 8px;
             left: -24px;
           }
           @include mq(tab_max) {
@@ -364,6 +386,9 @@
               padding: 20px 4%;
               align-self: stretch;
               margin-left: 4%;
+              @media all and (-ms-high-contrast: none) {
+                flex: 1 1 90%;
+              }
               @include mq(tab_max) {
                 padding: 0;
                 margin-left: 0;
@@ -524,6 +549,7 @@
                 color: $primary-color;
                 line-height: 1.6;
                 margin-top: 12px;
+                font-weight: bold;
                 @include mq(tab_max) {
                   font-size: 2rem;
                   margin-top: 8px;
@@ -584,7 +610,7 @@
             content: '';
             display: inline-block;
             width: 109%;
-            height: calc(100% + 70px);
+            height: calc(100% + 56px);
             background-color: #fff;
             border-radius: 20px;
             position: absolute;
@@ -603,23 +629,9 @@
             background-color: $primary-color;
             color: #fff;
             padding: 20px 30px;
-            border-radius: 10px 10px 10px 0;
+            border-radius: 10px;
             position: relative;
-
-            &:before {
-              content: '';
-              display: inline-block;
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 18px 18px 0 0;
-              border-color: $primary-color transparent transparent transparent;
-              position: absolute;
-              bottom: 1px;
-              left: 0;
-              transform: translateY(100%);
-            }
-
+            box-shadow: 0px 32px 32px -32px $primary-color;
 
             .years {
               font-size: 2rem;
@@ -684,8 +696,11 @@
       width: 940px;
       height: 9px;
       border-radius: 4.5px;
-      bottom: -78px;
+      bottom: -64px;
       left: 120px;
+      @include mq(tab_only) {
+        width: 820px;
+      }
       @include mq(tab_max) {
         width: 220px;
         bottom: -64px;
@@ -701,7 +716,7 @@
 
       .swiper-pagination-progressbar-fill {
         &:before {
-          content: '';
+          // content: '';
           display: inline-block;
           width: 58px;
           height: 58px;
@@ -719,7 +734,7 @@
       justify-content: flex-start;
       align-items: flex-start;
       position: relative;
-      top: 52px;
+      top: 40px;
       @include mq(tab_max) {
         top: 38px;
       }
