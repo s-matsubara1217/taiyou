@@ -538,6 +538,7 @@
             }
             .img-holder {
               .img {
+                @include keepAspect(62.5%);
                 img {
                   border-radius: 10px;
                 }
