@@ -16,41 +16,6 @@
       position: relative;
       z-index: 1;
       margin-top: 12px;
-      &:before {
-        content: "";
-        display: inline-block;
-        width: 369px;
-        height: 120px;
-        background: url(../img/img_deco02.png) no-repeat;
-        position: absolute;
-        z-index: -10;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        top: 0;
-        left: 0;
-        @include mq(tab) {
-          transform-origin: left top;
-          transform: scale(0.6);
-        }
-      }
-      &:after {
-        content: "";
-        display: inline-block;
-        width: 369px;
-        height: 120px;
-        background: url(../img/img_deco02.png) no-repeat;
-        position: absolute;
-        z-index: -10;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        bottom: 15%;
-        right: 0;
-        @include mq(tab) {
-          transform-origin: right bottom;
-          transform: scale(0.6);
-          bottom: 0;
-        }
-      }
       &__wrap {
         width: 100%;
         max-width: 1200px;
