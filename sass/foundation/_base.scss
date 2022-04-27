@@ -658,7 +658,7 @@ a {
     }
     &_text {
       position: relative;
-      z-index: 2;
+      z-index: 5;
       margin-left: 20px;
       margin-right: 80px;
       @include mq(tab_min) {
