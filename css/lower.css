@@ -3095,7 +3095,8 @@
 }
 @media screen and (max-width: 768px) {
   .lower-about .sec__feature .feature__list__item .num-holder {
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     text-align: left;
     margin-right: 0;
   }
@@ -3113,7 +3114,8 @@
 }
 @media screen and (max-width: 768px) {
   .lower-about .sec__feature .feature__list__item .num-holder .num {
-    font-size: 5rem;
+    font-size: 2.5rem;
+    margin-left: 8px;
   }
 }
 .lower-about .sec__feature .feature__list__item .txt-holder {
