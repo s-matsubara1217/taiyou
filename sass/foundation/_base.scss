@@ -638,11 +638,17 @@ a {
           max-width: none;
           top: -80px;
           right: -60px;
+          @media all and (-ms-high-contrast: none) {
+            right: -180px;
+          }
         }
       }
       .clipping {
         overflow: hidden;
         font-size: 0;
+        @media all and (-ms-high-contrast: none) {
+          width: 210px;
+        }
       }
       .human {
         position: relative;
@@ -664,6 +670,9 @@ a {
       @include mq(tab_min) {
         margin-left: 80px;
         margin-top: 60px;
+        @media all and (-ms-high-contrast: none) {
+          margin-left: 210px;
+        }
       }
       .en {
         font-size: (7rem * 0.4);
