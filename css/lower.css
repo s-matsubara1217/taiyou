@@ -3238,6 +3238,7 @@
 @media screen and (max-width: 768px) {
   .lower-about .sec__person {
     padding-top: 16px;
+    padding-bottom: 120px;
   }
 }
 .lower-about .sec__person .person__inner {
@@ -3259,6 +3260,8 @@
   .lower-about .sec__person .person__inner::before {
     width: 64%;
     border: 30px solid #fdf6c3;
+    height: calc(100% - 16px);
+    top: 24px;
   }
 }
 .lower-about .sec__person .person__head {
@@ -3270,11 +3273,17 @@
 }
 @media screen and (max-width: 768px) {
   .lower-about .sec__person .person__head .m_title_style01 {
-    padding: 0;
+    padding: 0 16px;
+    display: inline-block;
   }
 }
 .lower-about .sec__person .person__body {
   margin-top: 56px;
+}
+@media screen and (max-width: 768px) {
+  .lower-about .sec__person .person__body {
+    margin-top: 36px;
+  }
 }
 .lower-about .sec__person .person__list {
   display: flex;

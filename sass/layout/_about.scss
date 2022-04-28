@@ -515,6 +515,7 @@
     padding-bottom: 200px;
     @include mq(tab_max) {
       padding-top: 16px;
+      padding-bottom: 120px;
     }
     .person {
       &__inner {
@@ -533,6 +534,8 @@
           @include mq(tab_max) {
             width: 64%;
             border: 30px solid #fdf6c3;
+            height: calc(100% - 16px);
+            top: 24px;
           }
         }
       }
@@ -543,12 +546,16 @@
           padding: 0 40px;
           background-color: #fff;
           @include mq(tab_max) {
-            padding: 0;
+            padding: 0 16px;
+            display: inline-block;
           }
         }
       }
       &__body {
         margin-top: 56px;
+        @include mq(tab_max) {
+          margin-top: 36px;
+        }
       }
 
       &__list {
