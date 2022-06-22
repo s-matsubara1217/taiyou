@@ -183,8 +183,74 @@ function barChart(setChartEl, setAnimationTime) {
 
 // class="circleChart"を取得し、data-chartに登録された比率でグラフの表示
 function circleChart(setChartEl, setAnimationTime) {
-	const circleChartNodeList = setChartEl.querySelectorAll(".circleChart");
+	const circleChartNodeList = setChartEl.querySelectorAll(".circleChart"); //数字なし
+	const circleChartNodeList02 = setChartEl.querySelectorAll(".circleChart02"); //数字あり
+
 	Array.prototype.forEach.call(circleChartNodeList, function (chartElm) {
+
+		const w = chartElm.dataset.maxWidth;
+		const h = chartElm.dataset.maxHeight;
+		chartElm.width = w;
+		chartElm.height = h;
+
+		const defaultBarColor = '#d9d9d9';
+		const datas = JSON.parse(chartElm.dataset.chart);
+		const bg = chartElm.dataset.bg;
+		let keyArr = [];
+		let valueArr = [];
+		let bgArr = [];
+
+		if (bg) {
+			bgArr = bg.slice(1).slice(0, -1).split(",");
+		}
+		for (let key in datas) {
+			keyArr.push(key);
+			valueArr.push(datas[key]);
+		}
+
+		const myChart = new Chart(chartElm, {
+			type: "pie",
+			data: {
+				labels: keyArr,
+				datasets: [{
+					data: valueArr,
+					backgroundColor: bgArr ? bgArr : defaultBarColor,
+					borderWidth: 0,
+				}],
+			},
+			plugins: [ChartDataLabels],
+			options: {
+				plugins: {
+					datalabels: {
+						color: 'transparent',
+						font: {
+							weight: 'bold',
+							size: 15,
+						},
+						formatter: function(value, ctx) {
+							if(value < 10){
+								return '';
+							}
+							return value + '%';
+						},
+					},
+					tooltip: {
+						enabled: false,
+					},
+					legend: {
+						display: false,
+					},
+				},
+        legend: {
+        	display: false
+				},
+				tooltips: {
+					enabled: false
+				},
+			}
+		});
+	}); //数字なし
+	Array.prototype.forEach.call(circleChartNodeList02, function (chartElm) {
 
 		const w = chartElm.dataset.maxWidth;
 		const h = chartElm.dataset.maxHeight;
@@ -223,7 +289,7 @@ function circleChart(setChartEl, setAnimationTime) {
 						color: '#fff',
 						font: {
 							weight: 'bold',
-							size: 15,
+							size: 18,
 						},
 						formatter: function(value, ctx) {
 							if(value < 10){
@@ -247,8 +313,9 @@ function circleChart(setChartEl, setAnimationTime) {
 				},
 			}
 		});
-	});
+	}); //数字あり
 }
+
 
 // class="doughnutChart"を取得し、data-chartに登録された比率でグラフの表示
 function doughnutChart(setChartEl, setAnimationTime) {

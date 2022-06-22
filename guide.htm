@@ -216,144 +216,121 @@
 					</p>
 					<div class="sections">
 						<div class="sections__wrap custom-chart-container ">
+							<!-- 220622 matsubara コード改修↓ -->
 
-							<!-- 平均年齢（カウントアップのみ） -->
-							<section class="sections__item -s js-set_chart -count animation slideup_fade" data-chart="count">
+							<!-- 指導員国家資格試験合格率（カウントアップ / イラスト） -->
+							<section class="sections__item -m js-set_chart  -countIllust animation slideup_fade" data-chart="count">
 								<div class="count">01</div>
+								<div class="sections__item__wrap">
+									<div class="hd"><h2 class="hd__ttl">指導員国家資格試験合格率</h2></div>
+									<div class="contents">
+										<div class="contents__visual">
+											<div class="illust">
+												<img src="img/guide/illust01.png" alt="イラストイメージ" class="ofi" loading="lazy">
+											</div>
+										</div>
+										<div class="contents__detail">
+											<p class="txt">
+												<span class="num">5</span>
+												年連続
+											</p>
+											<p class="txt">
+												<span class="js-set_count num" data-num="100">0</span>%
+											</p>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- 未経験者or経験者（横棒グラフ） -->
+							<section class="sections__item -m -line js-set_chart animation slideup_fade" data-chart="line">
+								<div class="count">02</div>
+								<div class="sections__item__wrap">
+									<div class="hd"><h2 class="hd__ttl">未経験者or経験者</h2></div>
+									<div class="contents">
+										<div class="contents__visual">
+											<div class="lineChart">
+												<div class="lineChart__item js-set_line -bg-color01" data-num="91"></div>
+												<div class="lineChart__item js-set_line -bg-color02" data-num="9"></div>
+											</div>
+										</div>
+										<div class="contents__detail">
+											<div class="data">
+												<p class="data__txt commonBudge01 bg-blue">未経験者</p>
+												<p class="data__body">
+													<span class="js-set_count num" data-num="91">0</span>%
+												</p>
+											</div>
+											<span class="separate">:</span>
+											<div class="data">
+												<p class="data__txt commonBudge01 bg-red">経験者</p>
+												<p class="data__body">
+													<span class="js-set_count num" data-num="9">0</span>%
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- 平均年齢（カウントアップ / カラム） -->
+							<section class="sections__item -s js-set_chart -countColumn animation slideup_fade" data-chart="count">
+								<div class="count">03</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h2 class="hd__ttl">平均年齢</h2></div>
 									<div class="contents">
-										<div class="contents__visual">
-											<p class="txt">
-												<span class="js-set_count num" data-num="42">0</span>歳
-											</p>
-										</div>
-										<div class="contents__detail countChart">
+										<div class="contents__detail">
 											<div class="contents__detail__item">
-												<div class="icon -men">
-													<div class="img-box">
-														<img class="ofi" src="img/guide/ico_men.png" alt="men">
-													</div>
-												</div>
 												<div class="data">
+													<p class="data__txt commonBudge01 bg-blue">指導課</p>
 													<p class="data__body">
-														<span class="js-set_count num" data-num="42">0</span>歳
+														<span class="js-set_count num" data-num="39">0</span>歳
 													</p>
 												</div>
 											</div>
 											<div class="contents__detail__item">
-												<div class="icon -women">
-													<div class="img-box">
-														<img class="ofi" src="img/guide/ico_women.png" alt="women">
-													</div>
-												</div>
 												<div class="data">
+													<p class="data__txt commonBudge01 bg-red">全社</p>
 													<p class="data__body">
-														<span class="js-set_count num" data-num="42">0</span>歳
+														<span class="js-set_count num" data-num="40">0</span>歳
 													</p>
 												</div>
 											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 平均勤続年数（カウントアップのみ） -->
-							<section class="sections__item -s js-set_chart -count animation slideup_fade" data-chart="count">
-								<div class="count">02</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">平均勤続年数</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<p class="txt">
-												<span class="js-set_count num" data-num="10">0</span>年
-											</p>
-										</div>
-										<div class="contents__detail countChart">
-											<div class="contents__detail__item">
-												<div class="icon -men">
-													<div class="img-box">
-														<img class="ofi" src="img/guide/ico_men.png" alt="men">
-													</div>
-												</div>
-												<div class="data">
-													<p class="data__body">
-														<span class="js-set_count num" data-num="10">0</span>年
-													</p>
-												</div>
-											</div>
-											<div class="contents__detail__item">
-												<div class="icon -women">
-													<div class="img-box">
-														<img class="ofi" src="img/guide/ico_women.png" alt="women">
-													</div>
-												</div>
-												<div class="data">
-													<p class="data__body">
-														<span class="js-set_count num" data-num="10">0</span>年
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 平均残業時間（カウントアップのみ） -->
-							<section class="sections__item -s js-set_chart -count animation slideup_fade" data-chart="count">
-								<div class="count">03</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">平均残業時間</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<p class="txt">
-												<span class="js-set_count num" data-num="30">0</span>時間
-											</p>
-										</div>
-										<div class="contents__annotation">
-											<p class="txt">（1ヶ月）</p>
 										</div>
 									</div>
 								</div>
 							</section>
 							<!-- 男女構成（横棒グラフ） -->
-							<section class="sections__item -m -line js-set_chart animation slideup_fade" data-chart="line">
+							<section class="sections__item -s -line -lineSmall js-set_chart animation slideup_fade" data-chart="line">
 								<div class="count">04</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h2 class="hd__ttl">男女構成</h2></div>
 									<div class="contents">
 										<div class="contents__visual">
 											<div class="lineChart">
-												<div class="lineChart__item js-set_line -bg-color01" data-num="40"></div>
-												<div class="lineChart__item js-set_line -bg-color02" data-num="60"></div>
+												<div class="lineChart__item js-set_line -bg-color01" data-num="60"></div>
+												<div class="lineChart__item js-set_line -bg-color02" data-num="40"></div>
 											</div>
 										</div>
 										<div class="contents__detail">
 											<div class="data">
-												<div class="icon -men">
-													<div class="img-box">
-														<img class="ofi" src="img/guide/ico_men.png" alt="men">
-													</div>
-												</div>
 												<p class="data__body">
-													<span class="js-set_count num" data-num="4">0</span>
+													<span class="js-set_count num" data-num="60">0</span>%
 												</p>
 											</div>
 											<span class="separate">:</span>
 											<div class="data">
-												<div class="icon -women">
-													<div class="img-box">
-														<img class="ofi" src="img/guide/ico_women.png" alt="women">
-													</div>
-												</div>
 												<p class="data__body">
-													<span class="js-set_count num" data-num="6">0</span>
+													<span class="js-set_count num" data-num="40">0</span>%
 												</p>
 											</div>
 										</div>
 									</div>
+									<div class="bg-illust bg-illust01">
+										<img src="img/guide/bg_illust01.png" alt="背景イラスト">
+									</div>
 								</div>
 							</section>
-							<!-- 職種構成（パイグラフ） -->
-							<section class="sections__item -m js-set_chart -circle2 animation slideup_fade" data-chart="circle">
+							<!-- 職種構成（パイグラフ / 数字なし） -->
+							<section class="sections__item -s js-set_chart -circle animation slideup_fade" data-chart="circle">
 								<div class="count">05</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h2 class="hd__ttl">職種構成</h2></div>
@@ -362,332 +339,298 @@
 											<canvas class="circleChart"
 												data-maxWidth='200'
 												data-maxHeight='200'
-												data-chart='{"指導員": 15, "指導員2": 20, "指導員3": 35, "指導員4": 20, "事務": 8, "その他": 2}'
+												data-chart='{"指導課": 48, "営業・事務職": 27, "送迎課": 17, "その他": 8}'
 												data-bg='[#00a572,#3bb992,#93d8c3,#eb9446,#e9b688,#fdbe85]'></canvas>
 										</div>
 										<div class="contents__detail">
 											<div class="contents__detail__item">
 												<div class="icon"></div>
 												<p class="txt">
-													指導員：<span class="js-set_count num" data-num="15">0</span>%
+													指導課：<span class="js-set_count num" data-num="48">0</span>%
 												</p>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
 												<p class="txt">
-													指導員2：<span class="js-set_count num" data-num="20">0</span>%
+													営業・事務職：<span class="js-set_count num" data-num="27">0</span>%
 												</p>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
 												<p class="txt">
-													指導員3：<span class="js-set_count num" data-num="35">0</span>%
+													送迎課：<span class="js-set_count num" data-num="17">0</span>%
 												</p>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
 												<p class="txt">
-													指導員4：<span class="js-set_count num" data-num="20">0</span>%
-												</p>
-											</div>
-											<div class="contents__detail__item">
-												<div class="icon"></div>
-												<p class="txt">
-													事務：<span class="js-set_count num" data-num="8">0</span>%
-												</p>
-											</div>
-											<div class="contents__detail__item">
-												<div class="icon"></div>
-												<p class="txt">
-													その他：<span class="js-set_count num" data-num="2">0</span>%
+													その他：<span class="js-set_count num" data-num="8">0</span>%
 												</p>
 											</div>
 										</div>
 									</div>
 								</div>
 							</section>
-							<!-- 中途採用率（ドーナツグラフ） -->
-							<section class="sections__item -s js-set_chart -doughnut animation slideup_fade" data-chart="doughnut">
+							<!-- 入社を決めたポイントは？（アコーディオン） -->
+							<section class="sections__item -m js-set_chart -accordion animation slideup_fade">
 								<div class="count">06</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">中途採用率</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<canvas class="doughnutChart"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"中途採用率": 70, "": 30}'
-												data-bg='[#93d8c3,#a3b5b0]'></canvas>
-											<canvas class="doughnutChart -bg"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"": 100}'
-												data-bg='[#a3b5b0]'></canvas>
-											<p class="doughnutChart-count countChart">
-												<span class="js-set_count num" data-num="70">0</span>%
-											</p>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 平均有給休暇消化率（ドーナツグラフ） -->
-							<section class="sections__item -s js-set_chart -doughnut animation slideup_fade" data-chart="doughnut">
-								<div class="count">07</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">平均有給休暇消化率</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<canvas class="doughnutChart"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"平均有給休暇消化率": 80, "": 20}'
-												data-bg='[#93d8c3,#a3b5b0]'></canvas>
-											<canvas class="doughnutChart -bg"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"": 100}'
-												data-bg='[#a3b5b0]'></canvas>
-											<p class="doughnutChart-count countChart">
-												<span class="js-set_count num" data-num="80">0</span>%
-											</p>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 産休・育休休暇の取得率は？（ドーナツグラフ） -->
-							<section class="sections__item -s js-set_chart -doughnut animation slideup_fade" data-chart="doughnut">
-								<div class="count">08</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">産休・育休休暇の取得率は？</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<canvas class="doughnutChart"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"産休・育休休暇の取得率": 90, "": 10}'
-												data-bg='[#93d8c3,#a3b5b0]'></canvas>
-											<canvas class="doughnutChart -bg"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"": 100}'
-												data-bg='[#a3b5b0]'></canvas>
-											<p class="doughnutChart-count countChart">
-												<span class="js-set_count num" data-num="90">0</span>%
-											</p>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 生徒さんから告白されたことは？（横棒グラフ） -->
-							<section class="sections__item -m -line -line2 js-set_chart animation slideup_fade" data-chart="line">
-								<div class="count">09</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">生徒さんから<br class="u-spOnly">告白されたことは？</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<div class="lineChart">
-												<div class="lineChart__item js-set_line -bg-color01" data-num="40"></div>
-												<div class="lineChart__item js-set_line -bg-color02" data-num="60"></div>
-											</div>
-										</div>
-										<div class="contents__detail">
-											<div class="data">
-												<p class="data__txt bg-blue">ある</p>
-												<p class="data__body">
-													<span class="js-set_count num" data-num="4">0</span>
-												</p>
-											</div>
-											<span class="separate">:</span>
-											<div class="data">
-												<p class="data__txt bg-red">ない</p>
-												<p class="data__body">
-													<span class="js-set_count num" data-num="6">0</span>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 入社を決めたポイントは？（タグ） -->
-							<section class="sections__item -h js-set_chart -tag animation slideup_fade" data-chart="tag">
-								<div class="count">10</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h2 class="hd__ttl">入社を決めたポイントは？</h2></div>
 									<div class="contents">
-										<div class="contents__visual -set_tags">
-												<div class="contents__visual__item tagChart"><p class="txt">仕事内容に魅力を感じたから</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">雰囲気が良かったから</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">今までやったことのない業務に挑戦したかったから</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">お給与が良かったから</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">運転が好きだったから</p></div>
+										<div class="contents__visual">
+												<div class="contents__visual__item">
+													<p class="txt">運転や教えることが好き</p>
+												</div>
+												<div class="contents__visual__item">
+													<p class="txt">やりがいのある仕事だと思い</p>
+												</div>
+												<div class="contents__visual__item">
+													<p class="txt">自然豊富な環境</p>
+												</div>
+												<div class="contents__visual__item">
+													<p class="txt">卒業生で気になった</p>
+												</div>
+										</div>
+										<div class="contents__other">
+											<div class="contents__other__title">
+												<h4 class="title"><span class="txt">その他</span></h4>
+											</div>
+											<div class="contents__other__list">
+												<ul class="list">
+												 	<li><span>指導員になりたかった</span></li>
+													<li><span>施設が充実しているので</span></li>
+													<li><span>車や運転が好きなので</span></li>
+													<li><span>教えることが好きなので</span></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
 							</section>
-							<!-- パート・アルバイト 正社員になった割合は（パイグラフ） -->
-							<section class="sections__item -s js-set_chart -circle animation slideup_fade" data-chart="circle">
-								<div class="count">11</div>
+							<!-- キャリア志向 or WLB派（パイグラフ2 / 数字あり） -->
+							<section class="sections__item -m js-set_chart -circle2 animation slideup_fade" data-chart="circle">
+								<div class="count">07</div>
 								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">パート・アルバイト<br>正社員になった割合は</h2></div>
+									<div class="hd"><h2 class="hd__ttl">キャリア志向派 or <br>ワークライフバランス派？</h2></div>
 									<div class="contents">
 										<div class="contents__visual">
-											<canvas class="circleChart"
+											<canvas class="circleChart02"
 												data-maxWidth='200'
 												data-maxHeight='200'
-												data-chart='{"パート・アルバイト": 60, "正社員": 40}'
+												data-chart='{"キャリア志向派": 45, "ワークライフバランス": 55}'
 												data-bg='[#00a572,#eb9446]'></canvas>
 										</div>
 										<div class="contents__detail">
 											<div class="contents__detail__item">
 												<div class="icon"></div>
 												<p class="txt">
-													パート・アルバイト：<span class="js-set_count num" data-num="60">0</span>%
+													キャリア志向派：<span class="js-set_count num" data-num="45">0</span>%
 												</p>
 											</div>
 											<div class="contents__detail__item">
 												<div class="icon"></div>
 												<p class="txt">
-													正社員：<span class="js-set_count num" data-num="40">0</span>%
+													ワークライフバランス：<span class="js-set_count num" data-num="55">0</span>%
 												</p>
 											</div>
 										</div>
 									</div>
-								</div>
-							</section>
-							<!-- キャリア思考 or ワークライフバランス（パイグラフ） -->
-							<section class="sections__item -s js-set_chart -circle animation slideup_fade" data-chart="circle">
-								<div class="count">12</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">キャリア志向派 or<br>ワークライフバランス派？</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<canvas class="circleChart"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"キャリア志向派": 50, "ワークライフバランス": 50}'
-												data-bg='[#00a572,#eb9446]'></canvas>
-										</div>
-										<div class="contents__detail">
-											<div class="contents__detail__item">
-												<div class="icon"></div>
-												<p class="txt">
-													キャリア志向派：<span class="js-set_count num" data-num="50">0</span>%
-												</p>
-											</div>
-											<div class="contents__detail__item">
-												<div class="icon"></div>
-												<p class="txt">
-													ワークライフバランス：<span class="js-set_count num" data-num="50">0</span>%
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 残業したい or 残業したくない（パイグラフ） -->
-							<section class="sections__item -s js-set_chart -circle animation slideup_fade" data-chart="circle">
-								<div class="count">13</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">残業したい派 or<br>したくない派？</h2></div>
-									<div class="contents">
-										<div class="contents__visual">
-											<canvas class="circleChart"
-												data-maxWidth='200'
-												data-maxHeight='200'
-												data-chart='{"残業したい派": 30, "したくない派": 70}'
-												data-bg='[#00a572,#eb9446]'></canvas>
-										</div>
-										<div class="contents__detail">
-											<div class="contents__detail__item">
-												<div class="icon"></div>
-												<p class="txt">
-													残業したい派：<span class="js-set_count num" data-num="30">0</span>%
-												</p>
-											</div>
-											<div class="contents__detail__item">
-												<div class="icon"></div>
-												<p class="txt">
-													したくない派：<span class="js-set_count num" data-num="70">0</span>%
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							<!-- 福利厚生で一番うれしい項目は？（タグ） -->
-							<section class="sections__item -h js-set_chart -tag animation slideup_fade" data-chart="tag">
-								<div class="count">14</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">福利厚生で<br class="u-spOnly">一番うれしい項目は？</h2></div>
-									<div class="contents">
-										<div class="contents__visual -set_tags">
-												<div class="contents__visual__item tagChart"><p class="txt">マイカーのガソリン補助：50%</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">資格取得補助：30%</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">住宅取得補助：30%</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">特別休暇：15%</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">レジャーの優待：10%</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">その他：5%</p></div>
-										</div>
+									<div class="bg-illust bg-illust02">
+										<img src="img/guide/bg_illust02.png" alt="背景イラスト">
 									</div>
 								</div>
 							</section>
 							<!-- 前職は？（タグ） -->
-							<section class="sections__item -h js-set_chart -tag animation slideup_fade" data-chart="tag">
-								<div class="count">15</div>
+							<section class="sections__item -m js-set_chart -tag animation slideup_fade" data-chart="tag">
+								<div class="count">08</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h2 class="hd__ttl">前職は？
 									</h2></div>
 									<div class="contents">
 										<div class="contents__visual -set_tags">
-												<div class="contents__visual__item tagChart"><p class="txt">広告代理店</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">保険会社営業</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">ゼネコン</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">ホテル業</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">デザイナー</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">家具販売</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">エステティシャン</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">店員</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">飲食店</p></div>
 												<div class="contents__visual__item tagChart"><p class="txt">保育士</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">学習塾</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">公務員</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">営業・サービス</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">技術系</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">航空保安</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">教習指導員</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">式務職</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">電気工事士</p></div>
 										</div>
 									</div>
-								</div>
-							</section>
-							<!-- 資格取得制度で取った資格は？（タグ） -->
-							<section class="sections__item -h js-set_chart -tag animation slideup_fade" data-chart="tag">
-								<div class="count">16</div>
-								<div class="sections__item__wrap">
-									<div class="hd"><h2 class="hd__ttl">資格取得制度で<br class="u-spOnly">取った資格は？</h2></div>
-									<div class="contents">
-										<div class="contents__visual -set_tags">
-												<div class="contents__visual__item tagChart"><p class="txt">一級建築士</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">二級建築士</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">木造建築士</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">インテリアプランナー</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">宅地建物取引士</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">施工管理技士</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">普通自動車運転免許</p></div>
-										</div>
+									<div class="bg-illust bg-illust03">
+										<img src="img/guide/bg_illust03.png" alt="背景イラスト">
 									</div>
 								</div>
 							</section>
 							<!-- お仕事終わりの過ごし方は？（タグ） -->
-							<section class="sections__item -h js-set_chart -tag animation slideup_fade" data-chart="tag">
-								<div class="count">17</div>
+							<section class="sections__item -m js-set_chart -tag animation slideup_fade" data-chart="tag">
+								<div class="count">09</div>
 								<div class="sections__item__wrap">
 									<div class="hd"><h2 class="hd__ttl">お仕事終わりの過ごし方は？</h2></div>
 									<div class="contents">
 										<div class="contents__visual -set_tags">
-												<div class="contents__visual__item tagChart"><p class="txt">映画を観る</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">本を読む</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">家族と過ごす</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">資格取得のため勉強する</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">カラオケに行く</p></div>
-												<div class="contents__visual__item tagChart"><p class="txt">ジムに通う・スポーツをする</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">キャンプ</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">釣り</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">温泉</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">音楽鑑賞</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">映画鑑賞</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">ドライブ・ツーリング</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">ショッピング</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">子供と遊ぶ</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">洗車</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">家事</p></div>
+												<div class="contents__visual__item tagChart"><p class="txt">家でまったり</p></div>
 										</div>
 									</div>
 								</div>
 							</section>
+							<!-- 通勤エリア（パイグラフ / 数字なし * 2） -->
+							<section class="sections__item -ml js-set_chart -circle -circleDouble animation slideup_fade" data-chart="circle">
+								<div class="count">10</div>
+								<div class="sections__item__wrap">
+									<div class="hd"><h2 class="hd__ttl">通勤エリア</h2></div>
+									<div class="contentsWrap">
+										<div class="contents">
+											<div class="contents__visualWrap">
+												<p class="contents__text commonBudge01 bg-blue">兵庫県</p>
+												<div class="contents__visual">
+													<canvas class="circleChart"
+														data-maxWidth='200'
+														data-maxHeight='200'
+														data-chart='{"川西市": 43, "猪名川町": 28, "宝塚市": 8, "神戸市": 6, "三田市": 4, "その他": 11}'
+														data-bg='[#00a572,#3bb992,#93d8c3,#eb9446,#e9b688,#fdbe85]'></canvas>
+												</div>
+											</div>
+											<div class="contents__detail">
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														川西市：<span class="js-set_count num" data-num="43">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														猪名川町：<span class="js-set_count num" data-num="28">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														宝塚市：<span class="js-set_count num" data-num="8">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														神戸市：<span class="js-set_count num" data-num="6">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														三田市：<span class="js-set_count num" data-num="4">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														その他：<span class="js-set_count num" data-num="11">0</span>%
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="contents">
+											<div class="contents__visualWrap">
+												<p class="contents__text commonBudge01 bg-red">大阪府</p>
+												<div class="contents__visual">
+													<canvas class="circleChart"
+														data-maxWidth='200'
+														data-maxHeight='200'
+														data-chart='{"池田市": 26, "豊中市": 20, "能勢町": 20, "大阪市": 20, "その他": 14}'
+														data-bg='[#00a572,#3bb992,#93d8c3,#eb9446,#e9b688,#fdbe85]'></canvas>
+												</div>
+											</div>
+											<div class="contents__detail">
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														池田市：<span class="js-set_count num" data-num="26">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														豊中市：<span class="js-set_count num" data-num="20">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														能勢町：<span class="js-set_count num" data-num="20">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														大阪市：<span class="js-set_count num" data-num="20">0</span>%
+													</p>
+												</div>
+												<div class="contents__detail__item">
+													<div class="icon"></div>
+													<p class="txt">
+														その他：<span class="js-set_count num" data-num="14">0</span>%
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- 通勤手段（パイグラフ / 数字なし） -->
+							<section class="sections__item -s js-set_chart -circle animation slideup_fade" data-chart="circle">
+								<div class="count">11</div>
+								<div class="sections__item__wrap">
+									<div class="hd"><h2 class="hd__ttl">通勤手段</h2></div>
+									<div class="contents">
+										<div class="contents__visual">
+											<canvas class="circleChart"
+												data-maxWidth='200'
+												data-maxHeight='200'
+												data-chart='{"車": 87, "バイク": 7, "その他": 6}'
+												data-bg='[#00a572,#3bb992,#93d8c3,#eb9446,#e9b688,#fdbe85]'></canvas>
+										</div>
+										<div class="contents__detail">
+											<div class="contents__detail__item">
+												<div class="icon"></div>
+												<p class="txt">
+													車：<span class="js-set_count num" data-num="87">0</span>%
+												</p>
+											</div>
+											<div class="contents__detail__item">
+												<div class="icon"></div>
+												<p class="txt">
+													バイク：<span class="js-set_count num" data-num="7">0</span>%
+												</p>
+											</div>
+											<div class="contents__detail__item">
+												<div class="icon"></div>
+												<p class="txt">
+													その他：<span class="js-set_count num" data-num="6">0</span>%
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="bg-illust bg-illust04">
+										<img src="img/guide/bg_illust04.png" alt="背景イラスト">
+									</div>
+								</div>
+							</section>
 
+							<!-- 220622 matsubara コード改修↑ -->
 						</div>
 
 						<div class="annotation animation slideup_fade">
@@ -957,6 +900,7 @@
 <script src="js/vendor/chart.min.js"></script>
 <script src="js/vendor/chartjs-plugin-datalabels.js"></script>
 <script src="js/customChart.js"></script>
+<script src="js/guide.js"></script>
 <!-- //THIS PAGE -->
 
 
